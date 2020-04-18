@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'assets/scss/cy-core/_variables';
+body {
+	font-family: Roboto, Verdana, Arial, sans-serif;
+	background: $cy-black-font ;
+	color: $cy-white;
+}
+::-webkit-scrollbar {
+    width: 10px;     /* Tamaño del scroll en vertical */
+    height: 10px;    /* Tamaño del scroll en horizontal */
+}
+/* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+::-webkit-scrollbar-thumb {
+    background: $cy-green-primary;
+    border-radius: 4px;
+}
+
+/* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #3cb147;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Cambiamos el fondo cuando esté en active */
+::-webkit-scrollbar-thumb:active {
+    background-color: $cy-green-primary;
+}
+
+/* Ponemos un color de fondo y redondeamos las esquinas del track */
+::-webkit-scrollbar-track {
+    background: $cy-green-tertiary;
+/*     border-radius: 4px; */
+}
+
+/* Cambiamos el fondo cuando esté en active o hover */
+::-webkit-scrollbar-track:hover {
+/*   background: transparent; */
+}
+::-webkit-scrollbar-track:active{
+  background: transparent ;
+}
