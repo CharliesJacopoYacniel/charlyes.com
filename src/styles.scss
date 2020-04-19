@@ -1,11 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import 'assets/scss/cy-core/_grid';
 @import 'assets/scss/cy-core/_variables';
+
 body {
-	font-family: Roboto, Verdana, Arial, sans-serif;
+    // font-family: Roboto, Verdana, Arial, sans-serif;
+    font-family: Roboto-Regular, Verdana, Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
 	background: $cy-black-font ;
-	color: $cy-white;
+    color: $cy-white;
+    line-height: $font-height;
+    overflow-x: hidden; 
 }
+
+.center-flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 ::-webkit-scrollbar {
     width: 10px;     /* Tamaño del scroll en vertical */
     height: 10px;    /* Tamaño del scroll en horizontal */

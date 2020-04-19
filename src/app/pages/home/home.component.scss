@@ -1,66 +1,109 @@
 @import '../../../assets/scss/cy-core/variables';
+@import '../../../assets/scss/cy-core/utility';
 
 @import '../../../assets/scss/cy-core/_globals';
 
-
-
-
+/**
+		Estos estilos son para tosa la pagina
+*/ 
 .main-container{
-	// display: flex;
-	// align-items: center;
-	// flex-direction: column;
 	width: 100vw;
 	height: 100vh;
 	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		top:0;
+		left:0;
+		width: inherit;
+		height: inherit;
+		background-image: url('../../../assets/img/bakgroundCY.png');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+		opacity: .1;
+	}
 }
-.main-container::before{
-    content: "";
-    width: inherit;
-    height: inherit;
-    background-image: url('../../../assets/img/bakgroundCY.png');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    opacity: .09;
+// .main-container:
+
+.cy-title{// clase para los titulos
+   color: $cy-green-secondary;
+   font-size: $font-size-titles;
+}
+.cy-text{//clase para los textos de los titulos
+	color: $cy-green-primary;
+	font-size: $font-size-text;
+}
+.cy-title-footer{
+   color: $cy-green-secondary;
+   font-size: $font-size-titles;
+}
+.cy-text-footer{
+	color: $cy-white;
+	font-size: $font-size-text;
 }
 
+/**
+		Estos estilos son para el nav bar
+*/ 
 .container-nav {
 	background: $cy-green-tertiary;
 	box-shadow: 0 0 10px $cy-green-primary;
-}
-
-.wrap {
-	width: 960px;
-	max-width: 100%;
+	width: 100%;
 	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	
 }
 
 
 .menu-responsive {
 	position: relative;
 	height: 60px;
-  
+	z-index: 999;
+	& ul {
+		list-style: none;
+		& li {
+			float: left;
+			padding: 3px;
+			& a {
+				display: block;
+				padding: 20px;
+				color:$cy-green-primary;
+				text-decoration: none;
+				font-weight: 700;
+				&:hover {
+					 background: $cy-green-strong;
+					 transition-property: background-color;
+					 transition-duration: 0.4s;
+					 transition-timing-function: ease;
+					 color:$cy-green-primary;
+				  
+				  }
+			}
+		}
+	}
 }
 
-.menu-responsive ul {
-	list-style: none;
-}
+// .menu-responsive ul {
+// 	list-style: none;
+// }
 
-.menu-responsive ul li {
-	float: left;
-	padding: 3px;
+// .menu-responsive ul li {
+// 	float: left;
+// 	padding: 3px;
 
-}
+// }
 
 
-.menu-responsive ul li a {
-	display: block;
-	padding: 20px;
-	color:$cy-green-primary;
-	text-decoration: none;
-  font-weight: 700;
+// .menu-responsive ul li a {
+// 	display: block;
+// 	padding: 20px;
+// 	color:$cy-green-primary;
+// 	text-decoration: none;
+//   font-weight: 700;
 
-}
+// }
 
 .nav-logo {
   padding: 5px 15px 0px 15px;
@@ -70,16 +113,14 @@
     page-break-after: 5px;
   }
 }
-.menu-responsive ul li a:hover {
-  background: $cy-green-strong;
-	 transition-property: background-color;
-   transition-duration: 0.4s;
-   transition-timing-function: ease;
-   color:$cy-green-primary;
+// .menu-responsive ul li a:hover {
+//   background: $cy-green-strong;
+// 	 transition-property: background-color;
+//    transition-duration: 0.4s;
+//    transition-timing-function: ease;
+//    color:$cy-green-primary;
 
-
-
-}
+// }
 
 
 .three-lines-menu {
@@ -98,82 +139,80 @@
 	.menu-responsive ul {
 		display: none;
 		padding: 0;
-    
-
-		
 	}
 
 	.menu-responsive ul li {
 		float: none;
-    background: $cy-green-tertiary;
-    color: $cy-green-primary;
+		background: $cy-green-tertiary;
+		color: $cy-green-primary;
+	}
+	.menu-responsive ul.menu-responsive {
+		display: block;
+		width: 100%;
+		margin-top: 0;
 	}
 
 
 	.three-lines-menu {
 		display: block;
 		cursor: pointer;
-
-	}
-
-	.menu-responsive ul.menu-responsive {
-		display: block;
-		width: 100%;
-		margin-top: 0;
-   
 	}
 
 
-//=====
+
+/**
+		Estos estilos son para el home
+*/ 
 	.image-container{
 		display: flex;
 		justify-content: center;
 		img {
 			width: -webkit-fill-available;
+			z-index: -9;
 		}
 	}
 
-	.welcome-container{
+	.dots-container{
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		width: 100%;
 		height: 100%;
 		position: relative;
+		&:after{
+			content: "";
+			position: absolute;
+			width: inherit;
+			height: inherit;
+			background-image: url('../../../assets/img/grid-square.svg');
+			background-repeat: no-repeat;
+			background-position: bottom;
+			position: absolute;
+			z-index: -1;
+		}
 	}
-	.welcome-container::after{
-		position: absolute;
-		content: "";
-		width: inherit;
-		height: inherit;
-		background-image: url('../../../assets/img/grid-square.svg');
-		background-repeat: no-repeat;
-		background-position: bottom;
-		position: absolute;
-		z-index: -1;
-	}
-	// etiqueta con simbolo de mensaje
+	
 	.hello{
 		color: $cy-green-primary;
 		padding: 10px;
-		// margin: 0 0 20px 0;
 		background:$cy-green-tertiary;
 		border-radius: 5px;
 		position: relative;
+		&:after{
+			content: "";
+			content: "";
+			position: absolute;
+			left: 5px;
+			top: 35px;
+			width: 0;
+			height: 0;
+			background: transparent;
+			border-left: 15px solid transparent;
+			border-right: 15px solid transparent;
+			border-top: 40px solid $cy-green-tertiary;
+		}
 	}
-	.hello::after{
-		content: "";
-		content: "";
-		position: absolute;
-		left: 5px;
-		top: 25px;
-		width: 0;
-		height: 0;
-		background: transparent;
-		border-left: 15px solid transparent;
-		border-right: 15px solid transparent;
-		border-top: 40px solid $cy-green-tertiary;
-	}
+	
 
 	.charlies-yacniel{
 		font-size: 90px;
@@ -181,16 +220,343 @@
 	}
 
 	.profesion{
-		font-size: 20px;
+		font-size: 21px;
+		padding: 0px 0px 10px 0px;
 	}
 	.cv{
+		padding: 0px 0px 10px 0px;
 		button {
 			padding: 10px;
 			height: 50px;
 			border: 1px solid $cy-green-primary;
 			border-radius: 10px;
 			width: 200px;
-			color: $cy-green-tertiary;
+			color: $cy-green-strong;
 			background-color: $cy-green-primary;
 		}
 	}
+
+	// 
+	.button-down{
+		width: 40px;
+		background: transparent;
+		border: 1px solid $cy-green-primary;
+		border-radius: 30px;
+		height: 70px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.arrow-down{
+			width: 2px;
+			height: 35px;
+			background-color: $cy-green-primary;
+		}
+	}
+/**
+		Estos estilos son para el about me
+*/ 
+.img-charlies{
+	width: 100%;
+}
+
+.phrase{
+	font-style: italic;
+	text-align: right;
+	.text{
+		font-size: $font-size-sm;
+		
+	}
+	.autor{
+		font-size: $font-size-xs;
+
+	}
+}
+/**
+		Estos estilos son para el n +1 cosas sobre mi
+*/ 
+//TODO incio
+// @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+// Responsive
+@mixin responsive() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+$content-font: Cardo;
+$heading-font: 'Pathway Gothic One',
+sans-serif;
+$timeline-width:100%;
+$timeline-container-width:100%;
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: $timeline-width;
+  position: relative;
+  &__content {
+    &-title {
+      font-weight: normal;
+      font-size: 66px;
+      margin: -10px 0 0 0;
+      transition: .4s;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-family: $heading-font;
+      color: #fff;
+    }
+    &-desc {
+      margin: 0;
+      font-size: 15px;
+      box-sizing: border-box;
+      color: rgba(#fff, .7);
+      font-family: $content-font;
+      font-weight: normal;
+      line-height: 25px;
+    }
+  }
+  &:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, .07);
+    @include responsive() {
+      left: 40px;
+    }
+  }
+  &-item {
+    padding: 40px 0;
+    opacity: .3;
+    filter: blur(2px);
+    transition: .5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+    &:before {
+      content: attr(data-text);
+      letter-spacing: 3px;
+      width: 100%;
+      position: absolute;
+      color: rgba(#fff, .5);
+      font-size: 13px;
+      font-family: $heading-font;
+      border-left: 2px solid rgba(#fff, .5);
+      top: 70%;
+      margin-top: -5px;
+      padding-left: 15px;
+      opacity: 0;
+      right: calc(-100% - 56px);
+    }
+    &:nth-child(even) {
+      align-self: flex-end;
+      &:before {
+        right: auto;
+        text-align: right;
+        left: calc(-100% - 56px);
+        padding-left: 0;
+        border-left: none;
+        border-right: 2px solid rgba(#fff, .5);
+        padding-right: 15px;
+      }
+    }
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+      &:before {
+        top: 50%;
+        transition: .3s all .2s;
+        opacity: 1;
+      }
+      .timeline__content-title {
+        margin: -50px 0 20px 0;
+      }
+    }
+    @include responsive() {
+      align-self: baseline !important;
+      width: 100%;
+      padding: 0 30px 150px 80px;
+      &:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+      }
+      &:last-child {
+        padding-bottom: 40px;
+      }
+    }
+  }
+  &__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+  }
+  &-container {
+    width: $timeline-container-width;
+    position: relative;
+    padding: 80px 0;
+    transition: .3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+    // &:before {
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background: rgba(99, 99, 99, 0.8);
+    //   content: "";
+    // }
+  }
+  &-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    &__title {
+      color: #fff;
+      font-size: 46px;
+      font-family: $content-font;
+      font-weight: normal;
+      margin: 0;
+    }
+    &__subtitle {
+      color: rgba(255, 255, 255, .5);
+      font-family: $heading-font;
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin: 10px 0 0 0;
+      font-weight: normal;
+    }
+  }
+}
+
+//TODO fin
+
+/**
+		Estos estilos son para skill
+*/ 
+/**
+		Estos estilos son para footer
+*/ 
+.footer {
+	background-color: $cy-green-strong;
+
+}
+.contact-container{}
+.contact-item{
+	display: flex;
+	align-items: center;
+	margin-top:10px;
+}
+.contact-icon{
+    width: 40px;
+    height: 40px;
+    background: $cy-green-tertiary;
+	border-radius: $border-radius-circle;
+    text-align: center;
+    margin: 0 10px 0 10px;
+}
+
+.contact-tag-name{
+	color: $cy-green-primary;
+	font-size: $font-size-sm;
+	font-weight: $font-weight-200;
+	font-family: Roboto-Light;
+  
+}
+.contact-tag-value{
+	font-size: $font-size-md;
+	font-family: Roboto-Regular;
+}
+.network-icon{
+	padding: 0px 20px 0px 20px;
+	
+}
+
+.cy-form{
+
+}
+.cy-form-group{
+	// width: 100%;
+}
+.cy-form-row{
+	padding-top:15px;
+}
+.cy-form-control {
+	width: -webkit-fill-available;
+	height: 30px;
+	display: block;
+	padding: 10px;
+	// font-weight: $input-font-weight;
+	// line-height: $input-line-height;
+	color: $cy-green-primary;
+	background-color: transparent;
+	background-clip: padding-box;
+	border: 1px solid $cy-green-primary;
+	border-radius: $border-radius-10;
+  
+	// Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+  
+	// Unstyle the caret on `<select>`s in IE10+.
+	&::-ms-expand {
+	  background-color: transparent;
+	  border: 0;
+	}
+	// Placeholder
+	&::placeholder {
+	  color:  #ffffff82;
+	  opacity: 1;
+	}
+  
+	&:disabled,
+	&[readonly] {
+	  background-color: grey;
+	  opacity: 1;
+	}
+	
+}
+
+select.cy-form-control {
+  &:focus::-ms-value {
+    
+    color: red;
+    background-color: green;
+  }
+}
+
+// Make file inputs better match text inputs by forcing them to new lines.
+.cy-form-control-file,
+.cy-form-control-range {
+  display: block;
+  width: 100%;
+}
+
+
+//
+// Labels
+//
+
+// For use with horizontal and inline forms, when you need the label (or legend)
+// text to align with the form controls.
+.cy-col-form-label {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 0; // Override the `<label>/<legend>` default
+//   line-height: $input-line-height;
+}
+
+
+.cy-copyright{
+	font-size: $font-size-sm;
+	// font-family: Roboto-Regular;
+}
