@@ -1,0 +1,176 @@
+@import '../cy-core/variables';
+.cy-btn {
+    display: inline-block;
+    color: $cy-green-primary;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: $cy-border-radius-5;
+
+    padding: 15px 30px;
+    // min-height: 60px;
+    transition: all .2s ease-in;
+
+    &.cy-btn-fill{
+      border: 1px solid $cy-green-primary;
+      &:hover {
+        color: $cy-black-font;
+        background-color: $cy-green-primary;
+      }
+    }
+
+    &:hover,
+    &:active,
+    &:focus{
+      text-decoration: none;
+    }
+    &.cy-btn-primary{
+      color: $cy-green-strong;
+      background-color: $cy-green-primary;
+      &:hover,&:active ,&:focus{
+        color: $cy-green-primary;
+        background-color: $cy-green-strong;
+      }
+    }
+    &.cy-btn-secondary{
+      color: $cy-green-tertiary;
+      background-color: $cy-green-secondary;
+      &:hover,&:active ,&:focus{
+        color: $cy-green-secondary;
+        background-color: $cy-green-tertiary;
+      }
+    }
+    &.cy-btn-tertiary{
+      color: $cy-green-secondary;
+      background-color: $cy-green-tertiary;
+      &:hover,&:active,&:focus {
+        color: $cy-green-tertiary;
+        background-color: $cy-green-secondary;
+      }
+    }
+    &.cy-btn-strong{
+      color: $cy-green-primary;
+      background-color: $cy-green-strong;
+      &:hover,&:active,&:focus {
+        color: $cy-green-strong;
+        background-color: $cy-green-primary;
+        // border: 1px solid $cy-white ;
+      }
+    }
+    &.cy-btn-round{
+      padding: 0;
+      min-width:  50px;
+      min-height: 50px;
+      border: 1px solid $cy-green-primary;
+      border-radius: $cy-border-radius-circle;
+      &:hover,&:active ,&:focus{
+        color: $cy-black-font;
+        background-color: $cy-green-primary;
+      }
+    }
+    // &:focus,
+    // &.focus {
+    //   outline: 0;
+    //   color: $cy-white;
+    //   background-color: $cy-green-tertiary;
+    //   border: 1px solid $cy-green-tertiary ;
+    // }
+  
+    
+  
+    // Disabled comes first so active can properly restyle
+    &.disabled,
+    &:disabled {
+      opacity: .1;
+      // @include box-shadow(none);
+    }
+  
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      // @include box-shadow($btn-active-box-shadow);
+  
+      &:focus {
+        // @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+      }
+    }
+  }
+  
+  // Future-proof disabling of clicks on `<a>` elements
+  a.cy-btn.disabled,
+  fieldset:disabled a.btn {
+    pointer-events: none;
+  }
+  
+  
+  
+  
+  
+  //
+  // Link buttons
+  //
+  
+  // Make a button look and behave like a link
+  .cy-btn-link {
+    // font-weight: $font-weight-normal;
+    color: green;
+    text-decoration: none;
+  
+    &:hover {
+      color: red;
+      text-decoration: none;
+    }
+  
+    &:focus,
+    &.focus {
+      text-decoration: none;
+      box-shadow: none;
+    }
+  
+    &:disabled,
+    &.disabled {
+      color: #777;
+      pointer-events: none;
+    }
+  
+    // No need for an active state here
+  }
+  
+  
+  //
+  // Button Sizes
+  //
+  
+  .cy-btn-lg {
+    // @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+  }
+  
+  .cy-btn-sm {
+    // @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  }
+  
+  
+  //
+  // Block button
+  //
+  
+  .cy-btn-block {
+    display: block;
+    width: 100%;
+  
+    // Vertically space out multiple block buttons
+    + .cy-btn-block {
+      margin-top: 10px;
+    }
+  }
+  
+  // Specificity overrides
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"] {
+    &.btn-block {
+      width: 100%;
+    }
+  }
+  

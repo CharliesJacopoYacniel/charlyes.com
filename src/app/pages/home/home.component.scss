@@ -2,6 +2,7 @@
 @import '../../../assets/scss/cy-core/utility';
 
 @import '../../../assets/scss/cy-core/_globals';
+@import '../../../assets/scss/cy-ui-kit/_buttons';
 
 /**
 		Estos estilos son para tosa la pagina
@@ -25,22 +26,24 @@
 	}
 }
 // .main-container:
-
+a{
+	text-decoration: none;
+}
 .cy-title{// clase para los titulos
    color: $cy-green-secondary;
-   font-size: $font-size-titles;
+   font-size: $cy-font-size-titles;
 }
 .cy-text{//clase para los textos de los titulos
 	color: $cy-green-primary;
-	font-size: $font-size-text;
+	font-size: $cy-font-size-text;
 }
 .cy-title-footer{
    color: $cy-green-secondary;
-   font-size: $font-size-titles;
+   font-size: $cy-font-size-titles;
 }
 .cy-text-footer{
 	color: $cy-white;
-	font-size: $font-size-text;
+	font-size: $cy-font-size-text;
 }
 
 /**
@@ -85,25 +88,6 @@
 	}
 }
 
-// .menu-responsive ul {
-// 	list-style: none;
-// }
-
-// .menu-responsive ul li {
-// 	float: left;
-// 	padding: 3px;
-
-// }
-
-
-// .menu-responsive ul li a {
-// 	display: block;
-// 	padding: 20px;
-// 	color:$cy-green-primary;
-// 	text-decoration: none;
-//   font-weight: 700;
-
-// }
 
 .nav-logo {
   padding: 5px 15px 0px 15px;
@@ -113,14 +97,6 @@
     page-break-after: 5px;
   }
 }
-// .menu-responsive ul li a:hover {
-//   background: $cy-green-strong;
-// 	 transition-property: background-color;
-//    transition-duration: 0.4s;
-//    transition-timing-function: ease;
-//    color:$cy-green-primary;
-
-// }
 
 
 .three-lines-menu {
@@ -225,15 +201,16 @@
 	}
 	.cv{
 		padding: 0px 0px 10px 0px;
-		button {
-			padding: 10px;
-			height: 50px;
-			border: 1px solid $cy-green-primary;
-			border-radius: 10px;
-			width: 200px;
-			color: $cy-green-strong;
-			background-color: $cy-green-primary;
-		}
+		z-index: 9;
+		// button {
+		// 	padding: 10px;
+		// 	height: 50px;
+		// 	border: 1px solid $cy-green-primary;
+		// 	border-radius: 10px;
+		// 	width: 200px;
+		// 	color: $cy-green-strong;
+		// 	background-color: $cy-green-primary;
+		// }
 	}
 
 	// 
@@ -264,11 +241,11 @@
 	font-style: italic;
 	text-align: right;
 	.text{
-		font-size: $font-size-sm;
+		font-size: $cy-font-size-sm;
 		
 	}
 	.autor{
-		font-size: $font-size-xs;
+		font-size: $cy-font-size-xs;
 
 	}
 }
@@ -276,7 +253,7 @@
 		Estos estilos son para el n +1 cosas sobre mi
 */ 
 //TODO incio
-// @import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+
 // Responsive
 @mixin responsive() {
   @media only screen and (max-width: 767px) {
@@ -285,8 +262,7 @@
 }
 
 $content-font: Cardo;
-$heading-font: 'Pathway Gothic One',
-sans-serif;
+$heading-font: 'Roboto',sans-serif;
 $timeline-width:100%;
 $timeline-container-width:100%;
 .timeline {
@@ -297,42 +273,49 @@ $timeline-container-width:100%;
   max-width: $timeline-width;
   position: relative;
   &__content {
+	&__img__tag{
+		position: relative;
+	}
     &-title {
+	  position: absolute;
+	  bottom: -30px;
       font-weight: normal;
       font-size: 66px;
       margin: -10px 0 0 0;
       transition: .4s;
       padding: 0 10px;
-      box-sizing: border-box;
-      font-family: $heading-font;
-      color: #fff;
+	  box-sizing: border-box;
+    //   font-family: Roboto-LightItalic;
+    //   color: #fff;
     }
     &-desc {
-      margin: 0;
+	  margin: 0;
+	  padding-top:10px;
       font-size: 15px;
       box-sizing: border-box;
-      color: rgba(#fff, .7);
-      font-family: $content-font;
+    //   color: rgba(#fff, .7);
+    //   font-family: $content-font;
       font-weight: normal;
       line-height: 25px;
     }
   }
   &:before {
+	content: "";
     position: absolute;
     left: 50%;
-    width: 2px;
+    width: 3px;
     height: 100%;
-    margin-left: -1px;
-    content: "";
-    background: rgba(255, 255, 255, .07);
+	margin-left: -1px;
+	opacity: .1;
+    background-color:$cy-green-primary;
     @include responsive() {
       left: 40px;
     }
   }
   &-item {
     padding: 40px 0;
-    opacity: .3;
-    filter: blur(2px);
+    // opacity: .3;
+    // filter: blur(2px);
     transition: .5s;
     box-sizing: border-box;
     width: calc(50% - 40px);
@@ -344,14 +327,14 @@ $timeline-container-width:100%;
       letter-spacing: 3px;
       width: 100%;
       position: absolute;
-      color: rgba(#fff, .5);
+      color: $cy-white;
       font-size: 13px;
-      font-family: $heading-font;
-      border-left: 2px solid rgba(#fff, .5);
+    //   font-family: $heading-font;
+      border-left: 2px solid $cy-green-secondary;
       top: 70%;
       margin-top: -5px;
       padding-left: 15px;
-      opacity: 0;
+    //   opacity: 0;
       right: calc(-100% - 56px);
     }
     &:nth-child(even) {
@@ -362,18 +345,18 @@ $timeline-container-width:100%;
         left: calc(-100% - 56px);
         padding-left: 0;
         border-left: none;
-        border-right: 2px solid rgba(#fff, .5);
+        border-right: 2px solid $cy-green-secondary;
         padding-right: 15px;
       }
     }
     &--active {
-      opacity: 1;
+    //   opacity: 1;
       transform: translateY(0);
       filter: blur(0px);
       &:before {
         top: 50%;
         transition: .3s all .2s;
-        opacity: 1;
+        // opacity: 1;
       }
       .timeline__content-title {
         margin: -50px 0 20px 0;
@@ -382,7 +365,7 @@ $timeline-container-width:100%;
     @include responsive() {
       align-self: baseline !important;
       width: 100%;
-      padding: 0 30px 150px 80px;
+      padding: 0 0 150px 80px;
       &:before {
         left: 10px !important;
         padding: 0 !important;
@@ -397,8 +380,11 @@ $timeline-container-width:100%;
     }
   }
   &__img {
+	 
     max-width: 100%;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+    // box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+	box-shadow: -5px 5px 10px rgba(147, 234, 30, 0.14);
+	border-radius: $cy-border-radius-5 / 2;
   }
   &-container {
     width: $timeline-container-width;
@@ -417,27 +403,27 @@ $timeline-container-width:100%;
     //   content: "";
     // }
   }
-  &-header {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 80px;
-    position: relative;
-    &__title {
-      color: #fff;
-      font-size: 46px;
-      font-family: $content-font;
-      font-weight: normal;
-      margin: 0;
-    }
-    &__subtitle {
-      color: rgba(255, 255, 255, .5);
-      font-family: $heading-font;
-      font-size: 16px;
-      letter-spacing: 5px;
-      margin: 10px 0 0 0;
-      font-weight: normal;
-    }
-  }
+//   &-header {
+//     width: 100%;
+//     text-align: center;
+//     margin-bottom: 80px;
+//     position: relative;
+//     &__title {
+//       color: #fff;
+//       font-size: 46px;
+//       font-family: $content-font;
+//       font-weight: normal;
+//       margin: 0;
+//     }
+//     &__subtitle {
+//       color: rgba(255, 255, 255, .5);
+//       font-family: $heading-font;
+//       font-size: 16px;
+//       letter-spacing: 5px;
+//       margin: 10px 0 0 0;
+//       font-weight: normal;
+//     }
+//   }
 }
 
 //TODO fin
@@ -445,6 +431,361 @@ $timeline-container-width:100%;
 /**
 		Estos estilos son para skill
 */ 
+.cy-proyects{
+	// display: grid;
+	height: 400px;
+	background: url('../../../assets/img/proyects-font.png') ,radial-gradient($cy-green-strong,$cy-black);
+	background-size: cover;
+    background-repeat: no-repeat;
+	& .cy-proyect-item{
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+		background-color:$cy-green-tertiary;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		border: 1px dashed $cy-green-primary;
+		color: $cy-green-primary;
+		transition: all .2s ease-in;
+		& .cy-proyect-title{
+			font-size: $cy-font-size-xl;
+			color: $cy-white;
+			// &:hover{
+			// 	color: $cy-green-strong;
+			// }
+		}
+		& .cy-proyect-subtitle{
+			font-size: $cy-font-size-md;
+		}
+		&:hover{
+			& .cy-proyect-title{
+				color: $cy-green-strong;	
+			}
+			color: $cy-green-strong;
+			background-color:$cy-green-secondary;
+			border: 1px dashed $cy-green-secondary;
+		}
+	}
+}
+/**
+		Estos estilos para los tstimonio
+*/ 
+
+.title {
+	margin: 2em 0 0;
+	text-align: center;
+}
+.title h4 {
+	font-size: 1.8em;
+}
+.slideshow {
+    margin: 0;
+    max-width: 1000px;
+    min-width: 260px;
+    position: relative;
+	width: fit-content;
+	min-height: 300px;
+	height: 350px;
+	padding-top: 50px;
+   & .content {
+		height: 100%;
+		width: 100%;
+		// overflow: hidden;// si habilito esto puedo dejar de ver los comentrioa ala par
+		position: relative;
+
+		& .cy-testimonial-image{
+			position: absolute;
+			top: -50px;
+			width: 100px;
+			height: 100px;
+			border-radius: $cy-border-radius-circle;
+		}
+		& .cy-testimonial-card{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 5px;
+			padding-top: 50px;
+			margin-left: 10px;
+			margin-right: 10px;
+			height: 210px;
+		}
+		
+		& .cy-testimonial-name{
+			color: $cy-green-primary;
+		}
+		& .cy-testimonial-name{
+			color: $cy-green-primary;
+		}
+		& .cy-testimonial-network{
+			color: $cy-green-secondary;
+		}
+		& .cy-testimonial-credit{
+			color: $cy-green-primary;
+			margin: 0 auto;
+			padding: 0 20px;
+			text-align: justify;
+			font-size: 12px;		
+		}
+	}
+	& input {
+		    bottom: 15px;
+		    cursor: pointer;
+		    height: 9px;
+		    left: 50%;
+		    opacity: 0;
+		    position: absolute;
+		    width: 9px;
+		    z-index: 1001;
+		}
+	& input + label {
+		// border: 3px solid #000;
+		border: 3px solid $cy-green-primary;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		bottom: 15px;
+		display: block;
+		height: 6px;
+		left: 50%;
+		position: absolute;
+		-webkit-transition: background-color linear 0.1s;
+		-moz-transition: background-color linear 0.1s;
+		transition: background-color linear 0.1s;
+		width: 6px;
+		z-index: 1000;
+	}
+	& input:checked + label {
+		background-color: $cy-green-primary;
+	}
+}
+.parallax-bg {
+    background: url('../../../assets/img/bakgroundCY.png') repeat scroll 0 0;
+    background-size: cover;
+    opacity: .1;
+    filter: alpha(opacity=10);
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.selector-1, .button-label-1 {
+    margin-left: -36px;
+}
+.selector-2, .button-label-2 {
+    margin-left: -18px;
+}
+.selector-4, .button-label-4 {
+    margin-left: 18px;
+}
+.selector-5, .button-label-5 {
+    margin-left: 36px;
+}
+.arrow{
+	// &:nth-child(n){
+		background: transparent url('../../../assets/img/arrow-left.png') no-repeat;
+	// }
+	&:nth-child(2n){
+		background: transparent url('../../../assets/img/arrow-right.png') no-repeat !important;
+	}
+    cursor: pointer;
+    display: none;
+    height: 55px;
+    // margin-top: -19px;
+    opacity: .9;
+    position: absolute;
+    top: 40%;
+    -webkit-transition: opacity linear 0.3s;
+    -moz-transition: opacity linear 0.3s;
+    transition: all linear 0.3s;
+    width: 28px;
+	z-index: 1000;
+	&:hover{
+		color: $cy-green-primary;
+		opacity: 1;
+	}
+	&:active{
+		color: $cy-green-tertiary;
+		margin-top: -18px;
+	}
+}
+
+.selector-1:checked ~ .arrow.a2,
+.selector-2:checked ~ .arrow.a3,
+.selector-3:checked ~ .arrow.a4,
+.selector-4:checked ~ .arrow.a5 {
+    // background-position: top right;
+    display: block;
+    right: -15px;
+}
+.selector-2:checked ~ .arrow.a1,
+.selector-3:checked ~ .arrow.a2,
+.selector-4:checked ~ .arrow.a3,
+.selector-5:checked ~ .arrow.a4 {
+	// background-position: top left;
+	display: block;
+	left: -15px;
+	transform: rotate(180deg);
+}
+.slideshow input:checked ~ .content {
+    background-color: transparent;
+	-webkit-transition: background-position linear 0.6s, background-color linear 0.8s;
+	-moz-transition: background-position linear 0.6s, background-color linear 0.8s;
+	transition: background-position linear 0.6s, background-color linear 0.8s;
+}
+.slideshow input:checked ~ .content .parallax-bg {
+	-webkit-transition: background-position linear 0.7s;
+	-moz-transition: background-position linear 0.7s;
+	transition: background-position linear 0.7s;
+}
+input.selector-1:checked ~ .content {
+    background-position: 0 0;
+}
+input.selector-2:checked ~ .content {
+    background-position: -100px 0;
+}
+input.selector-3:checked ~ .content {
+    background-position: -200px 0;
+}
+input.selector-4:checked ~ .content {
+    background-position: -300px 0;
+}
+input.selector-5:checked ~ .content {
+    background-position: -400px 0;
+}
+input.selector-1:checked ~ .content .parallax-bg {
+	background-position: 0 0;
+}
+input.selector-2:checked ~ .content .parallax-bg {
+	background-position: -200px 0;
+}
+input.selector-3:checked ~ .content .parallax-bg {
+	background-position: -400px 0;
+}
+input.selector-4:checked ~ .content .parallax-bg {
+	background-position: -600px 0;
+}
+input.selector-5:checked ~ .content .parallax-bg {
+    background-position: -800px 0;
+}
+.slider {
+    height: 100%;
+    left: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    -webkit-transition: left ease-in 0.8s;
+    -moz-transition: left ease-in 0.8s;
+    transition: left ease-in 0.8s;
+	width: 500%;
+	& > li {
+		&:nth-child(n) .slider-content .cy-testimonial-card{
+			background-color: $cy-green-tertiary;
+			& .cy-testimonial-credit{
+				color: $cy-white;
+			}
+		}
+		&:nth-child(2n) .slider-content .cy-testimonial-card{
+			background-color: $cy-green-strong;
+			& .cy-testimonial-credit{
+				color: $cy-green-secondary;
+			}
+		}
+		box-sizing: border-box;
+		// color: #fff;
+		// background-color: $cy-green-strong;
+		display: table;
+		float: left;
+		height: 100%;
+		opacity: 0.4;
+		-webkit-transition: opacity ease-in 0.4s 0.8s;
+		-moz-transition: opacity ease-in 0.4s 0.8s;
+		transition: opacity ease-in 0.4s 0.8s;
+		width: 20%;
+	}
+	& > li img {
+		box-sizing: border-box;
+		display: inline-block;
+		max-height: 100%;
+		max-width: 100%;
+		vertical-align: middle;
+	}
+}
+
+
+input.selector-1:checked ~ .content .slider {
+    left: 0;
+}
+input.selector-2:checked ~ .content .slider {
+    left: -100%;
+}
+input.selector-3:checked ~ .content .slider {
+    left: -200%;
+}
+input.selector-4:checked ~ .content .slider {
+    left: -300%;
+}
+input.selector-5:checked ~ .content .slider {
+    left: -400%;
+}
+input.selector-1:checked ~ .content .slider > li:first-child,
+input.selector-2:checked ~ .content .slider > li:nth-child(2),
+input.selector-3:checked ~ .content .slider > li:nth-child(3),
+input.selector-4:checked ~ .content .slider > li:nth-child(4),
+input.selector-5:checked ~ .content .slider > li:nth-child(5){
+    opacity: 1;
+}
+
+/* media query*/
+@media (max-width: 680px) {
+	.slider > li > .slider-content {
+		height: 100%;
+		position: relative;
+		padding-top: 50px;
+		margin: 0 15px;
+	}
+	.slideshow {
+		& .content{
+			overflow: hidden;
+		}
+		& .cy-testimonial-image{
+			top: 0px !important;
+		}
+		& .cy-testimonial-card{
+			height: 250px !important;
+		}
+	}
+}
+
+
+.cy-container-contac-me{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	padding: 70px 0px;
+	&::after{
+		content: "";
+		opacity: .4;
+		z-index: -9;
+		width: inherit;
+		height: inherit;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: url('../../../assets/img/cy-background-contactme.png') ;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
 /**
 		Estos estilos son para footer
 */ 
@@ -462,20 +803,20 @@ $timeline-container-width:100%;
     width: 40px;
     height: 40px;
     background: $cy-green-tertiary;
-	border-radius: $border-radius-circle;
+	border-radius: $cy-border-radius-circle;
     text-align: center;
     margin: 0 10px 0 10px;
 }
 
 .contact-tag-name{
 	color: $cy-green-primary;
-	font-size: $font-size-sm;
+	font-size: $cy-font-size-sm;
 	font-weight: $font-weight-200;
 	font-family: Roboto-Light;
   
 }
 .contact-tag-value{
-	font-size: $font-size-md;
+	font-size: $cy-font-size-md;
 	font-family: Roboto-Regular;
 }
 .network-icon{
@@ -503,7 +844,7 @@ $timeline-container-width:100%;
 	background-color: transparent;
 	background-clip: padding-box;
 	border: 1px solid $cy-green-primary;
-	border-radius: $border-radius-10;
+	border-radius: $cy-border-radius-10;
   
 	// Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
   
@@ -557,6 +898,6 @@ select.cy-form-control {
 
 
 .cy-copyright{
-	font-size: $font-size-sm;
+	font-size: $cy-font-size-sm;
 	// font-family: Roboto-Regular;
 }

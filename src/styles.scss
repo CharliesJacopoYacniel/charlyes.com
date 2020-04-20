@@ -18,7 +18,25 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    // align-content: center;
 }
+.flex-colunm{
+    flex-direction: column;
+}
+.padding-top-10{padding-top: 10px;}
+.padding-top-20{padding-top: 20px;}
+.padding-top-30{padding-top: 30px;}
+// ================================
+.margin-top-10{padding-top: 10px;}
+.margin-top-20{padding-top: 20px;}
+.margin-top-30{padding-top: 30px;}
+
+.cy-color-primary{color:$cy-green-primary !important;}
+.cy-color-secondary{color:$cy-green-secondary !important;}
+.cy-color-tertiary{color:$cy-green-tertiary !important;}
+.cy-color-strong{color:$cy-green-strong !important;}
+.cy-color-white{color:$cy-white !important;}
+.cy-color-black{color:$cy-black !important;}
 
 
 ::-webkit-scrollbar {
