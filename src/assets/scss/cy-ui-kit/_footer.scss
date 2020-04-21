@@ -1,11 +1,117 @@
-footer {
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    line-height: 20px;
+  .footer {
+    background-color: $cy-green-strong;  
   }
-
-  footer a {
+  .contact-container{}
+  .contact-item{
     display: flex;
     align-items: center;
+    margin-top:10px;
+  }
+  .contact-icon{
+      width: 40px;
+      height: 40px;
+      background: $cy-green-tertiary;
+    border-radius: $cy-border-radius-circle;
+      text-align: center;
+      margin: 0 10px 0 10px;
+  }
+  
+  .contact-tag-name{
+    color: $cy-green-primary;
+    font-size: $cy-font-size-sm;
+    font-weight: $font-weight-200;
+    font-family: Roboto-Light;
+    
+  }
+  .contact-tag-value{
+    font-size: $cy-font-size-md;
+    font-family: Roboto-Regular;
+  }
+  .network-icon{
+    padding: 0px 20px 0px 20px;
+    
+  }
+  
+  .cy-form{
+  
+  }
+  .cy-form-group{
+    // width: 100%;
+  }
+  .cy-form-row{
+    padding-top:15px;
+
+    & label{
+      font-size: $cy-font-size-xs;
+    }
+  }
+  .cy-form-control {
+    width: -webkit-fill-available;
+    height: 30px;
+    display: block;
+    padding: 30px 10px !important;
+    // font-weight: $input-font-weight;
+    // line-height: $input-line-height;
+    color: $cy-green-primary;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid $cy-green-primary;
+    border-radius: $cy-border-radius-10;
+    
+    &#message{
+      height: auto;
+    }
+    // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
+    
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      background-color: transparent;
+      border: 0;
+    }
+    // Placeholder
+    &::placeholder {
+      color:  #ffffff82;
+      opacity: 1;
+    }
+    
+    &:disabled,
+    &[readonly] {
+      background-color: grey;
+      opacity: 1;
+    }
+    
+  }
+  
+  select.cy-form-control {
+    &:focus::-ms-value {
+      
+      background-color: green;
+    }
+  }
+  
+  // Make file inputs better match text inputs by forcing them to new lines.
+  .cy-form-control-file,
+  .cy-form-control-range {
+    display: block;
+    width: 100%;
+  }
+  
+  
+  //
+  // Labels
+  //
+  
+  // For use with horizontal and inline forms, when you need the label (or legend)
+  // text to align with the form controls.
+  .cy-col-form-label {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 0; // Override the `<label>/<legend>` default
+  //   line-height: $input-line-height;
+  }
+  
+  
+  .cy-copyright{
+    font-size: $cy-font-size-sm;
+    // font-family: Roboto-Regular;
   }

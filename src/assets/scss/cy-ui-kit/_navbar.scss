@@ -1,25 +1,84 @@
-.toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: #1976d2;
-    color: white;
-    font-weight: 600;
-  }
+.container-nav {
+	background: $cy-green-tertiary;
+	box-shadow: 0 0 10px $cy-green-primary;
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	z-index: 999;
+	
+}
 
-  .toolbar img {
-    margin: 0 16px;
-  }
 
-  .toolbar #twitter-logo {
-    height: 40px;
-    margin: 0 16px;
-  }
+.menu-responsive {
+	position: relative;
+	height: 60px;
+	z-index: 999;
+	& ul {
+		list-style: none;
+		& li {
+			float: left;
+			padding: 3px;
+			& a {
+				display: block;
+				padding: 20px;
+				color:$cy-green-primary;
+				text-decoration: none;
+				font-weight: 700;
+				&:hover {
+					 background: $cy-green-strong;
+					 transition-property: background-color;
+					 transition-duration: 0.4s;
+					 transition-timing-function: ease;
+					 color:$cy-green-primary;
+				  
+				  }
+			}
+		}
+	}
+}
 
-  .toolbar #twitter-logo:hover {
-    opacity: 0.8;
+
+.nav-logo {
+  padding: 5px 15px 0px 15px;
+  img{
+    width: 50px;
+    height: 50px;
+    page-break-after: 5px;
   }
+}
+
+
+.three-lines-menu {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	text-decoration: none;
+	color: $cy-green-primary;
+	font-size: 32px;
+	display: none;
+}
+
+
+
+
+	.menu-responsive ul {
+		display: none;
+		padding: 0;
+	}
+
+	.menu-responsive ul li {
+		float: none;
+		background: $cy-green-tertiary;
+		color: $cy-green-primary;
+	}
+	.menu-responsive ul.menu-responsive {
+		display: block;
+		width: 100%;
+		margin-top: 0;
+	}
+
+
+	.three-lines-menu {
+		display: block;
+		cursor: pointer;
+	}

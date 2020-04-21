@@ -1,0 +1,101 @@
+
+.main-container{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	&:before{
+		content: "";
+		position: absolute;
+		top:0;
+		left:0;
+		width: inherit;
+		height: inherit;
+		background-image: url('../../../assets/img/bakgroundCY.png');
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: cover;
+		opacity: .1;
+	}
+}
+.image-container{
+    display: flex;
+    justify-content: center;
+    img {
+        width: -webkit-fill-available;
+        z-index: -9;
+    }
+}
+
+.dots-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &:after{
+        content: "";
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        background-image: url('../../../assets/img/grid-square.svg');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.hello{
+    color: $cy-green-primary;
+    padding: 10px;
+    background:$cy-green-tertiary;
+    border-radius: 5px;
+    position: relative;
+    &:after{
+        content: "";
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 35px;
+        width: 0;
+        height: 0;
+        background: transparent;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 40px solid $cy-green-tertiary;
+    }
+}
+
+
+.charlies-yacniel{
+    font-size: 90px;
+    font-family: Morganite;
+}
+
+.profesion{
+    font-size: 21px;
+    padding: 0px 0px 10px 0px;
+}
+.cv{
+    padding: 0px 0px 10px 0px;
+    z-index: 9;
+}
+
+// 
+.button-down{
+    width: 40px;
+    background: transparent;
+    border: 1px solid $cy-green-primary;
+    border-radius: 30px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrow-down{
+        width: 2px;
+        height: 35px;
+        background-color: $cy-green-primary;
+    }
+}

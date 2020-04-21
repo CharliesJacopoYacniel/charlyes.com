@@ -1,0 +1,39 @@
+.cy-proyects{
+	// display: grid;
+	height: 400px;
+	background: url('../../../assets/img/proyects-font.png') ,radial-gradient($cy-green-strong,$cy-black);
+	background-size: cover;
+    background-repeat: no-repeat;
+	& .cy-proyect-item{
+		width: 150px;
+		height: 150px;
+		margin: 0 auto;
+		background-color:$cy-green-tertiary;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		border: 1px dashed $cy-green-primary;
+		color: $cy-green-primary;
+		transition: all .2s ease-in;
+		& .cy-proyect-title{
+			font-size: $cy-font-size-xl;
+			color: $cy-white;
+			// &:hover{
+			// 	color: $cy-green-strong;
+			// }
+		}
+		& .cy-proyect-subtitle{
+			font-size: $cy-font-size-md;
+		}
+		&:hover{
+			& .cy-proyect-title{
+				color: $cy-green-strong;	
+			}
+			color: $cy-green-strong;
+			background-color:$cy-green-secondary;
+			border: 1px dashed $cy-green-secondary;
+		}
+	}
+}

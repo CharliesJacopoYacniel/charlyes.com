@@ -1,4 +1,6 @@
-@import '../cy-core/variables';
+// @import '../cy-core/variables';
+   
+
 .cy-btn {
     display: inline-block;
     color: $cy-green-primary;
@@ -8,9 +10,10 @@
     background-color: transparent;
     border: 1px solid transparent;
     border-radius: $cy-border-radius-5;
+    cursor: pointer;
+    -webkit-appearance: none;
 
     padding: 15px 30px;
-    // min-height: 60px;
     transition: all .2s ease-in;
 
     &.cy-btn-fill{
@@ -113,24 +116,35 @@
   
   // Make a button look and behave like a link
   .cy-btn-link {
-    // font-weight: $font-weight-normal;
-    color: green;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    -webkit-appearance: none;
+    padding: 10px 20px;
+    transition: all .2s ease-in;
+    color: $cy-white;
     text-decoration: none;
-  
     &:hover {
-      color: red;
+      color: $cy-green-secondary;
       text-decoration: none;
+      border-bottom: 1px solid $cy-green-primary;
     }
   
     &:focus,
     &.focus {
+      color: $cy-green-primary;
       text-decoration: none;
       box-shadow: none;
+      border-bottom: 1px solid $cy-white;
     }
   
     &:disabled,
     &.disabled {
-      color: #777;
+      color: $cy-grey-disabled;
       pointer-events: none;
     }
   
