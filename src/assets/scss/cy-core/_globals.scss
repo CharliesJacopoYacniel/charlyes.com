@@ -15,6 +15,9 @@
       background: $cy-black-font ;
       color: $cy-white;
       overflow-x: hidden; 
+
+      // -webkit-font-smoothing: antialiased;
+      // -moz-osx-font-smoothing: grayscale;
   }
 
 /** estilos de l barra de scroll*/
