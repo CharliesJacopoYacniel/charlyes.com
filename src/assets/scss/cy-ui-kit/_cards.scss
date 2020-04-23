@@ -1,11 +1,3 @@
-// Variables
-$regal-blue: #034378;
-$san-juan: #2d4e68;
-$bermuda: #77d7b9;
-$white: #fff;
-$black: #000;
-$open-sans: 'Open Sans',
-sans-serif;
 // clear-fix mixin
 @mixin cf {
   &::before,
@@ -18,37 +10,11 @@ sans-serif;
   }
 }
 
-// * {
-//   box-sizing: border-box;
-// }
-
-// body {
-//   background-image: linear-gradient(to right, $regal-blue, $san-juan);
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   height: 100vh;
-//   font-family: $open-sans;
-// }
-
-// a {
-//   text-decoration: none;
-// }
-
-// h1 {
-//   font-family: $open-sans;
-//   font-weight: 300;
-// }
-
-// .row {
-//   max-width: 900px;
-//   margin: 50px auto 0;
-// }
-
-// Base styles
-.card {
+.cy-card {
   float: left;
-  // padding: 0 1.7rem;
   width: 100%;
+  position:relative;
+  transition: transform .5s;
   .menu-content {
     @include cf;
     margin: 0;
@@ -58,7 +24,7 @@ sans-serif;
       display: inline-block;
     }
     a {
-      color: $white;
+      color: $cy-white;
     }
     span {
       position: absolute;
@@ -66,17 +32,13 @@ sans-serif;
       top: 0;
       font-size: 10px;
       font-weight: 700;
-      font-family: 'Open Sans';
       transform: translate(-50%, 0);
     }
   }
   .wrapper {
-    // background-color: $white;
     min-height: 300px;
-    // min-width: 300px;
     position: relative;
     overflow: hidden;
-    // box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
     &:hover {
       .data {
         opacity:.7;
@@ -86,12 +48,8 @@ sans-serif;
   }
   .data {
     position: absolute;
-
     background-color:$cy-green-strong;
     opacity:8;
-    // clip-path: polygon(30% 0, 70% 0, 100% 100%, 30% 100%);
-    // clip-path: polygon(0% 0%, 100% 0%, 100% 86%, 56% 87%, 50% 100%, 43% 87%, 0 86%);
-
     top:10%;
     bottom: 0;
     width: 100%;
@@ -113,17 +71,58 @@ sans-serif;
     height: 70px;
     margin: 0;
   }
-  input[type='checkbox'] {
-    display: none;
-  }
-  input[type='checkbox']:checked + .menu-content {
-    transform: translateY(-60px);
-  }
+  // input[type='checkbox'] {
+  //   display: none;
+  // }
+  // input[type='checkbox']:checked + .menu-content {
+  //   transform: translateY(-60px);
+  // }
+
+  // &.cy-card-style-2{
+      .header {
+        padding: 1em;
+        z-index: 9;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+      }
+      &__content{
+        position:absolute;
+        top:0;
+        left:0;
+        padding:1em;
+        background-color:hsla(126, 49%, 46%, 0.7);
+        width:100%;
+        height:100%;
+        color:white;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        transform: translate(150%,50%) scale(2) rotate(180deg);
+        transition:inherit;
+      }
+      &__title{
+      margin:0;
+      }
+
+
+      &:hover{
+        .cy-card__content{
+          transform:translateX(0);
+        }
+
+        .cy-card__img {
+          transform: scale(1.5) rotate(10deg);
+        }
+      }
+
+// }
 }
 
 
 // Second example styles
-.example-2 {
+.cy-card-style-1{
   .wrapper {
     // background: url(../../../assets/img/charlies.png) center / cover no-repeat;
     // background-image: url(../../../assets/img/foto3.jpg);
@@ -133,7 +132,7 @@ sans-serif;
     transition: all 0.25s ease-in-out;
     filter: saturate(0%);
     // filter: brightness(0%);
-    
+
     &:hover {
       // background-size: 105%;
       filter: saturate(100%);
@@ -149,7 +148,7 @@ sans-serif;
   }
   .header {
     @include cf;
-    color: $white;
+    color: $cy-white;
     padding: 1em;
     z-index: 9;
     text-align: center;
@@ -169,12 +168,12 @@ sans-serif;
     }
   }
   .data {
-    color: $white;
+    color: $cy-white;
     transform: translateY(100%);
   }
   .title {
     a {
-      color: $white;
+      color: $cy-white;
     }
   }
   .button {
@@ -183,7 +182,7 @@ sans-serif;
     margin: 1em auto 1em;
     text-align: center;
     font-size: 12px;
-    color: $white;
+    color: $cy-white;
     line-height: 1;
     position: relative;
     font-weight: 700;
@@ -206,3 +205,5 @@ sans-serif;
     }
   }
 }
+
+
