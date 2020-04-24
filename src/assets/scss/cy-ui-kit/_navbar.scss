@@ -1,3 +1,4 @@
+@import '../cy-core/variables';
 .container-nav {
 	background: $cy-green-tertiary;
 	box-shadow: 0 0 10px $cy-green-primary;
@@ -5,7 +6,7 @@
 	margin: 0 auto;
 	position: fixed;
 	z-index: 999;
-	
+
 }
 
 
@@ -14,24 +15,32 @@
 	height: 60px;
 	z-index: 999;
 	& ul {
-		list-style: none;
+    list-style: none;
+    height: 100%;
 		& li {
 			float: left;
-			padding: 3px;
+      // padding: 3px;
+      height: inherit;
 			& a {
-				display: block;
-				padding: 20px;
+        display: block;
+        height: inherit;
+        border-radius: 1px;
+        font-size: 13px;
+        padding: 23px 20px;
 				color:$cy-green-primary;
 				text-decoration: none;
-				font-weight: 700;
+        font-weight: 700;
+        transition: all .2s ease-in;
 				&:hover {
-					 background: $cy-green-strong;
-					 transition-property: background-color;
-					 transition-duration: 0.4s;
-					 transition-timing-function: ease;
-					 color:$cy-green-primary;
-				  
-				  }
+
+          background: $cy-green-primary;
+          color:$cy-white;
+        }
+        &:active{
+          background: $cy-green-strong;
+          color:$cy-green-primary;
+         }
+
 			}
 		}
 	}
@@ -39,15 +48,20 @@
 
 
 .nav-logo {
-  padding: 5px 15px 0px 15px;
+  padding: 0px 15px;
   img{
     width: 50px;
     height: 50px;
     page-break-after: 5px;
   }
 }
+.logo-cy{
+ display: block;
+}
 
-
+.logo-color-cy{
+  display: none;
+}
 .three-lines-menu {
 	position: absolute;
 	bottom: 10px;
@@ -82,3 +96,54 @@
 		display: block;
 		cursor: pointer;
 	}
+
+  @media only screen and (min-width: $breakpoint-small) {
+    .logo-cy{
+      display: none;
+     }
+
+     .logo-color-cy{//imagen -isotipo
+       display: block;
+       margin: 5px 30px;
+     }
+    .container-nav {
+      background: $cy-black;
+      box-shadow: 0 0 10px transparent;
+      & .three-lines-menu {
+        display: none;
+      }
+      .menu-responsive {
+        position: initial;
+        // height: 60px;
+        // z-index: 999;
+        & ul {
+          display: flex;
+          margin: 0;
+          margin-right: 15px;
+          padding: 0;
+          justify-content: flex-end;
+          position: absolute;
+          width: -webkit-fill-available;
+          top: 0;
+          left: 0;
+          & li {
+            float: none;
+            background: transparent;
+            & a {
+              color:$cy-white;
+              font-weight: 700;
+              transition: all .2s ease-in-out;
+              &:hover{
+                 background: $cy-green-primary;
+                 color:$cy-green-strong;
+              }
+              &:active{
+                  background: $cy-green-tertiary;
+                  color:$cy-white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

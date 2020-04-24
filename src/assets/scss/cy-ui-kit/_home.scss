@@ -63,7 +63,7 @@
         background: transparent;
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
-        border-top: 40px solid $cy-green-tertiary;
+        border-top: 15px solid $cy-green-tertiary;
     }
 }
 
@@ -82,7 +82,7 @@
     z-index: 9;
 }
 
-// 
+//
 .button-down{
     width: 40px;
     background: transparent;
@@ -98,4 +98,8 @@
         height: 35px;
         background-color: $cy-green-primary;
     }
+}
+
+.cy-flex{
+  // display: flex;
 }

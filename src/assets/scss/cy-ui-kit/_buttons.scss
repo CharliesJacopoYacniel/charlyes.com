@@ -1,5 +1,5 @@
 // @import '../cy-core/variables';
-   
+
 
 .cy-btn {
     display: inline-block;
@@ -17,10 +17,21 @@
     transition: all .2s ease-in;
 
     &.cy-btn-fill{
+      background-color: $cy-black;
       border: 1px solid $cy-green-primary;
       &:hover {
         color: $cy-black-font;
         background-color: $cy-green-primary;
+      }
+    }
+    &.cy-btn-fill-reverse{
+      border: 1px solid $cy-black-font;
+      background-color: $cy-green-primary;
+      color: $cy-black-font;
+      &:hover {
+        color: $cy-green-primary;
+        border: 1px solid $cy-green-primary;
+        background-color: $cy-black-font;
       }
     }
 
@@ -80,40 +91,40 @@
     //   background-color: $cy-green-tertiary;
     //   border: 1px solid $cy-green-tertiary ;
     // }
-  
-    
-  
+
+
+
     // Disabled comes first so active can properly restyle
     &.disabled,
     &:disabled {
       opacity: .1;
       // @include box-shadow(none);
     }
-  
+
     &:not(:disabled):not(.disabled):active,
     &:not(:disabled):not(.disabled).active {
       // @include box-shadow($btn-active-box-shadow);
-  
+
       &:focus {
         // @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
       }
     }
   }
-  
+
   // Future-proof disabling of clicks on `<a>` elements
   a.cy-btn.disabled,
   fieldset:disabled a.btn {
     pointer-events: none;
   }
-  
-  
-  
-  
-  
+
+
+
+
+
   //
   // Link buttons
   //
-  
+
   // Make a button look and behave like a link
   .cy-btn-link {
     display: inline-block;
@@ -133,7 +144,7 @@
       text-decoration: none;
       border-bottom: 1px solid $cy-green-primary;
     }
-  
+
     &:focus,
     &.focus {
       color: $cy-green-primary;
@@ -141,44 +152,44 @@
       box-shadow: none;
       border-bottom: 1px solid $cy-white;
     }
-  
+
     &:disabled,
     &.disabled {
       color: $cy-grey-disabled;
       pointer-events: none;
     }
-  
+
     // No need for an active state here
   }
-  
-  
+
+
   //
   // Button Sizes
   //
-  
+
   .cy-btn-lg {
     // @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
   }
-  
+
   .cy-btn-sm {
     // @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
   }
-  
-  
+
+
   //
   // Block button
   //
-  
+
   .cy-btn-block {
     display: block;
     width: 100%;
-  
+
     // Vertically space out multiple block buttons
     + .cy-btn-block {
       margin-top: 10px;
     }
   }
-  
+
   // Specificity overrides
   input[type="submit"],
   input[type="reset"],
@@ -187,4 +198,3 @@
       width: 100%;
     }
   }
-  

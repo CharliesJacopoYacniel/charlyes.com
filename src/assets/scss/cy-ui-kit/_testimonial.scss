@@ -37,7 +37,7 @@
 			margin-right: 10px;
 			height: 210px;
 		}
-		
+
 		& .cy-testimonial-name{
 			color: $cy-green-primary;
 		}
@@ -52,7 +52,7 @@
 			margin: 0 auto;
 			padding: 0 20px;
 			text-align: justify;
-			font-size: 12px;		
+			font-size: 12px;
 		}
 	}
 	& input {
@@ -80,7 +80,7 @@
 		-moz-transition: background-color linear 0.1s;
 		transition: background-color linear 0.1s;
 		width: 6px;
-		z-index: 1000;
+		z-index: 9;
 	}
 	& input:checked + label {
 		background-color: $cy-green-primary;

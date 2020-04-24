@@ -2,48 +2,56 @@
 <div class="container-nav">
     <div id="menu" class="menu-responsive">
         <div class="nav-logo">
-            <img src="assets/img/logo-cy.svg" alt="Logo CY">
+            <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY">
+            <img class="logo-color-cy" src="assets/img/logo-color-cy.svg" alt="Logo CY">
         </div>
-        <div class="three-lines-menu"> &#9776;</div>
         <ul>
-            <li><a href="#">Casa</a></li>
-            <li><a href="#">Acercad de mi</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Testimonios</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Cont&aacute;ctame</a></li>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Acerca de mi</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Portafolio</a></li>
+          <li><a href="#">Testimonios</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Cont&aacute;ctame</a></li>
         </ul>
+        <div class="three-lines-menu"> &#9776;</div>
     </div>
 </div>
 
 <div class="main-container">
     <div class="cy-container">
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row cy-flex">
+
             <div class="cy-col-6 cy-col-12-sm">
                 <div class="image-container">
                     <img src="assets/img/charlies.png" alt="charlies image">
                 </div>
             </div>
+
           <div class="cy-col-6 cy-col-12-sm">
             <div class="dots-container">
                  <div class="hello center">Hola Soy</div>
                  <div class="charlies-yacniel center">Charlies Yacniel</div>
                  <div class="profesion center">Desarrollador/Dise&ntilde;ador de software</div>
                  <div class="cv center" >
-                     <a class="cy-btn cy-btn-fill" href="assets/files/cy-cv.pdf" target="_blank">Descarga mi CV</a>
+                     <a class="cy-btn cy-btn-fill-reverse margin-left-20" href="assets/files/cy-cv.pdf" target="_blank">Descarga mi CV</a>
+                     <a class="cy-btn cy-btn-fill margin-left-20" href="#portfolio">Portafolio</a>
                 </div>
             </div>
-            <div class="cy-col-12 ">
-                <a href="#i-like" class="center-flex">
-                    <div class="button-down">
-                        <div class="arrow-down"></div>
-                    </div>
-                </a>
-            </div>
+
+          </div>
         </div>
 
+        <div class="cy-row">
+              <div class="cy-col-12 ">
+                  <a href="#i-like" class="center-flex">
+                      <div class="button-down">
+                          <div class="arrow-down"></div>
+                      </div>
+                  </a>
+              </div>
+        </div>
         <!--  -->
         <div class="cy-row">
         <!-- //TODO no eliminar -->
@@ -77,12 +85,23 @@
                     <div class="autor">Charlies Yacniel</div>
                 </div>
             </div>
-            <div class="cy-col-12">
-                <h3 class="cy-title center" id="i-like">Me gusta ...</h3>
-                <p class="cy-text justify">
-                    Me gusta transformar problemas complejos en soluciones simples usando soluciones hermosas e intuitivas ,cuando el problema radica en el aspecto visual.Cuando no estoy lanzando lineas de codigo, aprendiendo algo nuevo, empujando píxeles o fortaleciendo mis cuadritos, me  puedes encontrar armando el cubo de rubik.
-                </p>
-            </div>
+        </div>
+
+        <div class="cy-row">
+          <div class="cy-col-12">
+            <h3 class="cy-title center" id="i-like">Me gusta ...</h3>
+            <p class="cy-text justify">
+                Me gusta transformar problemas complejos en soluciones simples usando soluciones hermosas e intuitivas ,cuando el problema radica en el aspecto visual.Cuando no estoy lanzando lineas de codigo, aprendiendo algo nuevo, empujando píxeles o fortaleciendo mis cuadritos, me  puedes encontrar armando el cubo de rubik.
+            </p>
+            <p class="cy-text justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis ex temporibus dolor dolores illum excepturi quae molestias quaerat.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id nostrum magnam quasi non quidem dolor, delectus eos harum atque!
+            </p>
+            <p class="cy-text justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis ex temporibus dolor dolores illum excepturi quae molestias quaerat.
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id nostrum magnam quasi non quidem dolor, delectus eos harum atque!
+            </p>
+          </div>
         </div>
         <!--  -->
         <div class="cy-row">
@@ -203,7 +222,7 @@
             </div>
         </div>
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row" id="portfolio">
             <div class="cy-col-12">
                 <h3 class="cy-title center"> Portafolio</h3>
                 <p class="cy-text center">
@@ -561,9 +580,9 @@
                 </p>
             </div>
         </div>
-        <!-- fin container -->
-      </div>
 
+      </div>
+      <!-- fin cy-container -->
       <!-- Footer -->
       <footer class="footer">
        <div class="cy-container">
@@ -656,4 +675,5 @@
        </div>
       </footer>
 </div>
+<!-- fin main-container -->
 
