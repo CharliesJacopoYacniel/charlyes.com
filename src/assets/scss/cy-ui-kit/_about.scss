@@ -7,14 +7,14 @@
 	text-align: right;
 	.text{
 		font-size: $cy-font-size-sm;
-		
+
 	}
 	.autor{
 		font-size: $cy-font-size-xs;
 
 	}
 }
-/** Estos estilos son para el n +1 cosas sobre mi*/ 
+/** Estos estilos son para el n +1 cosas sobre mi*/
 
 // Responsive
 @mixin responsive() {
@@ -25,6 +25,7 @@
 
 $timeline-width:100%;
 $timeline-container-width:100%;
+
 .timeline {
   display: flex;
   margin: 0 auto;
@@ -33,22 +34,22 @@ $timeline-container-width:100%;
   max-width: $timeline-width;
   position: relative;
   &__content {
-	&__img__tag{
-		position: relative;
-	}
+    &__img__tag{
+      position: relative;
+    }
     &-title {
-	  position: absolute;
-	  bottom: -30px;
+      position: absolute;
+      bottom: -30px;
       font-weight: normal;
       font-size: 66px;
       margin: -10px 0 0 0;
       transition: .4s;
       padding: 0 10px;
-	  box-sizing: border-box;
+      box-sizing: border-box;
     }
     &-desc {
-	  margin: 0;
-	  padding-top:10px;
+      margin: 0;
+      padding-top:10px;
       font-size: 15px;
       box-sizing: border-box;
       font-weight: normal;
@@ -61,8 +62,8 @@ $timeline-container-width:100%;
     left: 50%;
     width: 3px;
     height: 100%;
-	margin-left: -1px;
-	opacity: .1;
+    margin-left: -1px;
+    opacity: .1;
     background-color:$cy-green-primary;
     @include responsive() {
       left: 40px;
@@ -70,8 +71,8 @@ $timeline-container-width:100%;
   }
   &-item {
     padding: 40px 0;
-    // opacity: .3;
-    // filter: blur(2px);
+    opacity: .3;
+    filter: blur(2px);
     transition: .5s;
     box-sizing: border-box;
     width: calc(50% - 40px);
@@ -105,13 +106,13 @@ $timeline-container-width:100%;
       }
     }
     &--active {
-    //   opacity: 1;
+      opacity: 1;
       transform: translateY(0);
       filter: blur(0px);
       &:before {
         top: 50%;
         transition: .3s all .2s;
-        // opacity: 1;
+        opacity: 1;
       }
       .timeline__content-title {
         margin: -50px 0 20px 0;
@@ -135,7 +136,7 @@ $timeline-container-width:100%;
     }
   }
   &__img {
-	 
+
     max-width: 100%;
     // box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
 	box-shadow: -5px 5px 10px rgba(147, 234, 30, 0.14);

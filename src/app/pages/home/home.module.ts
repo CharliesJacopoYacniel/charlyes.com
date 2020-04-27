@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 // import { ComponentsModule } from 'src/app/components/components.module';
 
+// import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-
+    // AnimateOnScrollModule.forRoot()
     // ComponentsModule
   ]
 })

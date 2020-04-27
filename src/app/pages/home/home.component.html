@@ -1,27 +1,28 @@
-
 <div class="container-nav">
-    <div id="menu" class="menu-responsive">
+    <div id="menu" class="menu-responsive ">
         <div class="nav-logo">
-            <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY">
-            <img class="logo-color-cy" src="assets/img/logo-color-cy.svg" alt="Logo CY">
+           <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY">
+           <a class="link-logo" href="#">
+              <img class="logo-color-cy" src="assets/img/logo-color-cy.svg" alt="Logo CY">
+            </a>
         </div>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Acerca de mi</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Portafolio</a></li>
-          <li><a href="#">Testimonios</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Cont&aacute;ctame</a></li>
+        <ul class="">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about-me">Acerca de mi</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#portfolio">Portafolio</a></li>
+          <li><a href="#testimonials">Testimonios</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contac-me">Cont&aacute;ctame</a></li>
         </ul>
         <div class="three-lines-menu"> &#9776;</div>
     </div>
 </div>
-
-<div class="main-container">
+<!--  -->
+<div class="main-container" >
     <div class="cy-container">
         <!--  -->
-        <div class="cy-row cy-flex">
+        <div class="cy-row cy-flex" id="home">
 
             <div class="cy-col-6 cy-col-12-sm">
                 <div class="image-container">
@@ -30,13 +31,13 @@
             </div>
 
           <div class="cy-col-6 cy-col-12-sm">
-            <div class="dots-container">
-                 <div class="hello center">Hola Soy</div>
-                 <div class="charlies-yacniel center">Charlies Yacniel</div>
-                 <div class="profesion center">Desarrollador/Dise&ntilde;ador de software</div>
+            <div class="dots-container ">
+                 <div class="hello center" (click)="changeAnimate()">Hola Soy</div>
+                 <div class="charlies-yacniel center" >Charlies Yacniel</div>
+                 <div class="profesion center" >Desarrollador/Dise&ntilde;ador de software</div>
                  <div class="cv center" >
-                     <a class="cy-btn cy-btn-fill-reverse margin-left-20" href="assets/files/cy-cv.pdf" target="_blank">Descarga mi CV</a>
-                     <a class="cy-btn cy-btn-fill margin-left-20" href="#portfolio">Portafolio</a>
+                     <a [@changeState]="currentState" class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10" href="assets/files/cy-cv.pdf" target="_blank">Descarga mi CV</a>
+                     <a [@changeState]="currentState"  class="cy-btn cy-btn-fill margin-left-20 margin-bottom-10" href="#portfolio">Portafolio</a>
                 </div>
             </div>
 
@@ -45,15 +46,23 @@
 
         <div class="cy-row">
               <div class="cy-col-12 ">
-                  <a href="#i-like" class="center-flex">
+                  <!-- <a href="#about-me" class="center-flex">
                       <div class="button-down">
                           <div class="arrow-down"></div>
                       </div>
+                  </a> -->
+                  <a class="center-flex" href="#about-me">
+                    <svg class="mouse" xmlns="..." viewBox="0 0 76 130" preserveAspectRatio="">
+                      <g fill="none" fill-rule="evenodd">
+                      <rect width="70" height="118" x="1.5" y="1.5" stroke="" stroke-width="3" rx="36"/>
+                      <circle class="scroll-link" cx="36.5" cy="31.5" r="4.5" fill=""/>
+                      </g>
+                    </svg>
                   </a>
               </div>
         </div>
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row" id="about-me">
         <!-- //TODO no eliminar -->
             <!-- <div class="cy-col-12">
                 <div class="center-flex" style="flex-direction: column;">
@@ -70,15 +79,15 @@
                     <a class="cy-btn cy-btn-strong" href="#" >Download</a>
                 </div>
             </div> -->
-            <div class="cy-col-6 cy-col-12-sm">
+            <div class="cy-col-6 cy-col-12-sm" >
                 <h3 class="cy-title center" id="">Acerca de mi</h3>
-                <p class="cy-text justify">
+                <p class="cy-text justify capital-letter">
                     Soy Ingeniero/Dise&ntilde;ador de software habitante de la ciudad de Tegucigalpa, Honduras. Me siento muy c&oacute;modo combinado c&oacute;digos y n&uacute;meros para vivir, soy programador por hobby, desarrollador de software por ocupaci&oacute;n ,apasionado de los cubos de rubik y el camping , memero ,disl&eacute;xico, coffee lover, oveja negra y n&oacute;mada por excelencia.
                 </p>
             </div>
             <div class="cy-col-6 cy-col-12-sm">
                 <div class="img-container">
-                    <img class="img-charlies"src="assets/img/image-charlies.jpg" alt="image charlies">
+                    <img class="img-charlies" src="assets/img/image-charlies.jpg" alt="image charlies">
                 </div>
                 <div class="phrase">
                     <div class="text">“Pap&aacute; ,voy a estudiar computaci&oacute;n”</div>
@@ -89,8 +98,8 @@
 
         <div class="cy-row">
           <div class="cy-col-12">
-            <h3 class="cy-title center" id="i-like">Me gusta ...</h3>
-            <p class="cy-text justify">
+            <h3 class="cy-title center" id="">Me gusta ...</h3>
+            <p class="cy-text justify ">
                 Me gusta transformar problemas complejos en soluciones simples usando soluciones hermosas e intuitivas ,cuando el problema radica en el aspecto visual.Cuando no estoy lanzando lineas de codigo, aprendiendo algo nuevo, empujando píxeles o fortaleciendo mis cuadritos, me  puedes encontrar armando el cubo de rubik.
             </p>
             <p class="cy-text justify">
@@ -177,8 +186,9 @@
             </div>
         </div>
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row" id="services">
             <div class="cy-col-12">
+              <div class="separator center"></div><!-- Separador -->
                 <h3 class="cy-title center"> Skills</h3>
                 <p class="cy-text center">
                     Enfocado en crear productos novedosos con nuevas tendencias en el &aacute;mbito tecnol&oacute;gico.
@@ -224,6 +234,7 @@
         <!--  -->
         <div class="cy-row" id="portfolio">
             <div class="cy-col-12">
+              <div class="separator center"></div><!-- Separador -->
                 <h3 class="cy-title center"> Portafolio</h3>
                 <p class="cy-text center">
                     Visualiza cada proyecto llevado a cabo en la trayectoria como profesional de la tecnolog&iacute;a.
@@ -450,9 +461,10 @@
             </div>
         </div>
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row " id="testimonials">
             <div class="cy-col-12">
-                <h3 class="cy-title center"> Se dice de mi</h3>
+                <div class="separator center"></div><!-- Separador -->
+                <h3 class="cy-title center "> Se dice de mi</h3>
                 <p class="cy-text center">
                     Conoce de primera mano los testimonios de las personas mas allegadas a m&iacute;.
                 </p>
@@ -567,26 +579,68 @@
             </div>
         </div>
         <!--  -->
-        <div class="cy-row">
+        <div class="cy-row" id="blog">
             <div class="cy-col-12">
+              <div class="separator center"></div><!-- Separador -->
                 <h3 class="cy-title center"> Blog</h3>
                 <p class="cy-text center">
                     Conoce las ultimas noticias publicadas en el blog, en el encontrar&aacute;s noticias de ultimo momento relacionadas con la tecnolog&iacute;a
                 </p>
             </div>
-            <div class="cy-col-12">
-                <p class="cy-text justify">
-                    aqui van las noticisa del blog
-                </p>
+        </div>
+        <div class="cy-row">
+            <div class="cy-col-4">
+                <div class="card-blog">
+                  <img class="card-image-blog" src="assets/img/foto1.jpg" alt="image"/>
+                  <div class="container-item">
+                      <div class="card-date-blog">18 de Octubre de 1993</div>
+                      <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
+                      <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
+                      <a class="card-read-more-blog button more" href="#">Leer mas</a>
+                  </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="cy-col-4">
+              <div class="card-blog ">
+                <img class="card-image-blog" src="assets/img/foto2.jpg" alt="image"/>
+                <div class="container-item">
+                    <div class="card-date-blog">18 de Octubre de 1993</div>
+                    <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
+                    <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
+                    <a class="card-read-more-blog button more" href="#">Leer mas</a>
+                </div>
+              </div>
+          </div>
+          <!--  -->
+          <div class="cy-col-4">
+            <div class="card-blog">
+              <img class="card-image-blog" src="assets/img/foto3.jpg" alt="image"/>
+              <div class="container-item">
+                  <div class="card-date-blog">18 de Octubre de 1993</div>
+                  <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
+                  <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
+                  <a class="card-read-more-blog button more" href="#">Leer mas</a>
+              </div>
             </div>
         </div>
-
+        <!--  -->
+      </div>
+      <!-- fin row -->
+      <!-- inicio row -->
+      <div class="cy-row">
+          <div class="cy-col-4"></div>
+          <div class="cy-col-4 cs-col-12-sm">
+              <a class="cy-btn cy-btn-tertiary cy-btn-block" href="#">Ir al blog</a>
+          </div>
+          <div class="cy-col-4"></div>
+      </div>
       </div>
       <!-- fin cy-container -->
       <!-- Footer -->
       <footer class="footer">
        <div class="cy-container">
-           <div class="cy-row">
+           <div class="cy-row" id="contac-me">
              <div class="cy-col-6 cy-col-12-sm">
                  <h3 class="cy-title-footer ">Contacto</h3>
                  <p class="cy-text-footer ">

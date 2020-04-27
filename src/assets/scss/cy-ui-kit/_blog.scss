@@ -1,0 +1,29 @@
+
+.card-blog{
+  border-radius: 5px;
+  background-color: $cy-green-tertiary;
+}
+.card-image-blog{
+width: 100%;
+height: 200px;
+border-radius: 5px 5px 0px 0px;
+}
+
+.container-item{
+ padding: 10px 20px;
+}
+.card-date-blog{
+padding:  0;
+}
+.card-title-blog{
+  padding: 10px 0;
+  font-size: 18px;
+}
+.card-description-blog{
+  padding: 0;
+  margin: 0 0 10px 0;
+  font-size: 12px;
+}
+.card-read-more-blog{
+  text-decoration: none !important;
+}

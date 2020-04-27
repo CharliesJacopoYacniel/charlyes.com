@@ -34,6 +34,15 @@
 .margin-left-20{margin-left: 20px !important;}
 .margin-left-30{margin-left: 30px !important;}
 
+.margin-bottom-10{margin-bottom: 10px;}
+.margin-bottom-20{margin-bottom: 20px;}
+.margin-bottom-30{margin-bottom: 30px;}
+
+.margin-right-10{margin-right: 10px !important;}
+.margin-right-20{margin-right: 20px !important;}
+.margin-right-30{margin-right: 30px !important;}
+
+
 .cy-font-size-xl{font-size:$cy-font-size-xl !important;}
 .cy-font-size-lg{font-size:$cy-font-size-lg !important;}
 .cy-font-size-md{font-size:$cy-font-size-md !important;}
@@ -62,4 +71,18 @@
  .cy-text-footer{
      color: $cy-white;
      font-size: $cy-font-size-text;
+ }
+
+ .capital-letter{
+    float:left;
+    padding:2px;
+    margin-right: 5px;
+    &:first-letter{
+       float: inherit;;
+       font-size:60px;
+       line-height:55px;
+       padding:2px;
+       margin-right: 5px;
+       margin-bottom: 0px;
+    }
  }
