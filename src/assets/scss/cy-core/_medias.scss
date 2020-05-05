@@ -1,23 +1,14 @@
   /* Responsive Styles */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
 
-    .card-container > *:not(.circle-link) ,
-    .terminal {
-      width: 100%;
-    }
-
-    .card:not(.highlight-card) {
-      height: 16px;
-      margin: 8px 0;
-    }
-
-    .card.highlight-card span {
-      margin-left: 72px;
-    }
-
-    svg#rocket-smoke {
-      right: 120px;
-      transform: rotate(-5deg);
+   
+    .circular-progress{
+      &,
+      &:before,
+      &:after{
+        width:150px;
+        height:150px;
+        }
     }
   }
 
