@@ -3,7 +3,7 @@ import { Component, ElementRef, Output,Input, Directive, EventEmitter, NgZone } 
 
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
-import 'jquery';
+// import 'jquery';
 // import range = require( "lodash/range" );
 // import { ElementScrollPercentage } from "./element-scroll-percentage";
 @Component({
