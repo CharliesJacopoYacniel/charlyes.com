@@ -1,70 +1,98 @@
 <div class="container-nav">
-    <div id="menu" class="menu-responsive ">
-        <div class="nav-logo">
-           <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY">
-           <a class="link-logo" href="#">
-              <img class="logo-color-cy" src="assets/img/logo-color-cy.svg" alt="Logo CY">
-            </a>
-        </div>
-        <ul class="">
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#about-me">Acerca de mi</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#portfolio">Portafolio</a></li>
-          <li><a href="#testimonials">Testimonios</a></li>
-          <li><a href="#blog">Blog</a></li>
-          <li><a href="#contac-me">Cont&aacute;ctame</a></li>
-        </ul>
-        <div class="three-lines-menu"> &#9776;</div>
+  <div id="menu" class="menu-responsive">
+    <div class="nav-logo">
+      <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY" />
+      <a class="link-logo" href="#">
+        <img
+          class="logo-color-cy"
+          src="assets/img/logo-color-cy.svg"
+          alt="Logo CY"
+        />
+      </a>
     </div>
+    <ul class="">
+      <li><a href="#home">Inicio</a></li>
+      <li><a href="#about-me">Acerca de mi</a></li>
+      <li><a href="#services">Servicios</a></li>
+      <li><a href="#portfolio">Portafolio</a></li>
+      <li><a href="#testimonials">Testimonios</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#contac-me">Cont&aacute;ctame</a></li>
+    </ul>
+    <div class="three-lines-menu">&#9776;</div>
+  </div>
 </div>
 <!--  -->
-<div class="main-container" >
-    <div class="cy-container">
-        <!--  -->
-        <div class="cy-row cy-flex" id="home">
+<div class="main-container">
+  <div class="cy-container">
+    <!--  -->
+    <div class="cy-row cy-flex" id="home">
+      <div class="cy-col-6 cy-col-12-sm">
+        <div class="image-container">
+          <img src="assets/img/charlies.png" alt="charlies image" />
+        </div>
+      </div>
 
-            <div class="cy-col-6 cy-col-12-sm">
-                <div class="image-container">
-                    <img src="assets/img/charlies.png" alt="charlies image">
-                </div>
-            </div>
-
-          <div class="cy-col-6 cy-col-12-sm">
-            <div class="dots-container ">
-                 <div class="hello center" (click)="changeAnimate()">Hola Soy</div>
-                 <div class="charlies-yacniel center" >Charlies Yacniel</div>
-                 <div class="profesion center" >Desarrollador/Dise&ntilde;ador de software</div>
-                 <div class="cv center" >
-                     <a [@changeState]="currentState" class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10" href="assets/files/cy-cv.pdf" target="_blank">Descarga mi CV</a>
-                     <a [@changeState]="currentState"  class="cy-btn cy-btn-fill margin-left-20 margin-bottom-10" href="#portfolio">Portafolio</a>
-                </div>
-            </div>
-
+      <div class="cy-col-6 cy-col-12-sm">
+        <div class="dots-container">
+          <div class="hello center" (click)="changeAnimate()">Hola Soy</div>
+          <div class="charlies-yacniel center">Charlies Yacniel</div>
+          <div class="profesion center">
+            Desarrollador/Dise&ntilde;ador de software
+          </div>
+          <div class="cv center">
+            <a
+              [@changeState]="currentState"
+              class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10"
+              href="assets/files/cy-cv.pdf"
+              target="_blank"
+              >Descarga mi CV</a
+            >
+            <a
+              [@changeState]="currentState"
+              class="cy-btn cy-btn-fill margin-left-20 margin-bottom-10"
+              href="#portfolio"
+              >Portafolio</a
+            >
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="cy-row">
-              <div class="cy-col-12 ">
-                  <!-- <a href="#about-me" class="center-flex">
+    <div class="cy-row">
+      <div class="cy-col-12">
+        <!-- <a href="#about-me" class="center-flex">
                       <div class="button-down">
                           <div class="arrow-down"></div>
                       </div>
                   </a> -->
-                  <a class="center-flex" href="#about-me">
-                    <svg class="mouse" xmlns="..." viewBox="0 0 76 130" preserveAspectRatio="">
-                      <g fill="none" fill-rule="evenodd">
-                      <rect width="70" height="118" x="1.5" y="1.5" stroke="" stroke-width="3" rx="36"/>
-                      <circle class="scroll-link" cx="36.5" cy="31.5" r="4.5" fill=""/>
-                      </g>
-                    </svg>
-                  </a>
-              </div>
-        </div>
-        <!--  -->
-        <div class="cy-row" id="about-me">
-        <!-- //TODO no eliminar -->
-            <!-- <div class="cy-col-12">
+        <a class="center-flex" href="#about-me">
+          <svg
+            class="mouse"
+            xmlns="..."
+            viewBox="0 0 76 130"
+            preserveAspectRatio=""
+          >
+            <g fill="none" fill-rule="evenodd">
+              <rect
+                width="70"
+                height="118"
+                x="1.5"
+                y="1.5"
+                stroke=""
+                stroke-width="3"
+                rx="36"
+              />
+              <circle class="scroll-link" cx="36.5" cy="31.5" r="4.5" fill="" />
+            </g>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row" id="about-me">
+      <!-- //TODO no eliminar -->
+      <!-- <div class="cy-col-12">
                 <div class="center-flex" style="flex-direction: column;">
                     <a class="cy-btn cy-btn-fill" href="#" >Descarga mi CV</a>
                     <br>
@@ -79,297 +107,421 @@
                     <a class="cy-btn cy-btn-strong" href="#" >Download</a>
                 </div>
             </div> -->
-            <div class="cy-col-6 cy-col-12-sm" >
-                <h3 class="cy-title center" id="">Acerca de mi</h3>
-                <p class="cy-text justify capital-letter">
-                    Soy Ingeniero/Dise&ntilde;ador de software habitante de la ciudad de Tegucigalpa, Honduras. Me siento muy c&oacute;modo combinado c&oacute;digos y n&uacute;meros para vivir, soy programador por hobby, desarrollador de software por ocupaci&oacute;n ,apasionado de los cubos de rubik y el camping , memero ,disl&eacute;xico, coffee lover, oveja negra y n&oacute;mada por excelencia.
-                </p>
+      <div class="cy-col-6 cy-col-12-sm">
+        <h3 class="cy-title center" id="">Acerca de mi</h3>
 
-            </div>
-            <div class="cy-col-6 cy-col-12-sm">
-                <div class="img-container">
-                    <img class="img-charlies" src="assets/img/image-charlies.jpg" alt="image charlies">
+        <p class="cy-text justify capital-letter">
+          Soy Ingeniero/Dise&ntilde;ador de software habitante de la ciudad de
+          Tegucigalpa, Honduras. Me siento muy c&oacute;modo combinado
+          c&oacute;digos y n&uacute;meros para vivir, soy programador por hobby,
+          desarrollador de software por ocupaci&oacute;n ,apasionado de los
+          cubos de rubik y el camping , memero ,disl&eacute;xico, coffee lover,
+          oveja negra y n&oacute;mada por excelencia.
+        </p>
+      </div>
+      <div class="cy-col-6 cy-col-12-sm">
+        <div class="img-container">
+          <img
+            class="img-charlies"
+            src="assets/img/image-charlies.jpg"
+            alt="image charlies"
+          />
+        </div>
+        <div class="phrase">
+          <div class="text">
+            “Pap&aacute; ,voy a estudiar computaci&oacute;n”
+          </div>
+          <div class="autor">Charlies Yacniel</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cy-row">
+      <div class="cy-col-12">
+        <h3 class="cy-title center" id="">Me gusta ...</h3>
+        <p class="cy-text justify">
+          Me gusta transformar problemas complejos en soluciones simples usando
+          soluciones hermosas e intuitivas ,cuando el problema radica en el
+          aspecto visual.Cuando no estoy lanzando lineas de codigo, aprendiendo
+          algo nuevo, empujando píxeles o fortaleciendo mis cuadritos, me puedes
+          encontrar armando el cubo de rubik.
+        </p>
+        <p class="cy-text justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat
+          sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis
+          ex temporibus dolor dolores illum excepturi quae molestias quaerat.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae
+          necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id
+          nostrum magnam quasi non quidem dolor, delectus eos harum atque!
+        </p>
+        <p class="cy-text justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat
+          sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis
+          ex temporibus dolor dolores illum excepturi quae molestias quaerat.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae
+          necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id
+          nostrum magnam quasi non quidem dolor, delectus eos harum atque!
+        </p>
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row">
+      <div class="cy-col-12">
+        <h3 class="cy-title center">( N + 1 ) Cosas sobre mi</h3>
+        <!-- TODO incio -->
+
+        <div class="timeline-container" id="timeline-1">
+          <div class="timeline">
+            <!--  -->
+            <div class="timeline-item" data-text="Escuela">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto1.jpg" />
+                  <h2 class="timeline__content-title">2002</h2>
                 </div>
-                <div class="phrase">
-                    <div class="text">“Pap&aacute; ,voy a estudiar computaci&oacute;n”</div>
-                    <div class="autor">Charlies Yacniel</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="cy-row">
-          <div class="cy-col-12">
-            <h3 class="cy-title center" id="">Me gusta ...</h3>
-            <p class="cy-text justify ">
-                Me gusta transformar problemas complejos en soluciones simples usando soluciones hermosas e intuitivas ,cuando el problema radica en el aspecto visual.Cuando no estoy lanzando lineas de codigo, aprendiendo algo nuevo, empujando píxeles o fortaleciendo mis cuadritos, me  puedes encontrar armando el cubo de rubik.
-            </p>
-            <p class="cy-text justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis ex temporibus dolor dolores illum excepturi quae molestias quaerat.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id nostrum magnam quasi non quidem dolor, delectus eos harum atque!
-            </p>
-            <p class="cy-text justify">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fugiat sapiente quo id laboriosam in provident, saepe odio rerum nulla omnis ex temporibus dolor dolores illum excepturi quae molestias quaerat.
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo vitae necessitatibus fugit sapiente autem vel consequuntur odio cum nobis id nostrum magnam quasi non quidem dolor, delectus eos harum atque!
-            </p>
-          </div>
-        </div>
-        <!--  -->
-        <div class="cy-row">
-            <div class="cy-col-12">
-                <h3 class="cy-title center"> ( N + 1 ) Cosas sobre mi</h3>
-                <!-- TODO incio -->
-
-                <div class="timeline-container" id="timeline-1">
-                    <div class="timeline">
-                     <!--  -->
-                      <div class="timeline-item" data-text="Escuela">
-                        <div class="timeline__content">
-                            <div class="timeline__content__img__tag">
-                                <img class="timeline__img" src="assets/img/foto1.jpg"/>
-                                <h2 class="timeline__content-title">2002</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Me gusta transformar problemas complejos en soluciones simples usando soluciones hermosas e intuitivas ,cuando el problema radica en el aspecto visual. Cuando no estoy lanzando lineas de codigo, aprendiendo algo nuevo, empujando p&iacute;xeles o fortaleciendo mis cuadritos, me  puedes encontrar armando el cubo de rubik.</p>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div class="timeline-item" data-text="Ciclo com&uacute;n">
-                        <div class="timeline__content">
-                          <div class="timeline__content__img__tag">
-                              <img class="timeline__img" src="assets/img/foto2.jpg"/>
-                              <h2 class="timeline__content-title">2003</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Este gusto comenz&oacute; cuando ve&iacute;a los atractivos dise&ntilde;os que plasmaban mis colegas y recibían una buena aceptaci&oacute;n por parte de los dem&aacute;s, luego mire los mios y senti como mis colegas señalan mis diseños y decían “Vos aun diseñar con tablas”, indirectamente forjaron  mi car&aacute;cter .Todo esto junto dio un empuje para que me enfocara en lo que en realidad me gusta.</p>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div class="timeline-item" data-text="Universidad">
-                        <div class="timeline__content">
-                          <div class="timeline__content__img__tag">
-                              <img class="timeline__img" src="assets/img/foto3.jpg"/>
-                              <h2 class="timeline__content-title">2012</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Este gusto comenz&oacute; cuando ve&iacute;a los atractivos dise&ntilde;os que plasmaban mis colegas y recibían una buena aceptaci&oacute;n por parte de los dem&aacute;s, luego mire los mios y senti como mis colegas señalan mis diseños y decían “Vos aun diseñar con tablas”, indirectamente forjaron  mi car&aacute;cter .Todo esto junto dio un empuje para que me enfocara en lo que en realidad me gusta.</p>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div class="timeline-item" data-text="Universidad">
-                        <div class="timeline__content">
-                          <div class="timeline__content__img__tag">
-                              <img class="timeline__img" src="assets/img/foto4.jpg"/>
-                              <h2 class="timeline__content-title">2016</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Este gusto comenz&oacute; cuando ve&iacute;a los atractivos dise&ntilde;os que plasmaban mis colegas y recibían una buena aceptaci&oacute;n por parte de los dem&aacute;s, luego mire los mios y senti como mis colegas señalan mis diseños y decían “Vos aun diseñar con tablas”, indirectamente forjaron  mi car&aacute;cter .Todo esto junto dio un empuje para que me enfocara en lo que en realidad me gusta.</p>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div class="timeline-item" data-text="Universidad">
-                        <div class="timeline__content">
-                          <div class="timeline__content__img__tag">
-                              <img class="timeline__img" src="assets/img/foto5.jpg"/>
-                              <h2 class="timeline__content-title">2018</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Este gusto comenz&oacute; cuando ve&iacute;a los atractivos dise&ntilde;os que plasmaban mis colegas y recibían una buena aceptaci&oacute;n por parte de los dem&aacute;s, luego mire los mios y senti como mis colegas señalan mis diseños y decían “Vos aun diseñar con tablas”, indirectamente forjaron  mi car&aacute;cter .Todo esto junto dio un empuje para que me enfocara en lo que en realidad me gusta.</p>
-                        </div>
-                      </div>
-                      <!--  -->
-                      <div class="timeline-item" data-text="Universidad">
-                        <div class="timeline__content">
-                          <div class="timeline__content__img__tag">
-                              <img class="timeline__img" src="assets/img/foto6.png"/>
-                              <h2 class="timeline__content-title">2020</h2>
-                            </div>
-                          <p class="timeline__content-desc cy-text justify">Este gusto comenz&oacute; cuando ve&iacute;a los atractivos dise&ntilde;os que plasmaban mis colegas y recibían una buena aceptaci&oacute;n por parte de los dem&aacute;s, luego mire los mios y senti como mis colegas señalan mis diseños y decían “Vos aun diseñar con tablas”, indirectamente forjaron  mi car&aacute;cter .Todo esto junto dio un empuje para que me enfocara en lo que en realidad me gusta.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <!-- TODO fin -->
-            </div>
-        </div>
-        <!--  -->
-        <div class="cy-row" id="services">
-            <div class="cy-col-12">
-              <div class="separator center"></div><!-- Separador -->
-                <h3 class="cy-title center"> Skills</h3>
-                <p class="cy-text center">
-                    Enfocado en crear productos novedosos con nuevas tendencias en el &aacute;mbito tecnol&oacute;gico.
+                <p class="timeline__content-desc cy-text justify">
+                  Me gusta transformar problemas complejos en soluciones simples
+                  usando soluciones hermosas e intuitivas ,cuando el problema
+                  radica en el aspecto visual. Cuando no estoy lanzando lineas
+                  de codigo, aprendiendo algo nuevo, empujando p&iacute;xeles o
+                  fortaleciendo mis cuadritos, me puedes encontrar armando el
+                  cubo de rubik.
                 </p>
+              </div>
             </div>
+            <!--  -->
+            <div class="timeline-item" data-text="Ciclo com&uacute;n">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto2.jpg" />
+                  <h2 class="timeline__content-title">2003</h2>
+                </div>
+                <p class="timeline__content-desc cy-text justify">
+                  Este gusto comenz&oacute; cuando ve&iacute;a los atractivos
+                  dise&ntilde;os que plasmaban mis colegas y recibían una buena
+                  aceptaci&oacute;n por parte de los dem&aacute;s, luego mire
+                  los mios y senti como mis colegas señalan mis diseños y decían
+                  “Vos aun diseñar con tablas”, indirectamente forjaron mi
+                  car&aacute;cter .Todo esto junto dio un empuje para que me
+                  enfocara en lo que en realidad me gusta.
+                </p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="timeline-item" data-text="Universidad">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto3.jpg" />
+                  <h2 class="timeline__content-title">2012</h2>
+                </div>
+                <p class="timeline__content-desc cy-text justify">
+                  Este gusto comenz&oacute; cuando ve&iacute;a los atractivos
+                  dise&ntilde;os que plasmaban mis colegas y recibían una buena
+                  aceptaci&oacute;n por parte de los dem&aacute;s, luego mire
+                  los mios y senti como mis colegas señalan mis diseños y decían
+                  “Vos aun diseñar con tablas”, indirectamente forjaron mi
+                  car&aacute;cter .Todo esto junto dio un empuje para que me
+                  enfocara en lo que en realidad me gusta.
+                </p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="timeline-item" data-text="Universidad">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto4.jpg" />
+                  <h2 class="timeline__content-title">2016</h2>
+                </div>
+                <p class="timeline__content-desc cy-text justify">
+                  Este gusto comenz&oacute; cuando ve&iacute;a los atractivos
+                  dise&ntilde;os que plasmaban mis colegas y recibían una buena
+                  aceptaci&oacute;n por parte de los dem&aacute;s, luego mire
+                  los mios y senti como mis colegas señalan mis diseños y decían
+                  “Vos aun diseñar con tablas”, indirectamente forjaron mi
+                  car&aacute;cter .Todo esto junto dio un empuje para que me
+                  enfocara en lo que en realidad me gusta.
+                </p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="timeline-item" data-text="Universidad">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto5.jpg" />
+                  <h2 class="timeline__content-title">2018</h2>
+                </div>
+                <p class="timeline__content-desc cy-text justify">
+                  Este gusto comenz&oacute; cuando ve&iacute;a los atractivos
+                  dise&ntilde;os que plasmaban mis colegas y recibían una buena
+                  aceptaci&oacute;n por parte de los dem&aacute;s, luego mire
+                  los mios y senti como mis colegas señalan mis diseños y decían
+                  “Vos aun diseñar con tablas”, indirectamente forjaron mi
+                  car&aacute;cter .Todo esto junto dio un empuje para que me
+                  enfocara en lo que en realidad me gusta.
+                </p>
+              </div>
+            </div>
+            <!--  -->
+            <div class="timeline-item" data-text="Universidad">
+              <div class="timeline__content">
+                <div class="timeline__content__img__tag">
+                  <img class="timeline__img" src="assets/img/foto6.png" />
+                  <h2 class="timeline__content-title">2020</h2>
+                </div>
+                <p class="timeline__content-desc cy-text justify">
+                  Este gusto comenz&oacute; cuando ve&iacute;a los atractivos
+                  dise&ntilde;os que plasmaban mis colegas y recibían una buena
+                  aceptaci&oacute;n por parte de los dem&aacute;s, luego mire
+                  los mios y senti como mis colegas señalan mis diseños y decían
+                  “Vos aun diseñar con tablas”, indirectamente forjaron mi
+                  car&aacute;cter .Todo esto junto dio un empuje para que me
+                  enfocara en lo que en realidad me gusta.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- TODO fin -->
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row" id="services">
+      <div class="cy-col-12">
+        <div class="separator center"></div>
+        <!-- Separador -->
+        <h3 class="cy-title center">Skills</h3>
+        <p class="cy-text center">
+          Enfocado en crear productos novedosos con nuevas tendencias en el
+          &aacute;mbito tecnol&oacute;gico.
+        </p>
+      </div>
+    </div>
 
-        <div class="cy-row" >
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress html"></div>
-          </div>
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress css"></div>
-          </div>
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress js"></div>
-          </div>
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress php"></div>
-          </div>
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress python"></div>
-          </div>
-
-          <div class="cy-col-4 cy-col-6-sm">
-              <div class="circular-progress node"></div>
-          </div>
-
-
+    <div class="cy-row">
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress html"></div>
       </div>
 
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress css"></div>
+      </div>
 
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress js"></div>
+      </div>
 
-        <div class="cy-row">
-          <div class="cy-col-12">
-            <div class="cy-proyects center-flex">
-                <div class="cy-row">
-                    <div class="cy-col-3 cy-col-6-sm">
-                        <div class="cy-proyect-item">
-                            <div class="cy-proyect-title">+5</div>
-                            <div class="cy-proyect-subtitle">Clientes</div>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="cy-col-3 cy-col-6-sm">
-                        <div class="cy-proyect-item">
-                            <div class="cy-proyect-title">12</div>
-                            <div class="cy-proyect-subtitle">Proyectos</div>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="cy-col-3 cy-col-6-sm">
-                        <div class="cy-proyect-item">
-                            <div class="cy-proyect-title">5</div>
-                            <div class="cy-proyect-subtitle">Clientes</div>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="cy-col-3 cy-col-6-sm">
-                        <div class="cy-proyect-item">
-                            <div class="cy-proyect-title">2 A&ntilde;os</div>
-                            <div class="cy-proyect-subtitle">de experiencia</div>
-                        </div>
-                    </div>
-                    <!--  -->
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress php"></div>
+      </div>
+
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress python"></div>
+      </div>
+
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress node"></div>
+      </div>
+    </div>
+
+    <div class="cy-row">
+      <div class="cy-col-12">
+        <div class="cy-proyects center-flex">
+          <div class="cy-row">
+            <div class="cy-col-3 cy-col-6-sm">
+              <div class="cy-proyect-item">
+                <div class="cy-proyect-title">+5</div>
+                <div class="cy-proyect-subtitle">Clientes</div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="cy-col-3 cy-col-6-sm">
+              <div class="cy-proyect-item">
+                <div class="cy-proyect-title">12</div>
+                <div class="cy-proyect-subtitle">Proyectos</div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="cy-col-3 cy-col-6-sm">
+              <div class="cy-proyect-item">
+                <div class="cy-proyect-title">5</div>
+                <div class="cy-proyect-subtitle">Clientes</div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="cy-col-3 cy-col-6-sm">
+              <div class="cy-proyect-item">
+                <div class="cy-proyect-title">2 A&ntilde;os</div>
+                <div class="cy-proyect-subtitle">de experiencia</div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row" id="portfolio">
+      <div class="cy-col-12">
+        <div class="separator center"></div>
+        <!-- Separador -->
+        <h3 class="cy-title center">Portafolio</h3>
+        <p class="cy-text center">
+          Visualiza cada proyecto llevado a cabo en la trayectoria como
+          profesional de la tecnolog&iacute;a.
+        </p>
+      </div>
+      <div class="cy-col-12">
+        <!-- TODO inicio portafolio -->
+
+        <div class="container">
+          <div class="row">
+            <div class="cy-col-12 filters-group-wrap">
+              <div class="filters-group">
+                <div class="btn-group filter-options">
+                  <!-- <div class="btn-group filter-options center-flex"> -->
+                  <button class="cy-btn-link" data-group="all">Todos</button>
+                  <button class="cy-btn-link" data-group="space">
+                    Desarrollo
+                  </button>
+                  <button class="cy-btn-link" data-group="nature">Css</button>
+                  <button class="cy-btn-link" data-group="animal">
+                    Aplicaciones
+                  </button>
+                  <button class="cy-btn-link" data-group="city">
+                    Fotograf&iacute;a
+                  </button>
+                  <button class="cy-btn-link" data-group="pen">Pintura</button>
                 </div>
-
+              </div>
             </div>
+          </div>
         </div>
-        </div>
-        <!--  -->
-        <div class="cy-row" id="portfolio">
-            <div class="cy-col-12">
-              <div class="separator center"></div><!-- Separador -->
-                <h3 class="cy-title center"> Portafolio</h3>
-                <p class="cy-text center">
-                    Visualiza cada proyecto llevado a cabo en la trayectoria como profesional de la tecnolog&iacute;a.
-                </p>
-            </div>
-            <div class="cy-col-12">
-                <!-- TODO inicio portafolio -->
 
-                  <div class="container">
-                    <div class="row">
-                      <div class="cy-col-12 filters-group-wrap">
-                          <div class="filters-group ">
-                              <div class="btn-group filter-options ">
-                              <!-- <div class="btn-group filter-options center-flex"> -->
-                                <button class="cy-btn-link" data-group="all">Todos</button>
-                                <button class="cy-btn-link" data-group="space">Desarrollo</button>
-                                <button class="cy-btn-link" data-group="nature">Css</button>
-                                <button class="cy-btn-link" data-group="animal">Aplicaciones</button>
-                                <button class="cy-btn-link" data-group="city">Fotograf&iacute;a</button>
-                                <button class="cy-btn-link" data-group="pen">Pintura</button>
-                              </div>
-                          </div>
+        <div class="container">
+          <div id="grid" class="row my-shuffle-container">
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["nature"]'
+              data-date-created="2017-04-30"
+              data-title="Lake Walchen"
+            >
+              <div class="picture-item__inner">
+                <div class="cy-card cy-card-style-1">
+                  <div class="wrapper">
+                    <div class="header center cy-font-size-xs">
+                      12/05/2010 | hace 10 a&ntilde;os
+                    </div>
+                    <img src="assets/img/foto3.jpg" alt="foto 3" />
+                    <div class="data">
+                      <div class="content">
+                        <span class="author">Desarollo</span>
+                        <h4 class="title center cy-color-primary">
+                          Campa&ntilde;a BASA
+                        </h4>
+                        <span
+                          class="text justify cy-color-secondary cy-font-size-xs"
+                          >Este proyecto consistía en visualizar toda los
+                          componentes en ...</span
+                        >
+                        <a
+                          href="#cy-modal-article"
+                          class="button more open-popup"
+                          >Leer Mas</a
+                        >
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </figure>
 
-                  <div class="container">
-                    <div id="grid" class="row my-shuffle-container">
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["nature"]' data-date-created="2017-04-30" data-title="Lake Walchen">
-                        <div class="picture-item__inner">
-
-                          <div class="cy-card cy-card-style-1 ">
-                              <div class="wrapper">
-                                <div class="header center cy-font-size-xs">12/05/2010 | hace 10 a&ntilde;os</div>
-                                <img src="assets/img/foto3.jpg" alt="foto 3"/>
-                                <div class="data">
-                                  <div class="content">
-                                    <span class="author">Desarollo</span>
-                                    <h4 class="title center cy-color-primary">Campa&ntilde;a BASA</h4>
-                                    <span class="text justify cy-color-secondary cy-font-size-xs">Este proyecto consistía en visualizar toda los componentes en ...</span>
-                                    <a href="#" class="button more">Leer Mas</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-8@sm col-6@md picture-item " data-groups='["city"]' data-date-created="2016-07-01" data-title="Golden Gate Bridge">
-                        <div class="picture-item__inner">
-
-                          <div class="cy-card cy-card-style-2">
-                            <div class="header center cy-font-size-xs">12/05/2010 | hace 10 a&ntilde;os</div>
-                            <img src="assets/img/foto2.jpg" alt="foto 2"/>
-                             <div class="cy-card__content">
-                              <span class="author left">Css</span>
-                              <h2 class="cy-card__title cy-color-primary">Referidos BASA</h2>
-                              <p class="cy-card__description">Este proyecto consistía en visualizar toda los componentes en ...
-                                <a href="#" class="button more cy-color-strong">Leer Mas</a>
-                              </p>
-                            </div>
-                          </div>
-
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["animal"]' data-date-created="2016-08-12" data-title="Crocodile">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto3.jpg" alt="foto 3"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">Crocodile</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">animal</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2" data-groups='["space"]' data-date-created="2016-03-07" data-title="SpaceX">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto4.jpg" alt="foto 4"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">SpaceX</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">space</p>
-                          </div>
-                          <p class="picture-item__description">SpaceX launches a Falcon 9 rocket from Cape Canaveral Air Force Station</p>
-
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["city"]' data-date-created="2016-06-09" data-title="Crossroads">
-                        <div class="picture-item__inner">
-                          <!-- <div class="aspect aspect--16x9">
+            <!--  -->
+            <figure
+              class="col-3@xs col-8@sm col-6@md picture-item"
+              data-groups='["city"]'
+              data-date-created="2016-07-01"
+              data-title="Golden Gate Bridge"
+            >
+              <div class="picture-item__inner">
+                <div class="cy-card cy-card-style-2">
+                  <div class="header center cy-font-size-xs">
+                    12/05/2010 | hace 10 a&ntilde;os
+                  </div>
+                  <img src="assets/img/foto2.jpg" alt="foto 2" />
+                  <div class="cy-card__content">
+                    <span class="author left">Css</span>
+                    <h2 class="cy-card__title cy-color-primary">
+                      Referidos BASA
+                    </h2>
+                    <p class="cy-card__description">
+                      Este proyecto consistía en visualizar toda los componentes
+                      en ...
+                      <a
+                        href="#cy-modal-article"
+                        class="button more cy-color-strong"
+                        >Leer Mas</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["animal"]'
+              data-date-created="2016-08-12"
+              data-title="Crocodile"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto3.jpg" alt="foto 3" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">Crocodile</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">animal</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2"
+              data-groups='["space"]'
+              data-date-created="2016-03-07"
+              data-title="SpaceX"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto4.jpg" alt="foto 4" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">SpaceX</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">space</p>
+                </div>
+                <p class="picture-item__description">
+                  SpaceX launches a Falcon 9 rocket from Cape Canaveral Air
+                  Force Station
+                </p>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["city"]'
+              data-date-created="2016-06-09"
+              data-title="Crossroads"
+            >
+              <div class="picture-item__inner">
+                <!-- <div class="aspect aspect--16x9">
                             <div class="aspect__inner">
                               <img src="assets/img/foto5.jpg" alt="foto 5"/>
                             </div>
@@ -378,405 +530,688 @@
                             <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">Crossroads</a></figcaption>
                             <p class="picture-item__tags hidden@xs">city</p>
                           </div> -->
-                          <div class="cy-card cy-card-style-1 ">
-                            <div class="wrapper">
-                              <div class="header center cy-font-size-xs">12/05/2010 | hace 10 a&ntilde;os</div>
-                              <img src="assets/img/foto5.jpg" alt="foto 5"/>
-                              <div class="data">
-                                <div class="content">
-                                  <span class="author">Desarollo</span>
-                                  <h4 class="title center cy-color-primary">Campa&ntilde;a BASA</h4>
-                                  <span class="text justify cy-color-secondary cy-font-size-xs">Este proyecto consistía en visualizar toda los componentes en ...</span>
-                                  <a href="#" class="button more">Leer Mas</a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-6@xs col-8@sm col-6@md picture-item picture-item--overlay" data-groups='["space","nature"]' data-date-created="2016-06-29" data-title="Milky Way">
-                        <div class="picture-item__inner">
-                          <img src="assets/img/foto1.jpg" alt="foto 1"/>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#-a8g9aA" target="_blank" rel="noopener">Milky Way</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">space, nature</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-6@xs col-8@sm col-6@md picture-item picture-item--h2" data-groups='["space"]' data-date-created="2015-11-06" data-title="Earth">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto2.jpg" alt="foto 2"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">Earth</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">space</p>
-                          </div>
-                          <p class="picture-item__description">NASA Satellite view of Earth</p>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2" data-groups='["animal"]' data-date-created="2015-07-23" data-title="Turtle">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto3.jpg" alt="foto 3"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#-2p8fapOA8" target="_blank" rel="noopener">Turtle</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">animal</p>
-                          </div>
-                          <p class="picture-item__description">A close up of a turtle underwater</p>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["nature"]' data-date-created="2014-10-12" data-title="Stanley Park">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto4.jpg" alt="foto 4"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#-yEdfrvQ50" target="_blank" rel="noopener">Stanley Park</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">nature</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["animal"]' data-date-created="2017-01-12" data-title="Astronaut Cat">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto5.jpg" alt="foto 5"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">Astronaut Cat</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">animal</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-8@sm col-6@md picture-item picture-item--overlay" data-groups='["city"]' data-date-created="2017-01-19" data-title="San Francisco">
-                        <div class="picture-item__inner">
-                         <img src="assets/img/foto6.png" alt="foto 6"/>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">San Francisco</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">city</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <figure class="col-3@xs col-4@sm col-3@md picture-item" data-groups='["nature","city"]' data-date-created="2015-10-20" data-title="Central Park">
-                        <div class="picture-item__inner">
-                          <div class="aspect aspect--16x9">
-                            <div class="aspect__inner">
-                              <img src="assets/img/foto1.jpg" alt="foto 1"/>
-                            </div>
-                          </div>
-                          <div class="picture-item__details">
-                            <figcaption class="picture-item__title"><a href="#" target="_blank" rel="noopener">Central Park</a></figcaption>
-                            <p class="picture-item__tags hidden@xs">nature, city</p>
-                          </div>
-                        </div>
-                      </figure>
-                      <!--  -->
-                      <div class="col-1@sm col-1@xs my-sizer-element"></div>
+                <div class="cy-card cy-card-style-1">
+                  <div class="wrapper">
+                    <div class="header center cy-font-size-xs">
+                      12/05/2010 | hace 10 a&ntilde;os
+                    </div>
+                    <img src="assets/img/foto5.jpg" alt="foto 5" />
+                    <div class="data">
+                      <div class="content">
+                        <span class="author">Desarollo</span>
+                        <h4 class="title center cy-color-primary">
+                          Campa&ntilde;a BASA
+                        </h4>
+                        <span
+                          class="text justify cy-color-secondary cy-font-size-xs"
+                          >Este proyecto consistía en visualizar toda los
+                          componentes en ...</span
+                        >
+                        <a href="#" class="button more">Leer Mas</a>
+                      </div>
                     </div>
                   </div>
-                <!-- TODO fin portafolio -->
-            </div>
-        </div>
-        <!--  -->
-        <div class="cy-row " id="testimonials">
-            <div class="cy-col-12">
-                <div class="separator center"></div><!-- Separador -->
-                <h3 class="cy-title center "> Se dice de mi</h3>
-                <p class="cy-text center">
-                    Conoce de primera mano los testimonios de las personas mas allegadas a m&iacute;.
-                </p>
-            </div>
-            <div class="cy-col-12 ">
-                <!-- TODO inicio -->
-                <div class="slideshow">
-
-                    <input id="button-1" type="radio" name="radio-set" class="selector-1"  />
-                    <label for="button-1" class="button-label-1"></label>
-
-                    <input id="button-2" type="radio" name="radio-set" class="selector-2" />
-                    <label for="button-2" class="button-label-2"></label>
-
-                    <input id="button-3" type="radio" name="radio-set" class="selector-3" checked="checked"/>
-                    <label for="button-3" class="button-label-3"></label>
-
-                    <input id="button-4" type="radio" name="radio-set" class="selector-4" />
-                    <label for="button-4" class="button-label-4"></label>
-
-                    <input id="button-5" type="radio" name="radio-set" class="selector-5" />
-                    <label for="button-5" class="button-label-5"></label>
-
-                    <label for="button-1" class="arrow a1"></label>
-                    <label for="button-2" class="arrow a2"></label>
-                    <label for="button-3" class="arrow a3"></label>
-                    <label for="button-4" class="arrow a4"></label>
-                    <label for="button-5" class="arrow a5"></label>
-
-                    <div class="content">
-                        <div class="parallax-bg"></div>
-                        <ul class="slider">
-                            <li>
-                                <div class="slider-content">
-                                    <div class="cy-testimonial-card">
-                                        <img  class="cy-testimonial-image" src="assets/img/testimonial-image.png" alt="image"/>
-                                        <span class="cy-testimonial-name">Skarllette Yasm&iacute;n</span>
-                                        <span class="cy-testimonial-network">@snunez</span>
-                                        <span >"</span>
-                                        <p class="cy-testimonial-credit">Charlies es una persona muy servicial, amable, muy responsable tanto en el &aacute;mbito personal como profesional, con amplio conocimiento en el área tecnol&oacute;gica, sus diversos proyectos lo avalan. Excelente para enfrentar proyectos individuales o en Equipo su esp&iacute;ritu colaborador se refleja siempre. <br>&Eacute;xitos siempre Ing. Charlies</p>
-                                        <span>"</span>
-                                    </div>
-                                    <p id="slider-1-content"></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-content">
-                                    <div class="cy-testimonial-card">
-                                        <img  class="cy-testimonial-image" src="assets/img/testimonial-image.png" alt="image"/>
-                                        <span class="cy-testimonial-name">Skarllette Yasm&iacute;n</span>
-                                        <span class="cy-testimonial-network">@snunez</span>
-                                        <span >"</span>
-                                        <p class="cy-testimonial-credit">Charlies es una persona muy servicial, amable, muy responsable tanto en el &aacute;mbito personal como profesional, con amplio conocimiento en el área tecnol&oacute;gica, sus diversos proyectos lo avalan. Excelente para enfrentar proyectos individuales o en Equipo su esp&iacute;ritu colaborador se refleja siempre. <br>&Eacute;xitos siempre Ing. Charlies</p>
-                                        <span>"</span>
-                                    </div>
-                                    <p id="slider-2-content"></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-content">
-                                    <div class="cy-testimonial-card">
-                                        <img  class="cy-testimonial-image" src="assets/img/testimonial-image.png" alt="image"/>
-                                        <span class="cy-testimonial-name">Skarllette Yasm&iacute;n</span>
-                                        <span class="cy-testimonial-network">@snunez</span>
-                                        <span >"</span>
-                                        <p class="cy-testimonial-credit">Charlies es una persona muy servicial, amable, muy responsable tanto en el &aacute;mbito personal como profesional, con amplio conocimiento en el área tecnol&oacute;gica, sus diversos proyectos lo avalan. Excelente para enfrentar proyectos individuales o en Equipo su esp&iacute;ritu colaborador se refleja siempre. <br>&Eacute;xitos siempre Ing. Charlies</p>
-                                        <span>"</span>
-                                    </div>
-                                    <p id="slider-3-content"></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-content">
-                                    <div class="cy-testimonial-card">
-                                        <img  class="cy-testimonial-image" src="assets/img/testimonial-image.png" alt="image"/>
-                                        <span class="cy-testimonial-name">Skarllette Yasm&iacute;n</span>
-                                        <span class="cy-testimonial-network">@snunez</span>
-                                        <span >"</span>
-                                        <p class="cy-testimonial-credit">Charlies es una persona muy servicial, amable, muy responsable tanto en el &aacute;mbito personal como profesional, con amplio conocimiento en el área tecnol&oacute;gica, sus diversos proyectos lo avalan. Excelente para enfrentar proyectos individuales o en Equipo su esp&iacute;ritu colaborador se refleja siempre. <br>&Eacute;xitos siempre Ing. Charlies</p>
-                                        <span>"</span>
-                                    </div>
-                                    <p id="slider-4-content"></p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="slider-content">
-                                    <div class="cy-testimonial-card">
-                                        <img  class="cy-testimonial-image" src="assets/img/testimonial-image.png" alt="image"/>
-                                        <span class="cy-testimonial-name">Skarllette Yasm&iacute;n</span>
-                                        <span class="cy-testimonial-network">@snunez</span>
-                                        <span >"</span>
-                                        <p class="cy-testimonial-credit">Charlies es una persona muy servicial, amable, muy responsable tanto en el &aacute;mbito personal como profesional, con amplio conocimiento en el área tecnol&oacute;gica, sus diversos proyectos lo avalan. Excelente para enfrentar proyectos individuales o en Equipo su esp&iacute;ritu colaborador se refleja siempre. <br>&Eacute;xitos siempre Ing. Charlies</p>
-                                        <span>"</span>
-                                    </div>
-                                    <p id="slider-5-content"></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div><!-- content -->
-
-                </div><!-- slideshow -->
-                <!-- TODO fin -->
-            </div><!-- cy-row -->
-
-            <div class="cy-col-12">
-                <div class="cy-container-contac-me center-flex flex-colunm">
-                    <div class="cy-text padding-top-10">Tienes algun proyecto en mente?</div>
-                    <div class="cy-title center padding-top-10">Estoy disponible para trabajar independientemente</div>
-                    <br>
-                    <a class="cy-btn cy-btn-primary" href="#">Cont&aacute;ctame</a>
                 </div>
-            </div>
-        </div>
-        <!--  -->
-        <div class="cy-row" id="blog">
-            <div class="cy-col-12">
-              <div class="separator center"></div><!-- Separador -->
-                <h3 class="cy-title center"> Blog</h3>
-                <p class="cy-text center">
-                    Conoce las ultimas noticias publicadas en el blog, en el encontrar&aacute;s noticias de ultimo momento relacionadas con la tecnolog&iacute;a
-                </p>
-            </div>
-        </div>
-        <div class="cy-row">
-            <div class="cy-col-4">
-                <div class="card-blog">
-                  <img class="card-image-blog" src="assets/img/foto1.jpg" alt="image"/>
-                  <div class="container-item">
-                      <div class="card-date-blog">18 de Octubre de 1993</div>
-                      <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
-                      <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
-                      <a class="card-read-more-blog button more" href="#">Leer mas</a>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-6@xs col-8@sm col-6@md picture-item picture-item--overlay"
+              data-groups='["space","nature"]'
+              data-date-created="2016-06-29"
+              data-title="Milky Way"
+            >
+              <div class="picture-item__inner">
+                <img src="assets/img/foto1.jpg" alt="foto 1" />
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#-a8g9aA" target="_blank" rel="noopener"
+                      >Milky Way</a
+                    >
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">space, nature</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-6@xs col-8@sm col-6@md picture-item picture-item--h2"
+              data-groups='["space"]'
+              data-date-created="2015-11-06"
+              data-title="Earth"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto2.jpg" alt="foto 2" />
                   </div>
                 </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">Earth</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">space</p>
+                </div>
+                <p class="picture-item__description">
+                  NASA Satellite view of Earth
+                </p>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2"
+              data-groups='["animal"]'
+              data-date-created="2015-07-23"
+              data-title="Turtle"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto3.jpg" alt="foto 3" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#-2p8fapOA8" target="_blank" rel="noopener"
+                      >Turtle</a
+                    >
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">animal</p>
+                </div>
+                <p class="picture-item__description">
+                  A close up of a turtle underwater
+                </p>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["nature"]'
+              data-date-created="2014-10-12"
+              data-title="Stanley Park"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto4.jpg" alt="foto 4" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#-yEdfrvQ50" target="_blank" rel="noopener"
+                      >Stanley Park</a
+                    >
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">nature</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["animal"]'
+              data-date-created="2017-01-12"
+              data-title="Astronaut Cat"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto5.jpg" alt="foto 5" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">Astronaut Cat</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">animal</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-8@sm col-6@md picture-item picture-item--overlay"
+              data-groups='["city"]'
+              data-date-created="2017-01-19"
+              data-title="San Francisco"
+            >
+              <div class="picture-item__inner">
+                <img src="assets/img/foto6.png" alt="foto 6" />
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">San Francisco</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">city</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <figure
+              class="col-3@xs col-4@sm col-3@md picture-item"
+              data-groups='["nature","city"]'
+              data-date-created="2015-10-20"
+              data-title="Central Park"
+            >
+              <div class="picture-item__inner">
+                <div class="aspect aspect--16x9">
+                  <div class="aspect__inner">
+                    <img src="assets/img/foto1.jpg" alt="foto 1" />
+                  </div>
+                </div>
+                <div class="picture-item__details">
+                  <figcaption class="picture-item__title">
+                    <a href="#" target="_blank" rel="noopener">Central Park</a>
+                  </figcaption>
+                  <p class="picture-item__tags hidden@xs">nature, city</p>
+                </div>
+              </div>
+            </figure>
+            <!--  -->
+            <div class="col-1@sm col-1@xs my-sizer-element"></div>
+          </div>
+        </div>
+        <!-- TODO fin portafolio -->
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row" id="testimonials">
+      <div class="cy-col-12">
+        <div class="separator center"></div>
+        <!-- Separador -->
+        <h3 class="cy-title center">Se dice de mi</h3>
+        <p class="cy-text center">
+          Conoce de primera mano los testimonios de las personas mas allegadas a
+          m&iacute;.
+        </p>
+      </div>
+      <div class="cy-col-12">
+        <!-- TODO inicio -->
+        <div class="slideshow">
+          <input
+            id="button-1"
+            type="radio"
+            name="radio-set"
+            class="selector-1"
+          />
+          <label for="button-1" class="button-label-1"></label>
+
+          <input
+            id="button-2"
+            type="radio"
+            name="radio-set"
+            class="selector-2"
+          />
+          <label for="button-2" class="button-label-2"></label>
+
+          <input
+            id="button-3"
+            type="radio"
+            name="radio-set"
+            class="selector-3"
+            checked="checked"
+          />
+          <label for="button-3" class="button-label-3"></label>
+
+          <input
+            id="button-4"
+            type="radio"
+            name="radio-set"
+            class="selector-4"
+          />
+          <label for="button-4" class="button-label-4"></label>
+
+          <input
+            id="button-5"
+            type="radio"
+            name="radio-set"
+            class="selector-5"
+          />
+          <label for="button-5" class="button-label-5"></label>
+
+          <label for="button-1" class="arrow a1"></label>
+          <label for="button-2" class="arrow a2"></label>
+          <label for="button-3" class="arrow a3"></label>
+          <label for="button-4" class="arrow a4"></label>
+          <label for="button-5" class="arrow a5"></label>
+
+          <div class="content">
+            <div class="parallax-bg"></div>
+            <ul class="slider">
+              <li>
+                <div class="slider-content">
+                  <div class="cy-testimonial-card">
+                    <img
+                      class="cy-testimonial-image"
+                      src="assets/img/testimonial-image.png"
+                      alt="image"
+                    />
+                    <span class="cy-testimonial-name"
+                      >Skarllette Yasm&iacute;n</span
+                    >
+                    <span class="cy-testimonial-network">@snunez</span>
+                    <span>"</span>
+                    <p class="cy-testimonial-credit">
+                      Charlies es una persona muy servicial, amable, muy
+                      responsable tanto en el &aacute;mbito personal como
+                      profesional, con amplio conocimiento en el área
+                      tecnol&oacute;gica, sus diversos proyectos lo avalan.
+                      Excelente para enfrentar proyectos individuales o en
+                      Equipo su esp&iacute;ritu colaborador se refleja siempre.
+                      <br />&Eacute;xitos siempre Ing. Charlies
+                    </p>
+                    <span>"</span>
+                  </div>
+                  <p id="slider-1-content"></p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-content">
+                  <div class="cy-testimonial-card">
+                    <img
+                      class="cy-testimonial-image"
+                      src="assets/img/testimonial-image.png"
+                      alt="image"
+                    />
+                    <span class="cy-testimonial-name"
+                      >Skarllette Yasm&iacute;n</span
+                    >
+                    <span class="cy-testimonial-network">@snunez</span>
+                    <span>"</span>
+                    <p class="cy-testimonial-credit">
+                      Charlies es una persona muy servicial, amable, muy
+                      responsable tanto en el &aacute;mbito personal como
+                      profesional, con amplio conocimiento en el área
+                      tecnol&oacute;gica, sus diversos proyectos lo avalan.
+                      Excelente para enfrentar proyectos individuales o en
+                      Equipo su esp&iacute;ritu colaborador se refleja siempre.
+                      <br />&Eacute;xitos siempre Ing. Charlies
+                    </p>
+                    <span>"</span>
+                  </div>
+                  <p id="slider-2-content"></p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-content">
+                  <div class="cy-testimonial-card">
+                    <img
+                      class="cy-testimonial-image"
+                      src="assets/img/testimonial-image.png"
+                      alt="image"
+                    />
+                    <span class="cy-testimonial-name"
+                      >Skarllette Yasm&iacute;n</span
+                    >
+                    <span class="cy-testimonial-network">@snunez</span>
+                    <span>"</span>
+                    <p class="cy-testimonial-credit">
+                      Charlies es una persona muy servicial, amable, muy
+                      responsable tanto en el &aacute;mbito personal como
+                      profesional, con amplio conocimiento en el área
+                      tecnol&oacute;gica, sus diversos proyectos lo avalan.
+                      Excelente para enfrentar proyectos individuales o en
+                      Equipo su esp&iacute;ritu colaborador se refleja siempre.
+                      <br />&Eacute;xitos siempre Ing. Charlies
+                    </p>
+                    <span>"</span>
+                  </div>
+                  <p id="slider-3-content"></p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-content">
+                  <div class="cy-testimonial-card">
+                    <img
+                      class="cy-testimonial-image"
+                      src="assets/img/testimonial-image.png"
+                      alt="image"
+                    />
+                    <span class="cy-testimonial-name"
+                      >Skarllette Yasm&iacute;n</span
+                    >
+                    <span class="cy-testimonial-network">@snunez</span>
+                    <span>"</span>
+                    <p class="cy-testimonial-credit">
+                      Charlies es una persona muy servicial, amable, muy
+                      responsable tanto en el &aacute;mbito personal como
+                      profesional, con amplio conocimiento en el área
+                      tecnol&oacute;gica, sus diversos proyectos lo avalan.
+                      Excelente para enfrentar proyectos individuales o en
+                      Equipo su esp&iacute;ritu colaborador se refleja siempre.
+                      <br />&Eacute;xitos siempre Ing. Charlies
+                    </p>
+                    <span>"</span>
+                  </div>
+                  <p id="slider-4-content"></p>
+                </div>
+              </li>
+              <li>
+                <div class="slider-content">
+                  <div class="cy-testimonial-card">
+                    <img
+                      class="cy-testimonial-image"
+                      src="assets/img/testimonial-image.png"
+                      alt="image"
+                    />
+                    <span class="cy-testimonial-name"
+                      >Skarllette Yasm&iacute;n</span
+                    >
+                    <span class="cy-testimonial-network">@snunez</span>
+                    <span>"</span>
+                    <p class="cy-testimonial-credit">
+                      Charlies es una persona muy servicial, amable, muy
+                      responsable tanto en el &aacute;mbito personal como
+                      profesional, con amplio conocimiento en el área
+                      tecnol&oacute;gica, sus diversos proyectos lo avalan.
+                      Excelente para enfrentar proyectos individuales o en
+                      Equipo su esp&iacute;ritu colaborador se refleja siempre.
+                      <br />&Eacute;xitos siempre Ing. Charlies
+                    </p>
+                    <span>"</span>
+                  </div>
+                  <p id="slider-5-content"></p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- content -->
+        </div>
+        <!-- slideshow -->
+        <!-- TODO fin -->
+      </div>
+      <!-- cy-row -->
+
+      <div class="cy-col-12">
+        <div class="cy-container-contac-me center-flex flex-colunm">
+          <div class="cy-text padding-top-10">
+            Tienes algun proyecto en mente?
+          </div>
+          <div class="cy-title center padding-top-10">
+            Estoy disponible para trabajar independientemente
+          </div>
+          <br />
+          <a class="cy-btn cy-btn-primary" href="#">Cont&aacute;ctame</a>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="cy-row" id="blog">
+      <div class="cy-col-12">
+        <div class="separator center"></div>
+        <!-- Separador -->
+        <h3 class="cy-title center">Blog</h3>
+        <p class="cy-text center">
+          Conoce las ultimas noticias publicadas en el blog, en el
+          encontrar&aacute;s noticias de ultimo momento relacionadas con la
+          tecnolog&iacute;a
+        </p>
+      </div>
+    </div>
+    <div class="cy-row">
+      <div class="cy-col-4">
+        <div class="card-blog">
+          <img class="card-image-blog" src="assets/img/foto1.jpg" alt="image" />
+          <div class="container-item">
+            <div class="card-date-blog">18 de Octubre de 1993</div>
+            <div class="card-title-blog cy-color-secondary">
+              Lorem ipsum dolor sit amet consectetur,
+            </div>
+            <p class="card-description-blog">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Accusamus, temporibus! Cupiditate exercitationem error
+            </p>
+            <a class="card-read-more-blog button more" href="#">Leer mas</a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="cy-col-4">
+        <div class="card-blog">
+          <img class="card-image-blog" src="assets/img/foto2.jpg" alt="image" />
+          <div class="container-item">
+            <div class="card-date-blog">18 de Octubre de 1993</div>
+            <div class="card-title-blog cy-color-secondary">
+              Lorem ipsum dolor sit amet consectetur,
+            </div>
+            <p class="card-description-blog">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Accusamus, temporibus! Cupiditate exercitationem error
+            </p>
+            <a class="card-read-more-blog button more" href="#">Leer mas</a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="cy-col-4">
+        <div class="card-blog">
+          <img class="card-image-blog" src="assets/img/foto3.jpg" alt="image" />
+          <div class="container-item">
+            <div class="card-date-blog">18 de Octubre de 1993</div>
+            <div class="card-title-blog cy-color-secondary">
+              Lorem ipsum dolor sit amet consectetur,
+            </div>
+            <p class="card-description-blog">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+              Accusamus, temporibus! Cupiditate exercitationem error
+            </p>
+            <a class="card-read-more-blog button more" href="#">Leer mas</a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+    <!-- fin row -->
+    <!-- inicio row -->
+    <div class="cy-row">
+      <div class="cy-col-4"></div>
+      <div class="cy-col-4 cs-col-12-sm">
+        <a class="cy-btn cy-btn-tertiary cy-btn-block" href="#">Ir al blog</a>
+      </div>
+      <div class="cy-col-4"></div>
+    </div>
+  </div>
+  <!-- fin cy-container -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="cy-container">
+      <div class="cy-row" id="contac-me">
+        <div class="cy-col-6 cy-col-12-sm">
+          <h3 class="cy-title-footer">Contacto</h3>
+          <p class="cy-text-footer">
+            Toma algo de tiempo ,escribe e inmediatamente estar&eacute; en
+            contacto contigo.
+          </p>
+          <div class="contact-container">
+            <div class="contact-item">
+              <div class="contact-icon center-flex">
+                <img src="assets/img/phone.svg" alt="contact-icon" />
+              </div>
+              <div class="contac-tag">
+                <div class="contact-tag-name">Celular</div>
+                <div class="contact-tag-value">+504 9578-2412</div>
+              </div>
             </div>
             <!--  -->
-            <div class="cy-col-4">
-              <div class="card-blog ">
-                <img class="card-image-blog" src="assets/img/foto2.jpg" alt="image"/>
-                <div class="container-item">
-                    <div class="card-date-blog">18 de Octubre de 1993</div>
-                    <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
-                    <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
-                    <a class="card-read-more-blog button more" href="#">Leer mas</a>
-                </div>
+            <div class="contact-item">
+              <div class="contact-icon center-flex">
+                <img src="assets/img/email.svg" alt="contact-icon" />
               </div>
-          </div>
-          <!--  -->
-          <div class="cy-col-4">
-            <div class="card-blog">
-              <img class="card-image-blog" src="assets/img/foto3.jpg" alt="image"/>
-              <div class="container-item">
-                  <div class="card-date-blog">18 de Octubre de 1993</div>
-                  <div class="card-title-blog cy-color-secondary">Lorem ipsum dolor sit amet consectetur,</div>
-                  <p class="card-description-blog">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, temporibus! Cupiditate exercitationem error </p>
-                  <a class="card-read-more-blog button more" href="#">Leer mas</a>
+              <div class="contac-tag">
+                <div class="contact-tag-name">E-mail</div>
+                <div class="contact-tag-value">holamundo@charlyes.com</div>
               </div>
             </div>
+            <!--  -->
+            <div class="contact-item">
+              <div class="contact-icon center-flex">
+                <img src="assets/img/location.svg" alt="contact-icon" />
+              </div>
+              <div class="contac-tag">
+                <div class="contact-tag-name">Domicilio</div>
+                <div class="contact-tag-value">
+                  Tegucigalpa M.D.C. Francisco Moraz&aacute;n, Honduras.
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <div class="">
+              <h3 class="cy-title center">Encu&eacute;ntrame</h3>
+              <div class="center-flex">
+                <span class="network-icon">
+                  <!-- <img src="assets/img/email.svg" alt="network-icon"> -->
+                  <i
+                    class="cy cy-facebook-square cy-2x cy-color-green-primary"
+                  ></i>
+                </span>
+                <span class="network-icon">
+                  <i class="cy cy-linkedin cy-2x cy-color-green-primary"></i>
+                </span>
+                <span class="network-icon">
+                  <i class="cy cy-github cy-2x cy-color-green-primary"></i>
+                </span>
+                <span class="network-icon">
+                  <i class="cy cy-instagram cy-2x cy-color-green-primary"></i>
+                </span>
+                <span class="network-icon">
+                  <i class="cy cy-tweter cy-2x cy-color-green-primary"></i>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
         <!--  -->
-      </div>
-      <!-- fin row -->
-      <!-- inicio row -->
-      <div class="cy-row">
-          <div class="cy-col-4"></div>
-          <div class="cy-col-4 cs-col-12-sm">
-              <a class="cy-btn cy-btn-tertiary cy-btn-block" href="#">Ir al blog</a>
-          </div>
-          <div class="cy-col-4"></div>
-      </div>
-      </div>
-      <!-- fin cy-container -->
-      <!-- Footer -->
-      <footer class="footer">
-       <div class="cy-container">
-           <div class="cy-row" id="contac-me">
-             <div class="cy-col-6 cy-col-12-sm">
-                 <h3 class="cy-title-footer ">Contacto</h3>
-                 <p class="cy-text-footer ">
-                     Toma algo de tiempo ,escribe e inmediatamente estar&eacute; en contacto contigo.
-                 </p>
-                 <div class="contact-container">
-                     <div class="contact-item">
-                         <div class="contact-icon center-flex">
-                             <img src="assets/img/phone.svg" alt="contact-icon">
-                         </div>
-                         <div class="contac-tag">
-                             <div class="contact-tag-name">Celular</div>
-                             <div class="contact-tag-value">+504 9578-2412</div>
-                         </div>
-                     </div>
-                     <!--  -->
-                     <div class="contact-item">
-                        <div class="contact-icon center-flex">
-                            <img src="assets/img/email.svg" alt="contact-icon">
-                        </div>
-                        <div class="contac-tag">
-                            <div class="contact-tag-name">E-mail</div>
-                            <div class="contact-tag-value">holamundo@charlyes.com</div>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="contact-item">
-                        <div class="contact-icon center-flex">
-                            <img src="assets/img/location.svg" alt="contact-icon">
-                        </div>
-                        <div class="contac-tag">
-                            <div class="contact-tag-name">Domicilio</div>
-                            <div class="contact-tag-value">Tegucigalpa M.D.C. Francisco Moraz&aacute;n, Honduras.</div>
-                        </div>
-                    </div>
-                    <!--  -->
-                    <div class="">
-                            <h3 class="cy-title center">Encu&eacute;ntrame</h3>
-                            <div class="center-flex">
-                                <span class="network-icon">
-                                  <!-- <img src="assets/img/email.svg" alt="network-icon"> -->
-                                  <i class="cy cy-facebook-square cy-2x cy-color-green-primary"></i>
-                                </span>
-                                <span class="network-icon">
-                                  <i class="cy cy-linkedin cy-2x cy-color-green-primary"></i>
-                                </span>
-                                <span class="network-icon">
-                                  <i class="cy cy-github cy-2x cy-color-green-primary"></i>
-                                </span>
-                                <span class="network-icon">
-                                  <i class="cy cy-instagram cy-2x cy-color-green-primary"></i>
-                                </span>
-                                <span class="network-icon">
-                                  <i class="cy cy-tweter cy-2x cy-color-green-primary"></i>
-                                </span>
-                            </div>
-                    </div>
-                 </div>
-             </div>
-             <!--  -->
-             <div class="cy-col-6 cy-col-12-sm">
-                 <h3 class="cy-title ">Escribeme</h3>
+        <div class="cy-col-6 cy-col-12-sm">
+          <h3 class="cy-title">Escribeme</h3>
 
-                 <form action="" class="cy-form" method="post">
-                     <!-- <div class="cy-form-group"> -->
-                      <div class="cy-form-group">
-                            <div class="cy-form-row " >
-                                <label for="name">Nombre</label>
-                                <input  class="cy-form-control" type="text" name="name" id="name" placeholder="Escribe tu nombre">
-                            </div>
-                            <div class="cy-form-row">
-                                <label for="email">Email</label>
-                                <input class="cy-form-control" type="email" name="email" id="email" placeholder="ej: holamundo@charlyes.com">
-                            </div>
-                        </div>
-                        <div class="cy-form-row">
-                            <label for="phone">Tel&eacute;fono</label>
-                            <input class="cy-form-control" type="number" name="phone" id="phone" placeholder="Deja tu numero de telefono">
-                        </div>
-                        <div class="cy-form-row">
-                            <label for="pre">Presupuesto</label>
-                            <input class="cy-form-control" type="number" name="pre" id="pre" placeholder="Indica presupuesto">
-                        </div>
-                        <div class="cy-form-row">
-                            <label for="message">Mensaje</label>
-                            <textarea class="cy-form-control" name="message" id="message" cols="10" rows="5" placeholder="Escribeme tu mensaje"></textarea>
-                        </div>
-                        <div class="cy-form-row">
-                            <input class="cy-btn cy-btn-tertiary cy-btn-block " type="submit" value="Enviar">
-                        </div>
-                        <div class="cy-form-row">
-                            <div class="center-flex">
-                                <img src="assets/img/logo-cy.svg" alt="Logo CY">
-                            </div>
-                        </div>
-                     <!-- </div> -->
-                 </form>
-                </div>
-                <p class="cy-copyright center">Copyright ©2020 CharliesYacniel. Todos los derechos reservados</p>
-           </div>
-       </div>
-      </footer>
+          <form action="" class="cy-form" method="post">
+            <!-- <div class="cy-form-group"> -->
+            <div class="cy-form-group">
+              <div class="cy-form-row">
+                <label for="name">Nombre</label>
+                <input
+                  class="cy-form-control"
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Escribe tu nombre"
+                />
+              </div>
+              <div class="cy-form-row">
+                <label for="email">Email</label>
+                <input
+                  class="cy-form-control"
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="ej: holamundo@charlyes.com"
+                />
+              </div>
+            </div>
+            <div class="cy-form-row">
+              <label for="phone">Tel&eacute;fono</label>
+              <input
+                class="cy-form-control"
+                type="number"
+                name="phone"
+                id="phone"
+                placeholder="Deja tu numero de telefono"
+              />
+            </div>
+            <div class="cy-form-row">
+              <label for="pre">Presupuesto</label>
+              <input
+                class="cy-form-control"
+                type="number"
+                name="pre"
+                id="pre"
+                placeholder="Indica presupuesto"
+              />
+            </div>
+            <div class="cy-form-row">
+              <label for="message">Mensaje</label>
+              <textarea
+                class="cy-form-control"
+                name="message"
+                id="message"
+                cols="10"
+                rows="5"
+                placeholder="Escribeme tu mensaje"
+              ></textarea>
+            </div>
+            <div class="cy-form-row">
+              <input
+                class="cy-btn cy-btn-tertiary cy-btn-block"
+                type="submit"
+                value="Enviar"
+              />
+            </div>
+            <div class="cy-form-row">
+              <div class="center-flex">
+                <img src="assets/img/logo-cy.svg" alt="Logo CY" />
+              </div>
+            </div>
+            <!-- </div> -->
+          </form>
+        </div>
+        <p class="cy-copyright center">
+          Copyright ©2020 CharliesYacniel. Todos los derechos reservados
+        </p>
+      </div>
+    </div>
+  </footer>
 </div>
 <!-- fin main-container -->
+
+<!-- TODO incio codigo modal -->
+<div id="cy-modal-article" class="cy-modal">
+  <div class="cy-container-close">
+    <a href="#portfolio" (click)="onCloseModal($event)" class="cy-modal__close">&times;</a>
+  </div>
+  <div class="cy-modal__block">
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+  </div>
+</div>
+<!-- TODO fin codigo modal -->
+
+
 

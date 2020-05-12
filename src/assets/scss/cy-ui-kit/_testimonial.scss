@@ -1,308 +1,318 @@
 .title {
-	margin: 2em 0 0;
-	text-align: center;
+  margin: 2em 0 0;
+  text-align: center;
 }
 .title h4 {
-	font-size: 1.8em;
+  font-size: 1.8em;
 }
 .slideshow {
-    margin: 0;
-    max-width: 1000px;
-    min-width: 260px;
+  margin: 0;
+  max-width: 1000px;
+  min-width: 260px;
+  position: relative;
+  width: fit-content;
+  min-height: 300px;
+  height: 380px;
+  padding-top: 50px;
+  & .content {
+    height: 100%;
+    width: 100%;
+    // overflow: hidden;//TODO si habilito esto puedo dejar de ver los comentrioa ala par
     position: relative;
-	width: fit-content;
-	min-height: 300px;
-	height: 350px;
-	padding-top: 50px;
-   & .content {
-		height: 100%;
-		width: 100%;
-		// overflow: hidden;// si habilito esto puedo dejar de ver los comentrioa ala par
-		position: relative;
 
-		& .cy-testimonial-image{
-			position: absolute;
-			top: -50px;
-			width: 100px;
-			height: 100px;
-			border-radius: $cy-border-radius-circle;
-		}
-		& .cy-testimonial-card{
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			border-radius: 5px;
-			padding-top: 50px;
-			margin-left: 10px;
-			margin-right: 10px;
-			height: 210px;
-		}
+    & .cy-testimonial-image {
+      position: absolute;
+      top: -50px;
+      width: 100px;
+      height: 100px;
+      border-radius: $cy-border-radius-circle;
+    }
+    & .cy-testimonial-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 5px;
+      padding-top: 50px;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 210px;
+    }
 
-		& .cy-testimonial-name{
-			color: $cy-green-primary;
-		}
-		& .cy-testimonial-name{
-			color: $cy-green-primary;
-		}
-		& .cy-testimonial-network{
-			color: $cy-green-secondary;
-		}
-		& .cy-testimonial-credit{
-			color: $cy-green-primary;
-			margin: 0 auto;
-			padding: 0 20px;
-			text-align: justify;
-			font-size: 12px;
-		}
-	}
-	& input {
-		    bottom: 5px;
-		    cursor: pointer;
-		    height: 9px;
-		    left: 50%;
-		    opacity: 0;
-		    position: absolute;
-		    width: 9px;
-		    z-index: 1001;
-		}
-	& input + label {
-		border: 1px solid $cy-green-primary;
-		-webkit-border-radius: 50%;
-		-moz-border-radius: 50%;
-		border-radius: 50%;
-		bottom: 5px;
-		display: block;
-		height: 10px;
-		left: 50%;
-		position: absolute;
-		-webkit-transition: background-color linear 0.1s;
-		-moz-transition: background-color linear 0.1s;
-		transition: background-color linear 0.1s;
-		width: 10px;
-		z-index: 9;
-	}
-	& input:checked + label {
-		background-color: $cy-green-primary;
-	}
+    & .cy-testimonial-name {
+      color: $cy-green-primary;
+    }
+    & .cy-testimonial-name {
+      color: $cy-green-primary;
+    }
+    & .cy-testimonial-network {
+      color: $cy-green-secondary;
+    }
+    & .cy-testimonial-credit {
+      color: $cy-green-primary;
+      margin: 0 auto;
+      padding: 0 20px;
+      text-align: justify;
+      font-size: 12px;
+    }
+  }
+  & input {
+    bottom: 5px;
+    cursor: pointer;
+    height: 9px;
+    left: 50%;
+    opacity: 0;
+    position: absolute;
+    width: 9px;
+    z-index: 1001;
+  }
+  & input + label {
+    border: 1px solid $cy-green-primary;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    bottom: 5px;
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    -webkit-transition: background-color linear 0.1s;
+    -moz-transition: background-color linear 0.1s;
+    transition: background-color linear 0.1s;
+    width: 10px;
+    z-index: 9;
+  }
+  & input:checked + label {
+    background-color: $cy-green-primary;
+  }
 }
 .parallax-bg {
-    background: url('../../../assets/img/bakgroundCY.png') repeat scroll 0 0;
-    background-size: cover;
-    opacity: .1;
-    filter: alpha(opacity=10);
-    left: 0;
-    height: 100%;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
+  background: url("../../../assets/img/bakgroundCY.png") repeat scroll 0 0;
+  background-size: cover;
+  opacity: 0.1;
+  filter: alpha(opacity=10);
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
-.selector-1, .button-label-1 {
-    margin-left: -36px;
+@media  only screen and (min-width: 767px) {
+  .slideshow {
+    height: 350px;
+  }
+
 }
-.selector-2, .button-label-2 {
-    margin-left: -18px;
+
+
+.selector-1,
+.button-label-1 {
+  margin-left: -36px;
 }
-.selector-4, .button-label-4 {
-    margin-left: 18px;
+.selector-2,
+.button-label-2 {
+  margin-left: -18px;
 }
-.selector-5, .button-label-5 {
-    margin-left: 36px;
+.selector-4,
+.button-label-4 {
+  margin-left: 18px;
+}
+.selector-5,
+.button-label-5 {
+  margin-left: 36px;
 }
 
 .arrow {
-    background: transparent url('../../../assets/img/arrows2.png') no-repeat;
-    cursor: pointer;
-    display: none;
-    // height: 38px;
-	// margin-top: -19px;
-	height: 65px;
-    margin-top: -50px;
-    opacity: .2;
-	position: absolute;
-	transform: scale(1);
-    top: 50%;
-    -webkit-transition: opacity linear 0.3s;
-    -moz-transition: opacity linear 0.3s;
-    transition: all linear 0.3s;
-    width: 28px;
-	z-index: 998;
-	&:hover{
-		// color: $cy-green-primary;
-		opacity: 1;
-		transform: scale(1.1);
-	}
-	&:active{
-		// color: $cy-green-tertiary;
-		margin-top: -18px;
-	}
+  background: transparent url("../../../assets/img/arrows2.png") no-repeat;
+  cursor: pointer;
+  display: none;
+  // height: 38px;
+  // margin-top: -19px;
+  height: 65px;
+  margin-top: -50px;
+  opacity: 0.2;
+  position: absolute;
+  transform: scale(1);
+  top: 50%;
+  -webkit-transition: opacity linear 0.3s;
+  -moz-transition: opacity linear 0.3s;
+  transition: all linear 0.3s;
+  width: 28px;
+  z-index: 998;
+  &:hover {
+    // color: $cy-green-primary;
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  &:active {
+    // color: $cy-green-tertiary;
+    margin-top: -18px;
+  }
 }
-
 
 .selector-1:checked ~ .arrow.a2,
 .selector-2:checked ~ .arrow.a3,
 .selector-3:checked ~ .arrow.a4,
 .selector-4:checked ~ .arrow.a5 {
-	background-position: top right;
-    display: block;
-    right: -15px;
+  background-position: top right;
+  display: block;
+  right: -15px;
 }
 .selector-2:checked ~ .arrow.a1,
 .selector-3:checked ~ .arrow.a2,
 .selector-4:checked ~ .arrow.a3,
 .selector-5:checked ~ .arrow.a4 {
-	background-position: top left;
-	display: block;
-	left: -15px;
+  background-position: top left;
+  display: block;
+  left: -15px;
 }
 .slideshow input:checked ~ .content {
-    background-color: transparent;
-	-webkit-transition: background-position linear 0.6s, background-color linear 0.8s;
-	-moz-transition: background-position linear 0.6s, background-color linear 0.8s;
-	transition: background-position linear 0.6s, background-color linear 0.8s;
+  background-color: transparent;
+  -webkit-transition: background-position linear 0.6s,
+    background-color linear 0.8s;
+  -moz-transition: background-position linear 0.6s, background-color linear 0.8s;
+  transition: background-position linear 0.6s, background-color linear 0.8s;
 }
 .slideshow input:checked ~ .content .parallax-bg {
-	-webkit-transition: background-position linear 0.7s;
-	-moz-transition: background-position linear 0.7s;
-	transition: background-position linear 0.7s;
+  -webkit-transition: background-position linear 0.7s;
+  -moz-transition: background-position linear 0.7s;
+  transition: background-position linear 0.7s;
 }
 input.selector-1:checked ~ .content {
-    background-position: 0 0;
+  background-position: 0 0;
 }
 input.selector-2:checked ~ .content {
-    background-position: -100px 0;
+  background-position: -100px 0;
 }
 input.selector-3:checked ~ .content {
-    background-position: -200px 0;
+  background-position: -200px 0;
 }
 input.selector-4:checked ~ .content {
-    background-position: -300px 0;
+  background-position: -300px 0;
 }
 input.selector-5:checked ~ .content {
-    background-position: -400px 0;
+  background-position: -400px 0;
 }
 input.selector-1:checked ~ .content .parallax-bg {
-	background-position: 0 0;
+  background-position: 0 0;
 }
 input.selector-2:checked ~ .content .parallax-bg {
-	background-position: -200px 0;
+  background-position: -200px 0;
 }
 input.selector-3:checked ~ .content .parallax-bg {
-	background-position: -400px 0;
+  background-position: -400px 0;
 }
 input.selector-4:checked ~ .content .parallax-bg {
-	background-position: -600px 0;
+  background-position: -600px 0;
 }
 input.selector-5:checked ~ .content .parallax-bg {
-    background-position: -800px 0;
+  background-position: -800px 0;
 }
 .slider {
+  height: 100%;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-transition: left ease-in 0.8s;
+  -moz-transition: left ease-in 0.8s;
+  transition: left ease-in 0.8s;
+  width: 500%;
+  & > li {
+    &:nth-child(n) .slider-content .cy-testimonial-card {
+      background-color: $cy-green-tertiary;
+      & .cy-testimonial-credit {
+        color: $cy-white;
+      }
+    }
+    &:nth-child(2n) .slider-content .cy-testimonial-card {
+      background-color: $cy-green-strong;
+      & .cy-testimonial-credit {
+        color: $cy-green-secondary;
+      }
+    }
+    box-sizing: border-box;
+    display: table;
+    float: left;
     height: 100%;
-    left: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    -webkit-transition: left ease-in 0.8s;
-    -moz-transition: left ease-in 0.8s;
-    transition: left ease-in 0.8s;
-	width: 500%;
-	& > li {
-		&:nth-child(n) .slider-content .cy-testimonial-card{
-			background-color: $cy-green-tertiary;
-			& .cy-testimonial-credit{
-				color: $cy-white;
-			}
-		}
-		&:nth-child(2n) .slider-content .cy-testimonial-card{
-			background-color: $cy-green-strong;
-			& .cy-testimonial-credit{
-				color: $cy-green-secondary;
-			}
-		}
-		box-sizing: border-box;
-		display: table;
-		float: left;
-		height: 100%;
-		opacity: 0.4;
-		-webkit-transition: opacity ease-in 0.4s 0.8s;
-		-moz-transition: opacity ease-in 0.4s 0.8s;
-		transition: opacity ease-in 0.4s 0.8s;
-		width: 20%;
-	}
-	& > li img {
-		box-sizing: border-box;
-		display: inline-block;
-		max-height: 100%;
-		max-width: 100%;
-		vertical-align: middle;
-	}
+    opacity: 0.4;
+    -webkit-transition: opacity ease-in 0.4s 0.8s;
+    -moz-transition: opacity ease-in 0.4s 0.8s;
+    transition: opacity ease-in 0.4s 0.8s;
+    width: 20%;
+  }
+  & > li img {
+    box-sizing: border-box;
+    display: inline-block;
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
 }
-
 
 input.selector-1:checked ~ .content .slider {
-    left: 0;
+  left: 0;
 }
 input.selector-2:checked ~ .content .slider {
-    left: -100%;
+  left: -100%;
 }
 input.selector-3:checked ~ .content .slider {
-    left: -200%;
+  left: -200%;
 }
 input.selector-4:checked ~ .content .slider {
-    left: -300%;
+  left: -300%;
 }
 input.selector-5:checked ~ .content .slider {
-    left: -400%;
+  left: -400%;
 }
 input.selector-1:checked ~ .content .slider > li:first-child,
 input.selector-2:checked ~ .content .slider > li:nth-child(2),
 input.selector-3:checked ~ .content .slider > li:nth-child(3),
 input.selector-4:checked ~ .content .slider > li:nth-child(4),
-input.selector-5:checked ~ .content .slider > li:nth-child(5){
-    opacity: 1;
+input.selector-5:checked ~ .content .slider > li:nth-child(5) {
+  opacity: 1;
 }
 
 /* media query*/
 @media (max-width: 680px) {
-	.slider > li > .slider-content {
-		height: 100%;
-		position: relative;
-		padding-top: 50px;
-		margin: 0 15px;
-	}
-	.slideshow {
-		& .content{
-			overflow: hidden;
-		}
-		& .cy-testimonial-image{
-			top: 0px !important;
-		}
-		& .cy-testimonial-card{
-			height: 250px !important;
-		}
-	}
+  .slider > li > .slider-content {
+    height: 100%;
+    position: relative;
+    padding-top: 50px;
+    margin: 0 15px;
+  }
+  .slideshow {
+    & .content {
+      overflow: hidden;
+    }
+    & .cy-testimonial-image {
+      top: 0px !important;
+    }
+    & .cy-testimonial-card {
+      height: 250px !important;
+    }
+  }
 }
 
-
-.cy-container-contac-me{
-	width: 100%;
-	height: 100%;
-	position: relative;
-	padding: 70px 0px;
-	&::after{
-		content: "";
-		opacity: .4;
-		z-index: -9;
-		width: inherit;
-		height: inherit;
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-image: url('../../../assets/img/cy-background-contactme.png') ;
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
+.cy-container-contac-me {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 70px 0px;
+  &::after {
+    content: "";
+    opacity: 0.4;
+    z-index: -9;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../../../assets/img/cy-background-contactme.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }

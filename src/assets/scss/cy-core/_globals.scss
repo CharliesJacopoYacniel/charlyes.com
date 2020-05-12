@@ -2,6 +2,8 @@
 
 *,::before,::after {
   box-sizing: border-box;
+  // margin: 0; //TODO NO COLOCAR
+  // padding: 0;//TODO NO COLOCAR
 }
  html {
     line-height: 1.15; /* 1 */
@@ -9,13 +11,14 @@
   }
   body {
       margin: 0;
-      font-family: Roboto-Regular, Verdana, Arial, sans-serif;
+      font-family: -apple-system, Roboto-Regular, Verdana, Arial, sans-serif;
       height: 100vh;
       width: 100vw;
       background: $cy-black-font ;
       color: $cy-white;
       overflow-x: hidden;
 
+      -webkit-overflow-scrolling: touch;
       // -webkit-font-smoothing: antialiased;
       // -moz-osx-font-smoothing: grayscale;
   }

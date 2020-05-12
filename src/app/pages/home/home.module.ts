@@ -7,17 +7,17 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 // import { ComponentsModule } from 'src/app/components/components.module';
 
 // import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @NgModule({
-  declarations: [
-     HomeComponent,
-     NavbarComponent
-    ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    // AnimateOnScrollModule.forRoot()
-    // ComponentsModule
-  ]
+	declarations: [ HomeComponent, NavbarComponent, ModalComponent ],
+	imports: [
+		CommonModule,
+		HomeRoutingModule
+
+		// ComponentsModule
+		// AnimateOnScrollModule.forRoot()
+		// ComponentsModule
+	]
 })
-export class HomeModule { }
+export class HomeModule {}
