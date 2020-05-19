@@ -139,12 +139,18 @@
     transition: all .2s ease-in;
     color: $cy-white;
     text-decoration: none;
+
     &:hover {
       color: $cy-green-secondary;
       text-decoration: none;
       border-bottom: 1px solid $cy-green-primary;
     }
-
+    &.active{
+      color: $cy-green-secondary;
+      background-color: $cy-green-tertiary;
+      text-decoration: none;
+      border-bottom: 1px solid $cy-green-primary;
+    }
     &:focus,
     &.focus {
       color: $cy-green-primary;

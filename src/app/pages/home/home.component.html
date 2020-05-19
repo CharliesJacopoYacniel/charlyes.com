@@ -1,16 +1,17 @@
 <div class="container-nav">
   <div id="menu" class="menu-responsive">
     <div class="nav-logo">
-      <img class="logo-cy" src="assets/img/logo-cy.svg" alt="Logo CY" />
-      <a class="link-logo" href="#">
+      <a class="cy-isotipo" href="#home">
+        <img  src="assets/img/logo-cy.svg" alt="Logo CY" />
+      </a>
+      <a class="cy-logotipo" href="#home">
         <img
-          class="logo-color-cy"
           src="assets/img/logo-color-cy.svg"
           alt="Logo CY"
         />
       </a>
     </div>
-    <ul class="">
+    <ul class="cy-nav-links">
       <li><a href="#home">Inicio</a></li>
       <li><a href="#about-me">Acerca de mi</a></li>
       <li><a href="#services">Servicios</a></li>
@@ -23,6 +24,11 @@
   </div>
 </div>
 <!--  -->
+
+
+
+
+
 <div class="main-container">
   <div class="cy-container">
     <!--  -->
@@ -35,21 +41,20 @@
 
       <div class="cy-col-6 cy-col-12-sm">
         <div class="dots-container">
-          <div class="hello center" (click)="changeAnimate()">Hola Soy</div>
+          <div class="hello center" >Hola Soy</div>
           <div class="charlies-yacniel center">Charlies Yacniel</div>
           <div class="profesion center">
             Desarrollador/Dise&ntilde;ador de software
           </div>
           <div class="cv center">
             <a
-              [@changeState]="currentState"
               class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10"
               href="assets/files/cy-cv.pdf"
               target="_blank"
               >Descarga mi CV</a
             >
             <a
-              [@changeState]="currentState"
+
               class="cy-btn cy-btn-fill margin-left-20 margin-bottom-10"
               href="#portfolio"
               >Portafolio</a
@@ -170,7 +175,7 @@
         <h3 class="cy-title center">( N + 1 ) Cosas sobre mi</h3>
         <!-- TODO incio -->
 
-        <div class="timeline-container" id="timeline-1">
+        <div class="timeline-container" id="mytimeline">
           <div class="timeline">
             <!--  -->
             <div class="timeline-item" data-text="Escuela">
@@ -379,7 +384,7 @@
               <div class="filters-group">
                 <div class="btn-group filter-options">
                   <!-- <div class="btn-group filter-options center-flex"> -->
-                  <button class="cy-btn-link" data-group="all">Todos</button>
+                  <button class="cy-btn-link active" data-group="all">Todos</button>
                   <button class="cy-btn-link" data-group="space">
                     Desarrollo
                   </button>
@@ -426,6 +431,7 @@
                         >
                         <a
                           href="#cy-modal-article"
+                          (click)='onOpenModal()'
                           class="button more open-popup"
                           >Leer Mas</a
                         >
@@ -459,6 +465,7 @@
                       en ...
                       <a
                         href="#cy-modal-article"
+                        (click)='onOpenModal()'
                         class="button more cy-color-strong"
                         >Leer Mas</a
                       >
@@ -490,7 +497,7 @@
             </figure>
             <!--  -->
             <figure
-              class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2"
+              class="col-3@xs col-4@sm col-3@md picture-item  picture-item--h2"
               data-groups='["space"]'
               data-date-created="2016-03-07"
               data-title="SpaceX"
@@ -556,7 +563,7 @@
             </figure>
             <!--  -->
             <figure
-              class="col-6@xs col-8@sm col-6@md picture-item picture-item--overlay"
+              class="col-6@xs col-8@sm col-6@md picture-item  picture-item--overlay"
               data-groups='["space","nature"]'
               data-date-created="2016-06-29"
               data-title="Milky Way"
@@ -575,7 +582,7 @@
             </figure>
             <!--  -->
             <figure
-              class="col-6@xs col-8@sm col-6@md picture-item picture-item--h2"
+              class="col-6@xs col-8@sm col-6@md picture-item  picture-item--h2"
               data-groups='["space"]'
               data-date-created="2015-11-06"
               data-title="Earth"
@@ -599,7 +606,7 @@
             </figure>
             <!--  -->
             <figure
-              class="col-3@xs col-4@sm col-3@md picture-item picture-item--h2"
+              class="col-3@xs col-4@sm col-3@md picture-item  picture-item--h2"
               data-groups='["animal"]'
               data-date-created="2015-07-23"
               data-title="Turtle"
@@ -669,7 +676,7 @@
             </figure>
             <!--  -->
             <figure
-              class="col-3@xs col-8@sm col-6@md picture-item picture-item--overlay"
+              class="col-3@xs col-8@sm col-6@md picture-item  picture-item--overlay"
               data-groups='["city"]'
               data-date-created="2017-01-19"
               data-title="San Francisco"
@@ -706,7 +713,7 @@
               </div>
             </figure>
             <!--  -->
-            <div class="col-1@sm col-1@xs my-sizer-element"></div>
+            <div class="col-1@sm col-1@xs my-sizer-element" id="my-sizer-element"></div>
           </div>
         </div>
         <!-- TODO fin portafolio -->
@@ -1058,21 +1065,29 @@
               <div class="center-flex">
                 <span class="network-icon">
                   <!-- <img src="assets/img/email.svg" alt="network-icon"> -->
-                  <i
-                    class="cy cy-facebook-square cy-2x cy-color-green-primary"
-                  ></i>
+                  <a href="#">
+                    <i class="cy cy-facebook-square cy-2x cy-color-green-primary"></i>
+                  </a>
                 </span>
                 <span class="network-icon">
-                  <i class="cy cy-linkedin cy-2x cy-color-green-primary"></i>
+                  <a href="#">
+                    <i class="cy cy-linkedin cy-2x cy-color-green-primary"></i>
+                  </a>
                 </span>
                 <span class="network-icon">
-                  <i class="cy cy-github cy-2x cy-color-green-primary"></i>
+                  <a href="#">
+                    <i class="cy cy-github cy-2x cy-color-green-primary"></i>
+                  </a>
                 </span>
                 <span class="network-icon">
-                  <i class="cy cy-instagram cy-2x cy-color-green-primary"></i>
+                  <a href="#">
+                    <i class="cy cy-instagram cy-2x cy-color-green-primary"></i>
+                  </a>
                 </span>
                 <span class="network-icon">
-                  <i class="cy cy-tweter cy-2x cy-color-green-primary"></i>
+                  <a href="#">
+                    <i class="cy cy-tweter cy-2x cy-color-green-primary"></i>
+                  </a>
                 </span>
               </div>
             </div>
@@ -1082,7 +1097,7 @@
         <div class="cy-col-6 cy-col-12-sm">
           <h3 class="cy-title">Escribeme</h3>
 
-          <form action="" class="cy-form" method="post">
+          <form class="cy-form" method="post" autocomplete="off">
             <!-- <div class="cy-form-group"> -->
             <div class="cy-form-group">
               <div class="cy-form-row">
@@ -1153,7 +1168,7 @@
           </form>
         </div>
         <p class="cy-copyright center">
-          Copyright ©2020 CharliesYacniel. Todos los derechos reservados
+          Copyright ©{{year}} CharliesYacniel. Todos los derechos reservados
         </p>
       </div>
     </div>
@@ -1162,11 +1177,11 @@
 <!-- fin main-container -->
 
 <!-- TODO incio codigo modal -->
-<div id="cy-modal-article" class="cy-modal">
+<div id="cy-modal-article" class="cy-modal" [className]="classActive"   >
   <div class="cy-container-close">
-    <a href="#portfolio" (click)="onCloseModal($event)" class="cy-modal__close">&times;</a>
+    <span  class="cy-modal__close" (click)="onCloseModal()">&times;</span>
   </div>
-  <div class="cy-modal__block">
+  <div class="cy-modal__block" >
     <p>
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
       laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
@@ -1204,6 +1219,50 @@
       vel!
     </p>
     <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
+    </p>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
+      laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
+      quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias
+      vel!
       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi alias
       laborum accusamus velit nostrum, expedita aspernatur cum qui temporibus
       quidem! Delectus explicabo mollitia eligendi dolorum non dolore a alias

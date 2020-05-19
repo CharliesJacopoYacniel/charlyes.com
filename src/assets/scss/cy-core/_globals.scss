@@ -8,7 +8,9 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
+
   }
+  // html.scroll_y_no {overflow-y: auto; }
   body {
       margin: 0;
       font-family: -apple-system, Roboto-Regular, Verdana, Arial, sans-serif;
@@ -17,11 +19,15 @@
       background: $cy-black-font ;
       color: $cy-white;
       overflow-x: hidden;
-
+      // overflow-y: initial;
       -webkit-overflow-scrolling: touch;
       // -webkit-font-smoothing: antialiased;
       // -moz-osx-font-smoothing: grayscale;
+      // .scroll_y_yes {overflow-y: initial; }
+
   }
+
+  // html.scroll_y_yes{overflow-y:}
 
 /** estilos de l barra de scroll*/
 ::-webkit-scrollbar {

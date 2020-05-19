@@ -20,6 +20,10 @@
 
 }
 
+// .cy-modal:target{
+//   display: flex;
+//   // z-index: 999;
+// }
 #cy-modal-article:target{
   display: flex;
 }
@@ -36,6 +40,7 @@
   animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
 }
 
+
 .cy-modal:after{//linea
   content: "";
   width: 0;
@@ -48,6 +53,46 @@
   left: 0;
   margin-top: -1px;
 }
+
+
+.cy-modal-close {// div
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  animation-name: cy-animation-display;
+  animation-timing-function: ease-in-out;
+  animation-duration: .5s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+
+  .cy-container-close,
+  .cy-modal__block{
+    will-change: opacity;
+    animation: cy-animation-fade-out .5s ease-out both;
+  }
+}
+
+.cy-modal-close:before{// div
+  content: "";
+  box-sizing: border-box;
+  width: inherit;
+  height: inherit;
+  background-color: $cy-green-strong;
+  position: fixed;
+  left: 0;
+  top: 0;
+  will-change: height, width,top,background-color;
+  animation-name: close-animation;
+  animation-timing-function: ease-in-out;
+  animation-duration: .3s;
+  animation-delay: .6s;
+  animation-fill-mode: forwards;
+}
+
 
 @keyframes line-animation{
   0%{
@@ -77,6 +122,37 @@
   }
 }
 
+@keyframes close-animation{
+  0%{
+    background-color: $cy-green-strong;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+  }
+  50%{
+    background-color: $cy-green-strong;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+  }
+  100%{
+    background-color: $cy-green-primary;
+    height: 2px;
+    width: 0;
+    top: 50%;
+  }
+}
+@keyframes cy-animation-display{
+  0%{
+    display: flex;
+    z-index: 999;
+  }
+  100%{
+    display: none !important;
+    z-index: -999;
+  }
+}
+
 .cy-modal__block{
   height: 100vh;
   padding: 15px 100px;
@@ -84,6 +160,7 @@
   position: relative;
   margin: auto;
   overflow: auto;
+  will-change: opacity;
   animation: cy-animation-fade-in .5s ease-out 1.3s both;
 }
 
@@ -92,12 +169,13 @@
   100% {opacity: 1;}
 }
 @keyframes cy-animation-fade-out{
-  100%{opacity: 1;}
-  0%{opacity: 0;}
+  0%{opacity: 1;}
+  100%{opacity: 0.01;}
 }
 
 
 .cy-modal__close{
+  color: $cy-green-primary;
   font-size: 60px;
   display: flex;
   justify-content: center;
@@ -111,13 +189,16 @@
   top: 20px;
   right: 20px;
   z-index: inherit;
-  a{
+  will-change: opacity;
+  animation: cy-animation-fade-in .5s ease-out both;
+  .cy-modal__close {
+    cursor: pointer;
     width: inherit;
     height: inherit;
     transform: rotate(0);
     transition: transform .2s cubic-bezier(0.83, 0.04, 0, 1.16);
   }
-  a:hover{
+  .cy-modal__close:hover{
     transform: rotate(270deg);
   }
 }
@@ -127,6 +208,7 @@
   text-decoration: none;
 
 }
+
 
 
 
