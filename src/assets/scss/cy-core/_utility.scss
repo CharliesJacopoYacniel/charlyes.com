@@ -143,7 +143,8 @@
 .cy-title {
 	// clase para los titulos
 	color: $cy-green-secondary;
-	font-size: $cy-font-size-titles;
+  font-size: $cy-font-size-titles;
+  font-family: JetBrainsMono-Regular;
 }
 .cy-text {
 	//clase para los textos de los titulos
@@ -171,6 +172,23 @@
 		margin-right: 5px;
 		margin-bottom: 0px;
 	}
+}
+
+
+#progressbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color:$cy-green-strong;
+  animation: animateColor 10s linear infinite;
+}
+@keyframes animateColor{
+  0%,100%{background-color:$cy-green-strong;}
+  25%{background-color:$cy-green-primary;}
+  50%{background-color:$cy-green-secondary;}
+  75%{background-color:$cy-green-tertiary;}
 }
 
 

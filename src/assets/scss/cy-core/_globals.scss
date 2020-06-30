@@ -1,5 +1,6 @@
 @import '_variables';
 
+
 *,::before,::after {
   box-sizing: border-box;
   // margin: 0; //TODO NO COLOCAR
@@ -8,12 +9,11 @@
  html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
-
   }
   // html.scroll_y_no {overflow-y: auto; }
   body {
       margin: 0;
-      font-family: -apple-system, Roboto-Regular, Verdana, Arial, sans-serif;
+      font-family: -apple-system, Roboto-Regular, JetBrainsMono-Regular,Verdana, Arial, sans-serif;
       height: 100vh;
       width: 100vw;
       background: $cy-black-font ;
@@ -24,16 +24,19 @@
       // -webkit-font-smoothing: antialiased;
       // -moz-osx-font-smoothing: grayscale;
       // .scroll_y_yes {overflow-y: initial; }
-
   }
 
   // html.scroll_y_yes{overflow-y:}
 
 /** estilos de l barra de scroll*/
 ::-webkit-scrollbar {
-  width: 10px;     /* Tamaño del scroll en vertical */
+  width: 0;     /* Tamaño del scroll en vertical */
   height: 10px;    /* Tamaño del scroll en horizontal */
 }
+// ::-webkit-scrollbar {
+//   width: 10px;     /* Tamaño del scroll en vertical */
+//   height: 10px;    /* Tamaño del scroll en horizontal */
+// }
 /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
 ::-webkit-scrollbar-thumb {
   background: $cy-green-primary;

@@ -1,11 +1,27 @@
-import { Component, ElementRef, Output, Input, Directive, EventEmitter, NgZone } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {
+  Component,
+  ElementRef,
+  Output,
+  Input,
+  Directive,
+  EventEmitter,
+  NgZone,
+} from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 import Shuffle from 'shufflejs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
+})
+/*
+ animations: [
     trigger('animation_fade', [
       state(
         'fade-in',
@@ -39,8 +55,7 @@ import Shuffle from 'shufflejs';
       transition('open => close', [animate('0.5s ease-in')]),
     ])
 
-  ]
-})
+  ]*/
 export class HomeComponent {
   @Input() currentState;
   private eventOptions: boolean | { capture?: boolean; passive?: boolean };
@@ -50,18 +65,19 @@ export class HomeComponent {
   classActive: string = 'cy-modal';
 
   year: number = new Date().getFullYear();
-  constructor() { }
+  constructor() {}
 
   onCloseModal() {
-    this.classActive = (this.classActive === 'cy-modal') ? 'cy-modal-close' : 'cy-modal';
-    document.getElementsByTagName('body')[0].classList.add('scroll_y_yes')
-    document.getElementsByTagName('body')[0].classList.remove('scroll_y_no')
+    this.classActive =
+      this.classActive === 'cy-modal' ? 'cy-modal-close' : 'cy-modal';
+    document.getElementsByTagName('body')[0].classList.add('scroll_y_yes');
+    document.getElementsByTagName('body')[0].classList.remove('scroll_y_no');
   }
 
   onOpenModal() {
     this.classActive = 'cy-modal';
-    document.getElementsByTagName('body')[0].classList.remove('scroll_y_yes')
-    document.getElementsByTagName('body')[0].classList.add('scroll_y_no')
+    document.getElementsByTagName('body')[0].classList.remove('scroll_y_yes');
+    document.getElementsByTagName('body')[0].classList.add('scroll_y_no');
   }
 
   // noScroll_Y() {
@@ -69,22 +85,17 @@ export class HomeComponent {
   //   // this.scroll_y = (this.scroll_y === 'scroll_y_yes') ? 'scroll_y_no' : 'scroll_y_yes';
   // }
 
-
   ngOnInit() {
+    this.timeline();
+    // var progressbar= document.getElementById('progressbar');
+    // window.onscroll = function (event) {
+    //   var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
+    //   var progress = (scrollTop / (scrollHeight - clientHeight))*100;
+    //   progressbar.style.width = `${progress}%`;
+    // }
+
     this.ShuffleFuntion();
-
-    // document.getElementById('mytimeline').timeline();
-    // window.addEventListener('scroll', this.scroll, <any>this.eventOptions); //third parameter
   }
-
-  ngOnDestroy() {
-    // window.removeEventListener('scroll', this.scroll, <any>this.eventOptions);
-  }
-
-  scroll = (event): void => {
-    // console.log(event.srcElement)
-  };
-
 
   // ====
   changeAnimate() {
@@ -147,7 +158,11 @@ export class HomeComponent {
       var filterButtons = Array.from(options.children);
 
       filterButtons.forEach(function (button) {
-        button.addEventListener('click', this._handleFilterClick.bind(this), false);
+        button.addEventListener(
+          'click',
+          this._handleFilterClick.bind(this),
+          false
+        );
       }, this);
     };
 
@@ -263,7 +278,6 @@ export class HomeComponent {
       var searchText = evt.target.value.toLowerCase();
 
       this.shuffle.filter(function (element, shuffle) {
-
         // If there is a current filter applied, ignore elements that don't match it.
         if (shuffle.group !== Shuffle.ALL_ITEMS) {
           // Get the item's groups.
@@ -292,52 +306,82 @@ export class HomeComponent {
   // timeLine() {
 
   timeline() {
-    // var selectors = {
-    //   id: document.querySelector('mytimeline'),
-    //   item: document.querySelector(".timeline-item"),
-    //   activeClass: "timeline-item--active",
-    //   img: ".timeline__img"
-    // };
-    // selectors.item.eq(0).addClass(selectors.activeClass);
-    // selectors.id.css(
-    //   "background-image",
-    //   "url(" + selectors.item.first().find(selectors.img).attr("src") + ")"
-    // );
+  // ===== codigo del progress bar
+  var progressbar= document.getElementById('progressbar');
+    // window.onscroll = function (event) {
+
+    // }
+    //=============
+    var selectors = {
+      id: document.getElementById('timeline-1'),
+      item: document.getElementsByClassName('timeline-item'),
+      activeClass: 'timeline-item--active',
+      img: '.timeline__img',
+    };
+    // selectors.item[0].classList.add(selectors.activeClass);
+    // selectors.id.style.cssText =
+    //     'background-image:url(' +
+    //     selectors.item[0].getElementsByTagName('img')[0].getAttribute('src') +
+    //     ')';
     // var itemLength = selectors.item.length;
-    // $(window).scroll(function () {
-    //   var max, min;
-    //   var pos = $(this).scrollTop();
-    //   selectors.item.each(function (i) {
-    //     min = $(this).offset().top;
-    //     max = $(this).height() + $(this).offset().top;
-    //     var that = $(this);
-    //     if (i == itemLength - 2 && pos > min + $(this).height() / 2) {
-    //       selectors.item.removeClass(selectors.activeClass);
-    //       selectors.id.css(
-    //         "background-image",
-    //         "url(" + selectors.item.last().find(selectors.img).attr("src") + ")"
-    //       );
-    //       selectors.item.last().addClass(selectors.activeClass);
-    //     } else if (pos <= max - 40 && pos >= min) {
-    //       selectors.id.css(
-    //         "background-image",
-    //         "url(" + $(this).find(selectors.img).attr("src") + ")"
-    //       );
-    //       selectors.item.removeClass(selectors.activeClass);
-    //       $(this).addClass(selectors.activeClass);
-    //     }
-    //   });
-    // });
-    // };
+    var ArrayItems = selectors.item;
+    const item = [];
+    for (let i = 0; i < ArrayItems.length; i++) {
+        item.push(ArrayItems[i]);
+    }
+    window.onscroll = function (event) {
+      var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
+      var progress = (scrollTop / (scrollHeight - clientHeight))*100;
+      progressbar.style.width = `${progress}%`;
+
+       item.forEach((element:any) =>{
+          var coord=element.getBoundingClientRect()
+          if(coord.top <=60){
+            element.classList.add(selectors.activeClass);
+            // selectors.id.style.cssText =
+            // 'background-image:url(' +
+            // element.getElementsByTagName('img')[0].getAttribute('src') +
+            // ')';
+          }else{
+            element.classList.remove(selectors.activeClass);
+          }
+
+      });
+
+
+
+
+
+//TODO NO bORAR AUN
+      // item.forEach((element:any) =>{
+      //     var that = element;
+      //     min = that.offsetTop;
+      //     max = that.clientHeight + min;
+      //     console.log('altura elemento',max);
+          // console.log('MAX',max)
+          // console.log('asdasd',scrollTop / (scrollHeight - clientHeight))
+          // if(){
+          // }
+          // if ( element == (itemLength - 2) && pos > min + that.clientHeight / 2) {
+            // element.classList.remove(selectors.activeClass);
+            // selectors.id.style.cssText =
+            //     'background-image:url(' +
+            //     element.getElementsByTagName('img')[0].getAttribute('src') +
+            //     ')';
+
+              // selectors.item[(selectors.item).length - 1].classList.add(selectors.activeClass)
+          // } else if (pos <= max - 40 && pos >= min) {
+            // selectors.id.style.cssText =
+            //     'background-image:url(' +
+            //     element.getElementsByTagName('img')[0].getAttribute('src') +
+            //     ')';
+
+            // selectors.item[(selectors.item).length - 1].classList.remove(selectors.activeClass)
+            // that.classList.add(selectors.activeClass);
+          // }
+      // });
+    };
   }
-
-
-
-
-
-
-
-
 
   // }
 }
