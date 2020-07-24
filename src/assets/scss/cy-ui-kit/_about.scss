@@ -71,8 +71,8 @@ $timeline-container-width:100%;
   }
   &-item {
     padding: 40px 0;
-    opacity: .3;
-    filter: blur(2px);
+    // opacity: .3;//TODO
+    // filter: blur(2px);//TODO
     transition: .5s;
     box-sizing: border-box;
     width: calc(50% - 40px);

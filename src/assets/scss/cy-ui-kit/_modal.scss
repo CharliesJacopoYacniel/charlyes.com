@@ -206,10 +206,30 @@
 
 .cy-modal__close,.cy-modal__close:hover,.cy-modal__close:active{
   text-decoration: none;
-
 }
 
+.container-datail-project{
+	display: grid;
+	grid-template-columns: 6fr 4fr;
+	// max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+	padding-top: 70px;
+  justify-content: center;
+  &.reverse{
+    grid-template-columns: 4fr 6fr;
+  }
+}
 
+.prod-img {
+	width: 100%;
+  height: auto;
+  max-height: 600px;
+}
+.container-text{
+  padding: 20px;
+  text-align: justify;
+}
 
 
 /*
