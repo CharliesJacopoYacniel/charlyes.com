@@ -14,7 +14,7 @@
     },
     {
       "year": 1998,
-      "urlimage": "assets/img/photos_time_line/1997.jpg",
+      "urlimage": "assets/img/photos_time_line/1998.jpg",
       "tag": "childhood",
       "content":"I cried on my first day of preschool, a year later I was sent to higher ground to escape Hurricane Mitch."
     },
@@ -136,8 +136,32 @@
   ],
   "skills":[
     {
-      "name":"htmls",
+      "name":"html",
       "percentage":"50",
+      "color":"cy-green-primary",
+      "active":true
+    },
+    {
+      "name":"css",
+      "percentage":"10",
+      "color":"cy-green-primary",
+      "active":false
+    },
+    {
+      "name":"JS",
+      "percentage":"80",
+      "color":"cy-green-primary",
+      "active":false
+    },
+    {
+      "name":"PHP",
+      "percentage":"70",
+      "color":"cy-green-primary",
+      "active":false
+    },
+    {
+      "name":"Dockert",
+      "percentage":"90",
       "color":"cy-green-primary",
       "active":false
     }
