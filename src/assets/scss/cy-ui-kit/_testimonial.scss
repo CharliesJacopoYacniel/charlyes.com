@@ -305,7 +305,7 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
   height: 100%;
   position: relative;
   padding: 70px 0px;
-  &::after {
+  &::before {
     content: "";
     opacity: 0.4;
     z-index: -9;
@@ -314,10 +314,22 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("../../../assets/img/cy-background-contactme.png");
+    background-image: url("../../../assets/img/cy-background-contactme.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+  }
+  &::after {
+    content: "";
+    opacity: 0.1;
+    // z-index: -9;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, $cy-green-primary 0%, $cy-black 100%, $cy-black 100%);
+
   }
 }
 //=========================================
@@ -361,7 +373,7 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
   -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   padding: 5px;
-  z-index: 22222222;
+  // z-index: 22222222;
 }
 
 .testim .arrow:before {
@@ -389,7 +401,7 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
   bottom: 60px;
   left: 0;
   display: block;
-  z-index: 3333;
+  // z-index: 3333;
   height: 12px;
 }
 

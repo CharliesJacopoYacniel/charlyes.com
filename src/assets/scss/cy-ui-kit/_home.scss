@@ -69,8 +69,14 @@
 
 
 .charlies-yacniel{
-    font-size: 90px;
+    font-size: 50px;
     font-family: JetBrainsMono-ExtraBold-Italic;
+}
+
+@media only screen and (max-width: $breakpoint-small) {
+  .charlies-yacniel{
+    font-size: 50px;
+}
 }
 
 .profesion{

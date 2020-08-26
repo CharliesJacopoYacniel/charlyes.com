@@ -1,5 +1,5 @@
   .footer {
-    background-color: $cy-green-strong;  
+    background-color: $cy-green-strong;
   }
   .contact-container{}
   .contact-item{
@@ -15,13 +15,13 @@
       text-align: center;
       margin: 0 10px 0 10px;
   }
-  
+
   .contact-tag-name{
     color: $cy-green-primary;
     font-size: $cy-font-size-sm;
     font-weight: $font-weight-200;
     font-family: Roboto-Light;
-    
+
   }
   .contact-tag-value{
     font-size: $cy-font-size-md;
@@ -29,9 +29,9 @@
   }
   .network-icon{
     padding: 0px 20px 0px 20px;
-    
+
   }
-  
+
 
   .cy-form-row{
     padding-top:15px;
@@ -50,12 +50,12 @@
     background-clip: padding-box;
     border: 1px solid $cy-green-primary;
     border-radius: $cy-border-radius-10;
-    
+
     &#message{
       height: auto;
     }
     // Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
-    
+
     // Unstyle the caret on `<select>`s in IE10+.
     &::-ms-expand {
       background-color: transparent;
@@ -66,34 +66,34 @@
       color:  #ffffff82;
       opacity: 1;
     }
-    
+
     &:disabled,
     &[readonly] {
       background-color: grey;
       opacity: 1;
     }
-    
+
   }
-  
+
   select.cy-form-control {
     &:focus::-ms-value {
-      
+
       background-color: green;
     }
   }
-  
+
   // Make file inputs better match text inputs by forcing them to new lines.
   .cy-form-control-file,
   .cy-form-control-range {
     display: block;
     width: 100%;
   }
-  
-  
+
+
   //
   // Labels
   //
-  
+
   // For use with horizontal and inline forms, when you need the label (or legend)
   // text to align with the form controls.
   .cy-col-form-label {
@@ -102,9 +102,53 @@
     margin-bottom: 0; // Override the `<label>/<legend>` default
   //   line-height: $input-line-height;
   }
-  
-  
+
+
   .cy-copyright{
     font-size: $cy-font-size-sm;
     // font-family: Roboto-Regular;
+  }
+  .cy-span-credit{
+    font-size: 8px;
+    padding-left: 10px;
+  }
+  .cy-toast{
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    text-align: justify;
+  }
+  .cy-credits{
+    // overflow-x: scroll;
+
+    ul{
+      display: flex;
+      list-style: none;
+      padding: 0 5px;
+      margin: 0;
+      white-space: nowrap;
+      li{
+        padding: 0 5px;
+        line-height: 2.0;
+        font-size: 8px;
+        span{
+          padding-right: 5px;
+        }
+      }
+    }
+
+  }
+  @media screen and (max-width: 767px) {
+    .cy-credits{
+      overflow-x: scroll;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .cy-credits{
+      overflow-x: scroll;
+    }
+    ::-webkit-scrollbar {
+      width: 0;     /* Tamaño del scroll en vertical */
+      height:1px;    /* Tamaño del scroll en horizontal */
+    }
   }

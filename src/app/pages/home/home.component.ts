@@ -1,21 +1,24 @@
 import {
   Component,
-  ElementRef,
-  Output,
+  // ElementRef,
+  // Output,
   Input,
-  Directive,
-  EventEmitter,
-  NgZone,
+  // Directive,
+  // EventEmitter,
+  // NgZone,
 } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-} from '@angular/animations';
+// import {
+//   trigger,
+//   state,
+//   style,
+//   animate,
+//   transition,
+// } from '@angular/animations';
 import Shuffle from 'shufflejs';
 import { ServicedataService } from '../../services/servicedata.service';
+// import { Projectitem } from 'src/app/models/projectitem';
+// import { setTimeout } from 'timers';
+// import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -24,7 +27,9 @@ import { ServicedataService } from '../../services/servicedata.service';
 })
 export class HomeComponent {
   @Input() currentState;
-  private eventOptions: boolean | { capture?: boolean; passive?: boolean };
+  // private eventOptions: boolean | { capture?: boolean; passive?: boolean };
+
+  mail_send:boolean=false;
 
   fade_state: string = 'fade-out';
   popup_state: string = 'close';
@@ -41,6 +46,25 @@ export class HomeComponent {
   phone: string;
   address: string;
   projects: number;
+  my_social_networks:any;
+  credits:any;
+  // project_item:Projectitem;
+  project_item:any={
+    title: null,
+    type_project:null,
+    rol: null,
+    url_thumnails: null,
+    url_background: null,
+    url_devices: null,
+    url_mobile: null,
+    url_mocks: null,
+    url_public: null,
+    co_workers:null,
+    thumnail__descripition: null,
+    client:null,
+    text_presentation:null,
+  };
+
   categories = [
     {
       name: 'All',
@@ -63,18 +87,49 @@ export class HomeComponent {
       checked: false,
     },
   ];
-  constructor(private serviceData: ServicedataService) {
+//  span:any;
+// //  textIndex:any;
+//  textToShow:any;
+//  textToShowLen:any;
+//  letterIndex:any;
+//  textTimer:any;
+//  letterTimer:any;
+// //  textDelay:any;
+// //  letterDelay:any;
+//  emptyTimer:any;
+
+//  textIndex = 0;
+//  textDelay= 2300;
+//  letterDelay = 130;
+
+
+
+// userForm = new FormGroup({
+//   name: new FormControl(''),
+//   email: new FormControl(''),
+//   phone: new FormControl(''),
+//   message: new FormControl(''),
+// });
+
+constructor(private serviceData: ServicedataService) {
+
+
     this.serviceData.getJSON().subscribe((data) => {
       // console.log(data);
       this.linetime = data.linetime;
       // this.testimonials = data.testimonials;
       this.experience = data.experience;
+      // this.portfolio = data.portfolio;
       this.clients = data.clients;
       this.projects = data.projects;
       this.email = data.email;
       this.phone = data.phone;
       this.address = data.address;
+      this.my_social_networks = data.my_social_networks;
+      this.credits = data.credits;
+      // console.log('social',this.my_social_networks);
     });
+
   }
 
   onCloseModal() {
@@ -85,7 +140,8 @@ export class HomeComponent {
   }
 
   onOpenModal(data) {
-    console.log(data)
+    console.log('open modal',data)
+    this.project_item = data;
     this.classActive = 'cy-modal';
     document.getElementsByTagName('body')[0].classList.remove('scroll_y_yes');
     document.getElementsByTagName('body')[0].classList.add('scroll_y_no');
@@ -97,6 +153,10 @@ export class HomeComponent {
   // }
 
   async ngOnInit() {
+
+    this.emptySpan();// TODO no elimnar
+
+    this.toggleButtonMenu();
     this.testimonials = [
       {
         name: 'Skarllette Yasmín',
@@ -164,93 +224,171 @@ export class HomeComponent {
     ];
     this.portfolio = [
       {
-        date: new Date(),
-        year:2018,
-        cardtype: 1,
-        group: 'developer',
-        title: 'DARA',
-        rol:'Dirección de Arte, Diseño, Animación',
-        autor: 'Charlies',
-        figureclass: 'col-3@xs col-4@sm col-3@md picture-item',
-        cyclass: 'cy-card cy-card-style-1',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        urlbackground: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        urlmain: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        urlpublic: 'https://github.com/CharliesJacopoYacniel',
-        credits:'',
-        coworkers:'Fernando espina| Andy Ariel',
-        detalis: 'Este es un projecto de cliente de rurbo Bancario...',
-        client: 'Banco Atlantida',
-        descripiton: 'La plataforma conciliaciones DARA de pagos y garantías bancarias , es el módulo donde los usuarios del área de operaciones del banco Atlántida pueden iniciar sesión y proceder con el balance contable entre el SAR y el Banco , es aquí donde los usuarios que estén habilitados pueden verificar si existen anomalías y/o diferencias en los grupos de pagos de ambas partes y en base a ello proceder a efectuar ( cancelar ) los pagos directamente en el módulo o proceder con los trámites administrativos segun sea el caso',
-      },
-      {
-        date: new Date(),
-        cardtype: 2,
-        group: 'developer',
-        title: 'university 234',
-        autor: 'Yacniel',
-        figureclass: 'col-6@xs col-8@sm col-6@md picture-item',
-        cyclass: 'cy-card cy-card-style-2',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        descripiton:
-          'I was born in Tegucigalpa during the month of October 1993, I originally received the name Charli as my first name, Yacniel turned out to be an adaptation of Jack Daniel  s.○ Father: Hello good morning, I have come to register my son.○ Her: What is the first name?○ Father: Charli○ She: Mmm Charli?○ Father: Yes Charli, it is.○ She: Ah good, Charlies.',
-        client: 'BADAs;kdj;alskdja;slkdjas;lkd',
-        detalis: 'a;sda;lskfs;dkfhsdkjfhasd;kjfha;j',
-      },
-      {
-        date: new Date(),
-        cardtype: 1,
+        card_type: 1,
         group: 'css',
-        title: 'university 234',
-        autor: 'Yacniel',
-        figureclass: 'col-3@xs col-4@sm col-3@md picture-item',
-        cyclass: 'cy-card cy-card-style-1',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        descripiton:
-          'I was born in Tegucigalpa during the month of October 1993, I originally received the name Charli as my first name, Yacniel turned out to be an adaptation of Jack Daniel  s.○ Father: Hello good morning, I have come to register my son.○ Her: What is the first name?○ Father: Charli○ She: Mmm Charli?○ Father: Yes Charli, it is.○ She: Ah good, Charlies.',
-        client: 'BADAs;kdj;alskdja;slkdjas;lkd',
-        detalis: 'a;sda;lskfs;dkfhsdkjfhasd;kjfha;j',
+        figureclass: 'col-6@xs col-4@sm col-3@md picture-item',
+        cy_class: 'cy-card cy-card-style-2',
+        date: "March 2020",
+        title: "charlyes.com",
+        type_project:"Landing Page",
+        rol: "Front-end Developer",
+        autor: "Charlies Yacniel",
+        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
+        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
+        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+        url_public: "https://github.com/CharliesYacniel",
+        team: [
+          {
+            name:"Charlies yacniel",
+            user_name:"@charliesyacniel",
+            rol:"Front-end developer",
+            url_network:"https://github.co/CharliesYacniel"
+          },
+        ],
+        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
+        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
+        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        resources:[
+          {name: 'Angular 8'},
+          {name: 'Suffle JS'}
+        ],
+        clients: [
+          {
+            position_logo:1,
+            class_logo:"cy-col-2 cy-col-2-sm",
+            class_text:"cy-col-10 cy-col-10-sm",
+            url_logo:'assets/img/logo-cy.svg',
+            name:'Charlies Yacniel',
+            description: 'Necesitaba crear mi propio sitio web'
+          },
+        ]
       },
       {
-        date: new Date(),
-        cardtype: 2,
-        group: 'apps',
-        title: 'university 234',
-        autor: 'Yacniel',
-        figureclass: 'col-3@xs col-4@sm col-3@md picture-item',
-        cyclass: 'cy-card cy-card-style-2',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        descripiton:
-          'I was born in Tegucigalpa during the month of October 1993, I originally received the name Charli as my first name, Yacniel turned out to be an adaptation of Jack Daniel  s.○ Father: Hello good morning, I have come to register my son.○ Her: What is the first name?○ Father: Charli○ She: Mmm Charli?○ Father: Yes Charli, it is.○ She: Ah good, Charlies.',
-        client: 'BADAs;kdj;alskdja;slkdjas;lkd',
-        detalis: 'a;sda;lskfs;dkfhsdkjfhasd;kjfha;j',
+        group: "developer",//use
+        figureclass: 'col-6@xs col-8@sm col-6@md picture-item',//user
+        card_type: 2,//use
+        cy_class: "cy-card cy-card-style-1",//use
+
+        date: "December 2018",
+        title: "Bank Conciliations",
+        type_project:"Aplication Web",
+        rol: "Programmer analyst",
+        autor: "Charlies Yacniel",
+        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
+        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
+        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+        url_public: "https://github.com/CharliesYacniel",
+        team: [
+          {
+            name:"Fernando Espinal",
+            user_name:"@fersup",
+            rol:"Developer Mobile",
+            url_network:"https://github.co/CharliesYacniel"
+          },
+          {
+            name:"Andy Castellanos",
+            user_name:"@andy",
+            rol:"Developer Back End",
+            url_network:"https://github.co/CharliesYacniel"
+          },
+          {
+            name:"Fernando Espinal",
+            user_name:"@fersup",
+            rol:"Developer Mobile",
+            url_network:"https://github.com/CharliesYacniel"
+          }
+        ],
+        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
+        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
+        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        resources:[
+          {name: 'Animate CSS'},
+          {name: 'Datatables JS'},
+          {name: 'Bootstrap 4'},
+          {name: 'Toast JS'},
+        ],
+        clients: [
+          {
+            position_logo:'column1',
+            class_logo:"cy-col-2 cy-col-2-sm",
+            class_text:"cy-col-10 cy-col-10-sm",
+            url_logo:'assets/img/logo-cy.svg',
+            name:'Solid Prestige Financial Institution',
+            description: 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
+          },
+          {
+            position_logo:'column2',
+            class_logo:"cy-col-2 cy-col-2-sm",
+            class_text:"cy-col-10 cy-col-10-sm",
+            url_logo: 'assets/img/logo-cy.svg',
+            name: 'Grupo Rentas Aduaneras',
+            description: 'The "Grupo Rentas Aduaneras" is a government institution dedicated to the revenue collection item in national customs and international.'
+          },
+        ]
       },
       {
-        date: new Date(),
-        cardtype: 1,
-        group: 'apps',
-        title: 'university 234',
-        autor: 'Yacniel',
-        figureclass: 'col-3@xs col-4@sm col-3@md picture-item',
-        cyclass: 'cy-card cy-card-style-2',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        descripiton:
-          'I was born in Tegucigalpa during the month of October 1993, I originally received the name Charli as my first name, Yacniel turned out to be an adaptation of Jack Daniel  s.○ Father: Hello good morning, I have come to register my son.○ Her: What is the first name?○ Father: Charli○ She: Mmm Charli?○ Father: Yes Charli, it is.○ She: Ah good, Charlies.',
-        client: 'BADAs;kdj;alskdja;slkdjas;lkd',
-        detalis: 'a;sda;lskfs;dkfhsdkjfhasd;kjfha;j',
-      },
-      {
-        date: new Date(),
+        card_type: 2,
         group: 'css',
-        cardtype: 1,
-        title: 'university 234',
-        autor: 'Yacniel',
-        figureclass: 'col-6@xs col-8@sm col-6@md picture-item',
-        cyclass: 'cy-card cy-card-style-1',
-        urlthumnails: 'assets/img/image_projects/reconciliations/project-cy-devices.png',
-        descripiton: 'I was born in Tegucigalpa during the month of October 1993, I originally received the name Charli as my first name, Yacniel turned out to be an adaptation of Jack Daniel s.○ Father: Hello good morning, I have come to register my son.○ Her: What is the first name?○ Father: Charli○ She: Mmm Charli?○ Father: Yes Charli, it is.○ She: Ah good, Charlies.',
-        client: 'BADAs;kdj;alskdja;slkdjas;lkd',
-        detalis: 'a;sda;lskfs;dkfhsdkjfhasd;kjfha;j',
+        figureclass: 'col-6@xs col-4@sm col-8@md picture-item',
+        cy_class: 'cy-card cy-card-style-2',
+        date: "October 2017",
+        title: "Update Data Clients",
+        type_project:"Form web",
+        rol: "Back-end developer",
+        autor: "Charlies Yacniel",
+        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
+        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
+        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
+        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+        url_public: "https://github.com/CharliesYacniel",
+        team: [
+          {
+            name:"Charlies Yacniel",
+            user_name:"@charliesyacniel",
+            rol:"Back-end developer",
+            url_network:"https://github.co/CharliesYacniel"
+          },
+          {
+            name:"Victor Morales",
+            user_name:"@vimo",
+            rol:"Front-end developer",
+            url_network:"https://github.co/CharliesYacniel"
+          },
+        ],
+        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
+        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
+        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        resources:[
+          {name: 'Meteor JS'},
+          {name: 'Animate CSS'}
+        ],
+        clients: [
+          {
+            position_logo:'column1',
+            class_logo:"cy-col-2 cy-col-2-sm",
+            class_text:"cy-col-10 cy-col-10-sm",
+            url_logo:'assets/img/logo-cy.svg',
+            name:'Solid Prestige Financial Institution',
+            description: 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
+          },
+        ]
       },
     ];
     await this.timeline();
@@ -261,7 +399,6 @@ export class HomeComponent {
     //   var progress = (scrollTop / (scrollHeight - clientHeight))*100;
     //   progressbar.style.width = `${progress}%`;
     // }
-
     await this.ShuffleFuntion();
   }
 
@@ -656,6 +793,135 @@ export class HomeComponent {
       // });
     };
   }
+
+  toggleButtonMenu(){
+    let toggle = document.querySelector('.three-lines-menu'),
+    li = document.querySelectorAll('ul.cy-nav-links li'),
+    sidebar = document.querySelector('#menu ul');
+    // console.log('li',li)
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        // console.log('click en menu')
+        sidebar.classList.toggle('menu-responsive');
+    });
+
+    li.forEach(function(item){
+      item.addEventListener('click', function(e) {
+        // e.preventDefault();
+        // console.log('click en li')
+        sidebar.classList.toggle('menu-responsive');
+    });
+    })
+  }
+// ===============
+
+// showText() {
+//   this.textToShow = this.textArr[this.textIndex];
+//   this.textToShowLen = this.textToShow.length;
+//   this.letterIndex = 0;
+
+//   this.letterTimer = setInterval(function() {
+//     this.span.textContent += this.textToShow[this.letterIndex];
+//     console.log(this.textToShow[this.letterIndex]);
+//     this.letterIndex++;
+//     if (this.letterIndex > this.textToShowLen-1) {
+//       clearInterval(this.letterTimer);
+//       this.textTimer = setTimeout(this.nextText,this.textDelay)
+//     }
+//   } ,this.letterDelay)
+
+// }
+
+// nextText() {
+//   clearTimeout(this.textTimer);
+//   this.textIndex++;
+//   if (this.textIndex > this.textArr.length-1) {
+//     this.textIndex = 0;
+//   }
+//   this.emptySpan();
+
+// }
+
+emptySpan() {
+  var span,
+   textIndex,
+   textToShow,
+   textToShowLen,
+   letterIndex,
+   textTimer,
+   letterTimer,
+   textDelay,
+   letterDelay,
+   emptyTimer;
+   var textArr = [
+     "ies",
+     'yes'
+    ];
+    textIndex = 0;
+    textDelay= 2000;
+    letterDelay = 150;
+
+    span =   document.querySelector("#cyspanletter");
+
+    // span.textContent=textArr[textIndex + 1];
+  // console.log(span)
+  emptyTimer =  setInterval(()=>{
+        // removeLetter
+        if (span.textContent.length != 0) {
+          var popedSpan = Array.prototype.slice.call(span.textContent).slice(0,span.textContent.length-1).join('');
+          span.textContent = popedSpan;
+        } else {
+          clearInterval(emptyTimer);
+          // await showText();
+          textToShow = textArr[textIndex];
+          textToShowLen = textToShow.length;
+          letterIndex = 0;
+
+          letterTimer = setInterval(()=> {
+            span.textContent += textToShow[letterIndex];
+            // console.log(textToShow[letterIndex]);
+            letterIndex++;
+            if (letterIndex > textToShowLen-1) {
+              clearInterval(letterTimer);
+              textTimer = setTimeout(()=>{
+                clearTimeout(textTimer);
+                textIndex++;
+                span.textContent=textArr[textIndex];
+                if (textIndex > textArr.length-1) {
+                  textIndex = 0;
+                }
+                this.emptySpan();
+                // textIndex++;
+              },textDelay)
+            }
+          } ,letterDelay)
+        }
+      }
+    , letterDelay/2);
+}
+
+
+// async removeLetter() {
+//   if (this.span.textContent.length != 0) {
+//     var popedSpan = Array.prototype.slice.call(this.span.textContent).slice(0,this.span.textContent.length-1).join('');
+//     this.span.textContent = popedSpan;
+//   } else {
+//     clearInterval(this.emptyTimer);
+//     await this.showText();
+//   }
+// }
+
+
+
+onSendMail(){
+  // e.preventDefault();
+  console.log('enviarme un correo')
+  // console.log(e)
+  // console.warn(this.userForm.value);
+
+
+  this.mail_send==true;
+}
 
   // }
 }

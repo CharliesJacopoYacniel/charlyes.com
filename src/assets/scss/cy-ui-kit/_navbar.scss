@@ -1,8 +1,8 @@
 @import '../cy-core/variables';
 .container-nav {
 	background: $cy-green-tertiary;
-	box-shadow: 0 0 10px $cy-green-primary;
-	width: 100vw;
+	// box-shadow: 0 0 10px $cy-green-primary;
+	width: 100%;
 	margin: 0 auto;
 	position: fixed;
 	z-index: 999;
@@ -58,6 +58,7 @@
 
 .nav-logo {
   padding: 0px 15px;
+  height: 100%;
   & a {
     &:hover{
       cursor: pointer;
@@ -67,7 +68,8 @@
      display: inline-block;
      z-index: 99999;
      /* margin-top: 10px; */
-     padding: 5px 0;
+    //  padding: 5px 0;
+     margin: 5px auto;
      & img{
        width: 100%;
        height: 100%;
@@ -127,6 +129,8 @@
     //    display: block;
     //    margin: 5px 30px;
     //  }
+
+
     .cy-isotipo{
       display: block;
      }

@@ -1,29 +1,27 @@
-<div class="container-nav">
-  <div id="menu" class="menu-responsive">
-    <div class="nav-logo">
-      <a class="cy-isotipo" href="#home">
-        <img src="assets/img/logo-cy.svg" alt="Logo CY" />
-      </a>
-      <a class="cy-logotipo" href="#home">
-        <img src="assets/img/logo-color-cy.svg" alt="Logo CY" />
-      </a>
+  <div class="container-nav">
+    <div id="menu" class="menu-responsive">
+      <div class="nav-logo">
+        <a class="cy-isotipo" href="#home">
+          <img src="assets/img/logo-cy.svg" alt="Logo CY" />
+        </a>
+      </div>
+      <ul class="cy-nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about-me">About me</a></li>
+        <li><a href="#services">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#testimonials">Testimonies</a></li>
+        <li><a href="#contac-me">Contact me</a></li>
+      </ul>
+      <div class="three-lines-menu">&#9776;</div>
     </div>
-    <ul class="cy-nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about-me">About me</a></li>
-      <li><a href="#services">Skills</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#testimonials">Testimonies</a></li>
-      <!-- <li><a href="#blog">Blog</a></li> -->
-      <li><a href="#contac-me">Contact me</a></li>
-    </ul>
-    <div class="three-lines-menu">&#9776;</div>
+    <div class="" id="progressbar"></div>
   </div>
-  <div class="" id="progressbar"></div>
-</div>
-<!--  -->
 
+  <!--  -->
 <div class="main-container">
+
+
   <div class="cy-container">
     <!--  -->
     <div class="cy-row cy-flex" id="home">
@@ -36,7 +34,8 @@
       <div class="cy-col-6 cy-col-12-sm">
         <div class="dots-container">
           <div class="hello center">Hi, I'm</div>
-          <div class="charlies-yacniel center">Charlies Yacniel</div>
+          <div class="charlies-yacniel center">Charl<span id="cyspanletter">yes</span></div>
+          <div class="charlies-yacniel center">Yacniel</div>
           <div class="profesion center">
             Software Designer / Developer
           </div>
@@ -284,14 +283,14 @@
       <div class="cy-col-12">
         <div class="cy-proyects center-flex">
           <div class="cy-row">
-            <div class="cy-col-4 cy-col-4-sm">
+            <!-- <div class="cy-col-4 cy-col-4-sm">
               <div class="cy-proyect-item">
                 <div class="cy-proyect-title">+{{ clients }}</div>
                 <div class="cy-proyect-subtitle">Clients</div>
               </div>
-            </div>
+            </div> -->
             <!--  -->
-            <div class="cy-col-4 cy-col-4-sm">
+            <div class="cy-col-6 cy-col-12-sm">
               <div class="cy-proyect-item">
                 <div class="cy-proyect-title">{{ projects }}</div>
                 <div class="cy-proyect-subtitle">Projcts</div>
@@ -305,7 +304,7 @@
               </div>
             </div> -->
             <!--  -->
-            <div class="cy-col-4 cy-col-4-sm">
+            <div class="cy-col-6 cy-col-12-sm">
               <div class="cy-proyect-item">
                 <div class="cy-proyect-title">{{ experience }} years</div>
                 <div class="cy-proyect-subtitle">of experience</div>
@@ -604,20 +603,20 @@
             <figure [ngClass]="item.figureclass" *ngFor="let item of portfolio" [attr.data-title]="item.title"
               [attr.data-date-created]="item.date" attr.data-groups="[&quot;{{ item.group }}&quot;]">
               <div class="picture-item__inner">
-                <ng-template [ngIf]="item.cardtype === 1" [ngIfElse]="cardtype2">
-                  <div [ngClass]="item.cyclass">
+                <ng-template [ngIf]="item.card_type === 1" [ngIfElse]="cardtype2">
+                  <div [ngClass]="item.cy_class">
                     <div class="wrapper">
                       <div class="header center cy-font-size-xs">
-                        {{ item.date | date: "short" }}
+                        {{ item.date}}
                       </div>
-                      <img [src]="item.urlthumnails" alt="Photo item portfolio" />
+                      <img [src]="item.url_thumnails" alt="thumnail portfolio" />
                       <div class="data">
                         <div class="content">
                           <span class="author">{{ item.autor }}</span>
                           <h4 class="title center cy-color-primary">
                             {{ item.title }}
                           </h4>
-                          <span class="text justify cy-color-secondary cy-font-size-xs">{{ item.description }}</span>
+                          <span class="text justify cy-color-secondary cy-font-size-xs" >{{ item.thumnail__descripition }} </span>
                           <a href="#cy-modal-article" (click)="onOpenModal(item)" class="button more open-popup">Read
                             more</a>
                         </div>
@@ -627,18 +626,18 @@
                 </ng-template>
 
                 <ng-template #cardtype2>
-                  <div [ngClass]="item.cyclass">
+                  <div [ngClass]="item.cy_class">
                     <div class="header center cy-font-size-xs">
-                      {{ item.date | date: "short" }}
+                      {{ item.date }}
                     </div>
-                    <img [src]="item.urlthumnails" alt="Photo item portfolio" />
+                    <img [src]="item.url_thumnails" alt="Photo item portfolio" />
                     <div class="cy-card__content">
-                      <span class="author left">Css</span>
+                      <span class="author left">{{item.type_project}}</span>
                       <h2 class="cy-card__title cy-color-primary">
                         {{ item.client }}
                       </h2>
-                      <p class="cy-card__description">
-                        {{ item.description }}
+                      <p class="cy-card__description" >
+                        {{ item.thumnail__descripition }}
                         <a href="#cy-modal-article" (click)="onOpenModal(item)" class="button more cy-color-strong">Read
                           more</a>
                       </p>
@@ -667,7 +666,7 @@
             I am available to work independently.
           </div>
           <br />
-          <a class="cy-btn cy-btn-primary" href="#contac-me">Contact me</a>
+          <a class="cy-btn cy-btn-primary" style="z-index: 9;" href="#contac-me">Contact me</a>
         </div>
       </div>
     </div>
@@ -1166,27 +1165,11 @@
               <div class="">
                 <h3 class="cy-title center">Find me</h3>
                 <div class="center-flex">
-                  <!-- <span class="network-icon">
-                  <a href="https://www.facebook.com/jacopoLaSabandija" target="blank"><i class="cy cy-facebook-square cy-2x cy-color-green-primary"></i></a>
-                </span> -->
-                  <span class="network-icon">
-                    <a href="https://github.com/CharliesJacopoYacniel/" target="blank">
-                      <i class="cy cy-github cy-2x cy-color-green-primary"></i>
-                    </a>
-                  </span>
-                  <span class="network-icon">
-                    <a href="https://www.linkedin.com/in/charliesyacniel/" target="blank">
-                      <i class="cy cy-linkedin cy-2x cy-color-green-primary"></i>
-                    </a>
-                  </span>
-                  <!-- <span class="network-icon">
-                  <a href="https://www.instagram.com/charlies_yacniel/" target="blank"><i class="cy cy-instagram cy-2x cy-color-green-primary"></i></a>
-                </span> -->
-                  <span class="network-icon">
-                    <a href="https://twitter.com/CharliesYacniel" target="blank">
-                      <i class="cy cy-tweter cy-2x cy-color-green-primary"></i>
-                    </a>
-                  </span>
+                  <span class="network-icon"*ngFor="let item of my_social_networks" >
+                        <a [href]="item.url" target="blank" *ngIf="item.active===true">
+                          <i [ngClass]="item.cy_logo" class="cy cy-2x cy-color-green-primary"></i>
+                        </a>
+                    </span>
                 </div>
               </div>
             </div>
@@ -1195,36 +1178,38 @@
           <div class="cy-col-6 cy-col-12-sm">
             <h3 class="cy-title">Write me</h3>
 
-            <form class="cy-form" method="post" autocomplete="off">
+            <form class="cy-form" >
               <!-- <div class="cy-form-group"> -->
               <div class="cy-form-group">
                 <div class="cy-form-row">
-                  <label for="name">Name</label>
-                  <input class="cy-form-control" type="text" name="name" id="name" placeholder="Write your name" />
+                  <label for="name">Name:</label>
+                  <input class="cy-form-control" type="text"   placeholder="Write your name" />
                 </div>
                 <div class="cy-form-row">
-                  <label for="email">E-mail</label>
-                  <input class="cy-form-control" type="email" name="email" id="email"
+                  <label for="email">E-mail:</label>
+                  <input class="cy-form-control" type="email"
                     placeholder="ex: holamundo@charlyes.com" />
                 </div>
               </div>
               <div class="cy-form-row">
-                <label for="phone">Phone</label>
-                <input class="cy-form-control" type="number" name="phone" id="phone"
+                <label for="phone">Phone:</label>
+                <input class="cy-form-control" type="number"
                   placeholder="Leave your telephone number" />
               </div>
-              <div class="cy-form-row">
-                <label for="pre">Budget</label>
+              <!-- <div class="cy-form-row">
+                <label for="pre">Budget:</label>
                 <input class="cy-form-control" type="number" name="pre" id="pre" placeholder="Indicates budget" />
-              </div>
+              </div> -->
               <div class="cy-form-row">
-                <label for="message">Mensaje</label>
-                <textarea class="cy-form-control" name="message" id="message" cols="10" rows="5"
+                <label for="message">Message:</label>
+                <textarea class="cy-form-control" formControlName="message" cols="10" rows="5"
                   placeholder="Write me your message"></textarea>
               </div>
               <div class="cy-form-row">
-                <input class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" value="Send" />
+                <!-- <input class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" value="Send" /> -->
+                <button class="cy-btn cy-btn-tertiary cy-btn-block"  >Send</button>
               </div>
+              <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>
               <div class="cy-form-row">
                 <div class="center-flex">
                   <img src="assets/img/logo-cy.svg" alt="Logo CY" />
@@ -1234,9 +1219,56 @@
             </form>
           </div>
           <p class="cy-copyright center">
-            Copyright ©{{ year }} CharliesYacniel. All rights reserved
+            Charlies Yacniel ©{{ year }}
           </p>
         </div>
+      </div>
+      <div class="cy-credits">
+        <!--
+          lista de objetos a dar creditos
+            - inspiracion del sitio web(coder.xd)
+            -tipografia jetbrains (ellos dicen que no pero les dare creditos) LISTO
+            -David waimin y valeria por las fotos (posblemente)
+            -Graficos son de alvaro felipe de edteam
+            -shufle.js LISTO
+            -Animacion de apertura del proyecto LISTO
+            -carrusel de comentarios
+            -line time
+            -nataly por la foto de la unah
+            - tania por la foto odnde etoy haciendo cables
+            -victor alvarado prola foto del bunker
+            -belkis por la foto de copan donde estoy meditando
+            -iconos de frepik LISTO
+            - tipo de letra roboto
+            - keyla por la traduction al ingles
+            - Benesis por la redaccion LISTO
+            -iconos que estan en el footer del CV
+            -barra de scroling horizontal en el header
+            -imagnes de stck de los dispositivos de pantall de aterizaje
+            -creditos al equipo de los proyectos
+         -->
+        <span class="cy-span-credit">This site has been designed and developed by Charlies Yacniel thanks to: </span>
+        <ul >
+          <li *ngFor="let item of credits"><a [href]="item.url" *ngIf="item.status===true"  [title]="item.name" target="blank">{{item.name}}</a></li>
+          <!--
+          <li><a href="https://www.instagram.com/bd_cl/?hl=es-la" title="Benesis" target="blank">Benesis</a></li>
+          <li><a href="https://www.flaticon.es/autores/freepik" title="Freepik" target="blank">Freepik</a></li>
+          <li><a href="http://fontello.com/" title="Freepik" target="blank">Fontello</a></li>
+          <li><a href="https://github.com/necolas/normalize.css" target="blank">Normalize.css</a></li>
+          <li><a href="https://www.jetbrains.com/lp/mono/" target="blank">Jetbrains mono</a></li>
+          <li><a href="https://vestride.github.io/Shuffle/" target="blank">Shuffle JS</a></li>
+          <li><a href="http://simplegrid.io/" target="blank">Simplegrid</a></li>
+          <li><a href="https://codepen.io/melnik909/pen/QModrM" target="blank">Stas Melnikov</a></li>
+          <li><a href="https://codepen.io/feyinway/pen/LjMPgv" target="blank">Fey</a></li>
+          <li><a href="https://codepen.io/feyinway/pen/prGrJq" target="blank">Fey</a></li>
+          <li><a href="https://fonts.google.com/specimen/Roboto" target="blank">Christian Robertson</a></li>
+          <li><a href="https://codepen.io/AlvaroFelipe/pen/gagWYN" target="blank">Alvaro Felipe</a></li>
+          <li><a href="https://codepen.io/knyttneve/pen/bgvmma" target="blank">Mert Cukuren</a></li>
+          <li><a href="https://www.instagram.com/ntpark_view/?hl=es-la" target="blank">Nataly Park Photografies</a></li>
+          <li><a href="https://www.instagram.com/vic89_m/?hl=es-la" target="blank">Víctor Alvarado</a></li>
+          <li><a href="https://www.instagram.com/belkislopez19/?hl=es-la" target="blank">Belkis López</a></li>
+          <li><a href="https://www.instagram.com/keysjafet.s/?hl=es-la" target="blank">Keyla Jafet</a></li> -->
+        </ul>
       </div>
     </footer>
   </div>
@@ -1257,121 +1289,109 @@
 
               <div class="cy-row cy-row-background">
                 <div class="cy-col-12 cy-col-background">
-                  <h1 class="cy-color-primary center">Conciliaciones Bancarias</h1>
-                  <h4 class="cy-color-secondary">Aplicación Web</h4>
-                  <p class="cy-color-white justify">
-                    Una “Institución Financiera de Sólido Prestigio” necesitaba
-                    definir sus <span>nuevos procesos</span> para la <span>automatización</span> de conciliación
-                    de pagos y recaudaciones, realizadas por sus clientes mediante
-                    procesos <span>manuales</span>.
+                  <h1 class="cy-color-primary center">{{project_item.title}}</h1>
+                  <h4 class="cy-color-secondary">{{project_item.type_project}}</h4>
+                  <p class="cy-color-white justify" [innerHTML]="project_item.text_presentation">
+                    <!-- A Solid Prestige Financial Institution needs
+                     define your <span>new processes</span> for reconciliation <span>automation</span>
+                     of payments and collections, made by their clients through
+                     <span>manual</span> processes. -->
                   </p>
-                  <p class="cy-color-white justify">
-                    El <span>portal web</span>  “Conciliaciones” es el <span>módulo administrativo</span> donde
-                    los usuarios pueden iniciar sesión y proceder con el <span>balance contable</span> entre la institución recaudadora de fondos y el área de
-                    tecnologías de información.
-                  </p>
-                  <p class="cy-color-secondary right">Diciembre 2018</p>
+                  <!-- <p class="cy-color-white justify">
+                    The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where
+                     Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of
+                     information technologies.
+                  </p> -->
+                  <p class="cy-color-secondary right">{{project_item.date}}</p>
                 </div>
               </div>
         </div>
         <!--  -->
 
         <div class="cy-container">
-          <h1 class="cy-title left">El Cliente</h1>
+          <h1 class="cy-title left">The client</h1>
 
-            <div class="cy-row">
-                  <div class="cy-col-2 cy-col-2-sm">
-                    <img src="assets/img/logo-cy.svg" alt="Logo CY" />
-                  </div>
-                  <!--  -->
-                  <div class="cy-col-10 cy-col-10-sm">
-                    <p class="cy-color-white justify">
-                      La “Institución Financiera de Sólido Prestigio” es una institución
-                      bancaria con larga trayectoria regional en la propuesta de
-                      productos y prestación de servicios a la comunidad.
-                    </p>
-                  </div>
-                  <!--  -->
+            <div class="cy-row" *ngFor="let client_item of project_item.clients">
+              <ng-template [ngIf]="client_item.position_logo === 'column1'" [ngIfElse]="position2">
+                <div  [ngClass]="client_item.class_logo">
+                  <img [src]="client_item.url_logo" alt="Logo CY" />
+                </div>
+                <div [ngClass]="client_item.class_text">
+                  <p class="cy-color-white justify" [innerHTML]="client_item.description" ></p>
+                </div>
+              </ng-template>
+              <ng-template #position2>
+                <div [ngClass]="client_item.class_text">
+                  <p class="cy-color-white justify" [innerHTML]="client_item.description" ></p>
+                </div>
+                <div  [ngClass]="client_item.class_logo">
+                  <img [src]="client_item.url_logo" alt="Logo CY" />
+                </div>
+              </ng-template>
 
             </div>
             <!--  -->
-            <div class="cy-row">
-              <div class="cy-col-10 cy-col-12-sm">
+            <!-- <div class="cy-row">
+              <div class="cy-col-10 cy-col-10-sm">
                 <p class="cy-color-white justify">
-                  El “Grupo Rentas Aduaneras” es una institución gubernamental
-                  dedicada al rubro de recaudación de rentas en aduanas nacionales e
-                  internacionales.
+                  The "Grupo Rentas Aduaneras" is a government institution
+                  dedicated to the revenue collection item in national customs and
+                  international
                 </p>
               </div>
-              <!--  -->
-              <div class="cy-col-2 cy-col-12-sm">
+              <div class="cy-col-2 cy-col-2-sm cy-align-items-center">
                 <img src="assets/img/logo-cy.svg" alt="Logo CY" />
               </div>
-
-            </div>
+            </div> -->
         </div>
         <!--  -->
         <div class="cy-container">
 
 
-          <h1 class="cy-title left">Intervenci&oacute;n</h1>
+          <h1 class="cy-title left">Intervention</h1>
           <div class="cy-row">
             <div class="cy-col-12">
-              <p class="cy-color-white justify">
-                Charlies fue asignado a este proyecto para llevar a cabo el <span>diseño
-                  y el desarrollo</span> de una <span>aplicación web</span> que permitiera a los
-                usuarios realizar el proceso de <span>validación</span> que se realizaba de
-                forma <span>manual</span> pasando este a una forma <span>automática</span>,segura y
-                consistente.
-              </p>
+              <p class="cy-color-white justify" [innerHTML]="project_item.text_presentation"> </p>
             </div>
           </div>
       </div>
         <!--  -->
 
         <div class="cy-container">
-        <h1 class="cy-title left">El reto</h1>
+        <h1 class="cy-title left">The challenge</h1>
         <div class="cy-row">
           <div class="cy-col-12">
-            <p class="cy-color-white justify">
-              El proyecto fue aprobado en agosto de 2018 finalizando en
-              diciembre del mismo año, se acordó fijar una primera parte del
-              módulo para tal mes y el resto para una segunda entrega.
-              <br />
-              El <span>requisito principal</span> para la operación del proyecto consistía en
-              tomar la información de ambos entes, <span>comparar</span> datos, determinar
-             <span>diferidos</span> y generar <span>alertas</span> a los usuarios.
-            </p>
+            <p class="cy-color-white justify" [innerHTML]="project_item.text_challenge" ></p>
           </div>
         </div>
       </div>
         <!--  -->
         <div class="cy-container">
-        <h1 class="cy-title left">Manos en la obra</h1>
+        <h1 class="cy-title left">Hands on work</h1>
         <div class="cy-row">
           <div class="cy-col-12">
-            <p class="cy-color-white justify">
-              En este proyecto se contaba con un <span>requerimiento de software</span> sobre
-              el cual se diseñó una guía del portal usando <span>mockups</span>, estos fueron
-              maquetados por el equipo de <span>diseño gráfico</span> respetando la <span>línea gráfica</span> establecida.
-            </p>
+            <p class="cy-color-white justify" [innerHTML]="project_item.text_hands_of_work"></p>
           </div>
         </div>
       </div>
         <!--  -->
         <div class="cy-row">
           <div class="cy-col-12">
-            <img src="assets/img/image_projects/reconciliations/project-cy-mocks.png" alt="image mocks" />
+            <img *ngIf="project_item.url_mocks !== null" [src]="project_item.url_mocks" alt="image mocks" />
           </div>
         </div>
         <!--  -->
         <div class="cy-container">
         <div class="cy-row">
           <div class="cy-col-12">
-            <p class="cy-color-white justify">
-              La gestión del proyecto fue llevada a cabo por el equipo de
-              <span>Project Manager</span> de la “Institución Financiera de Sólido
-              Prestigio”, ellos llevaron el control de las <span>tareas</span> del proyecto.
+            <p class="cy-color-white justify" [innerHTML]="project_item.text_other">
+              <!-- The project management was carried out by the team of
+               <span>Project Manager</span> of the “Financial Institution of Solid
+               Prestige ”, they took control of the <span>tasks</span> of the project.
+               <br>
+               For the design and development of the project there was free decision in
+              the use of tools, as a new
+              software solution. -->
             </p>
           </div>
         </div>
@@ -1379,56 +1399,48 @@
         <!--  -->
         <div class="cy-row">
           <div class="cy-col-12">
-            <img src="assets/img/image_projects/reconciliations/project-cy-devices.png" alt="image devices" />
+            <img *ngIf="project_item.url_devices !== null" [src]="project_item.url_devices" alt="image devices" />
           </div>
         </div>
         <!--  -->
-        <div class="cy-container">
+        <!-- <div class="cy-container">
         <div class="cy-row">
           <div class="cy-col-12">
             <p class="cy-color-white justify">
-              Para el diseño y el desarrollo del proyecto hubo decisión libre en
-              el uso de herramientas, ya que se estaba implementando una nueva
-              solución de software.
+              For the design and development of the project there was free decision in
+              the use of tools, as a new
+              software solution.
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
         <!--  -->
         <div class="cy-container">
-        <h1 class="cy-title left">Recursos</h1>
+        <h1 class="cy-title left">Resources</h1>
         <div class="cy-row">
           <div class="cy-col-12">
-            <!-- <p class="cy-color-white justify"> -->
               <ul class="cy-list-resources-proyect">
-                <li>Animate Css</li>
-                <li>Bootstrap</li>
+                <li *ngFor="let item of project_item.resources" >{{item.name}}</li>
+                <!-- <li>Bootstrap</li>
                 <li>Datatables Js</li>
                 <li>Toast JS</li>
-                <li>Basa Fonts</li>
+                <li>Basa Fonts</li> -->
               </ul>
-            <!-- </p> -->
           </div>
         </div>
       </div>
         <!--  -->
         <div class="cy-row">
           <div class="cy-col-12">
-            <img src="assets/img/image_projects/reconciliations/project-cy-mobile.png" alt="image mobile" />
+            <img *ngIf="project_item.url_mobile !== null" [src]="project_item.url_mobile" alt="image mobile" />
           </div>
         </div>
         <!--  -->
         <div class="cy-container">
-        <h1 class="cy-title left">Resumen</h1>
+        <h1 class="cy-title left">Summary</h1>
         <div class="cy-row">
           <div class="cy-col-12">
-            <p class="cy-color-white justify">
-              Al final los usuarios quedaron satisfechos al poder llevar a cabo
-              las conciliaciones en un <span>sitio web</span> alojado en su <span>intranet</span>, al día
-              de hoy pueden generar la documentación requerida por el “Grupo
-              Rentas Aduaneras” el cual valida el correcto <span>registro</span> de la
-              información.
-            </p>
+            <p class="cy-color-white justify" [innerHTML]="project_item.text_sumary"></p>
           </div>
         </div>
         <!--  -->
@@ -1436,26 +1448,25 @@
 
       <div class="cy-row cy-footer-project">
         <div class="cy-container">
-          <h1 class="cy-title left" style="padding-top: 15px;">Equipo</h1>
+          <h1 class="cy-title left" style="padding-top: 15px;">Team</h1>
           <div class="cy-row">
-            <div class="cy-col-4 colum-team">
-              <h2 class="cy-color-primary">Fernando Espinal</h2>
-              <h3 class="cy-color-white">Desarrollador movil</h3>
-              <h5 class="cy-color-secondary "><a class="cy-color-secondary" href="#" target="blank">@fersup</a></h5>
+            <div class="cy-col-4 colum-team" *ngFor="let item of project_item.team">
+              <h2 class="cy-color-primary">{{item.name}}</h2>
+              <h3 class="cy-color-white">{{item.rol}}</h3>
+              <h5 class="cy-color-secondary ">
+                <a class="cy-color-secondary" [href]="item.url_network" target="blank">{{item.user_name}}</a>
+              </h5>
             </div>
-            <div class="cy-col-4 colum-team">
+            <!-- <div class="cy-col-4 colum-team">
               <h2 class="cy-color-primary">Andy Castellanos</h2>
-              <h3 class="cy-color-white">Desarrollador Backend</h3>
+              <h3 class="cy-color-white">Developer Backend</h3>
               <h5 class="cy-color-secondary "><a class="cy-color-secondary" href="#" target="blank">@andys</a></h5>
-
-              <!-- <p class="cy-color-white">Desarrollador movil</p> -->
-
             </div>
             <div class="cy-col-4 colum-team">
               <h2 class="cy-color-primary">Fernando Espinal</h2>
-              <h3 class="cy-color-white">Desarrollador movil</h3>
+              <h3 class="cy-color-white">Developer movil</h3>
               <h5 class="cy-color-secondary "><a class="cy-color-secondary" href="#" target="blank">@fersup</a></h5>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

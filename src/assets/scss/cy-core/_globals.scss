@@ -8,6 +8,7 @@
 }
  html {
     line-height: 1.15; /* 1 */
+    overflow-x: hidden;
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   // html.scroll_y_no {overflow-y: auto; }

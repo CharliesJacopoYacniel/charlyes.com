@@ -35,7 +35,7 @@
   // background-color: $cy-green-strong;
   background-color: $cy-black;
   position: fixed;
-  left: 0;
+  left: -3px;
   top: 50%;
   will-change: height, top;
   animation: open-animation .6s cubic-bezier(0.83, 0.04, 0, 1.16) .65s both;
@@ -93,6 +93,12 @@
   animation-duration: .3s;
   animation-delay: .6s;
   animation-fill-mode: forwards;
+}
+
+.cy-align-items-center{
+  img{
+    height: 100%;
+  }
 }
 
 

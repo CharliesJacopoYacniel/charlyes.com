@@ -132,7 +132,45 @@
     }
   ],
   "portfolio":[
-
+    {
+      "card_type": 1,
+      "figure_class": "col-3@xs col-4@sm col-3@md picture-item",
+      "date": "december",
+      "month_proyect":"December",
+      "year_project": 2018,
+      "cy_class": "cy-card cy-card-style-1",
+      "group": "developer",
+      "title": "Bank Conciliations",
+      "type_proyect":"Aplication Web",
+      "rol": "Programmer analyst",
+      "autor": "Charlies Yacniel",
+      "url_thumnails": "assets/img/image_projects/reconciliations/project-cy-devices.png",
+      "url_background": "assets/img/image_projects/reconciliations/project-cy-background.png",
+      "url_devices": "assets/img/image_projects/reconciliations/project-cy-devices.png",
+      "url_mobile": "assets/img/image_projects/reconciliations/project-cy-mobile.png",
+      "url_mocks": "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+      "url_public": "https://github.com/CharliesYacniel",
+      "co_workers": [
+        {
+          "name":"Fernando Espinal",
+          "rol":"Developer Mobile",
+          "url_network":"https://github.co/CharliesYacniel"
+        },
+        {
+          "name":"Andy Castellanos",
+          "rol":"Developer Back End",
+          "url_network":"https://github.co/CharliesYacniel"
+        },
+        {
+          "name":"Fernando Espinal",
+          "rol":"Developer Mobile",
+          "url_network":"https://github.com/CharliesYacniel"
+        }
+      ],
+      "detalis": "A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through<span>manual</span> processes.",
+      "client": "Solid Prestige Financial Institution",
+      "descripiton": "La plataforma conciliaciones DARA de pagos y garantías bancarias , es el módulo donde los usuarios del área de operaciones del banco Atlántida pueden iniciar sesión y proceder con el balance contable entre el SAR y el Banco , es aquí donde los usuarios que estén habilitados pueden verificar si existen anomalías y/o diferencias en los grupos de pagos de ambas partes y en base a ello proceder a efectuar ( cancelar ) los pagos directamente en el módulo o proceder con los trámites administrativos segun sea el caso"
+    }
   ],
   "skills":[
     {
@@ -164,6 +202,141 @@
       "percentage":"90",
       "color":"cy-green-primary",
       "active":false
+    }
+  ],
+  "my_social_networks":[
+    {
+      "active":false,
+      "url":"https://www.facebook.com/jacopoLaSabandija",
+      "cy_logo":"cy-facebook-square"
+    },
+    {
+      "active":true,
+      "url":"https://github.com/CharliesYacniel/",
+      "cy_logo":"cy-github"
+    },
+    {
+      "active":true,
+      "url":"https://www.linkedin.com/in/charliesyacniel/",
+      "cy_logo":"cy-linkedin"
+    },
+    {
+      "active":false,
+      "url":"https://www.instagram.com/charlies_yacniel/",
+      "cy_logo":"cy-instagram"
+    },
+    {
+      "active":true,
+      "url":"https://twitter.com/CharliesYacniel",
+      "cy_logo":"cy-tweter"
+    }
+  ],
+  "credits":[
+    {
+      "status":true,
+      "name":"Benesis Damaris",
+      "url":"https://www.instagram.com/bd_cl/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Keyla Jafet",
+      "url":"https://www.instagram.com/keysjafet.s/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Tania Ordoñez",
+      "url":"https://www.instagram.com/eoatania/"
+    },
+    {
+      "status":true,
+      "name":"Nataly Park Photografies",
+      "url":"https://www.instagram.com/ntpark_view/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Víctor Alvarado",
+      "url":"https://www.instagram.com/vic89_m/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Belkis López",
+      "url":"https://www.instagram.com/belkislopez19/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Valeria Godoy",
+      "url":"https://www.instagram.com/val.goc/?hl=es-la"
+    },
+    {
+      "status":true,
+      "name":"Alvaro Felipe",
+      "url":"https://codepen.io/AlvaroFelipe/pen/gagWYN"
+    },
+    {
+      "status":true,
+      "name":"Freepik",
+      "url":"https://www.flaticon.es/autores/freepik"
+    },
+    {
+      "status":true,
+      "name":"Fontello",
+      "url":"http://fontello.com/"
+    },
+    {
+      "status":true,
+      "name":"Normalize.css",
+      "url":"http://necolas.github.io/normalize.css/"
+    },
+    {
+      "status":true,
+      "name":"Jetbrains mono",
+      "url":"https://www.jetbrains.com/lp/mono/"
+    },
+    {
+      "status":true,
+      "name":"Shuffle JS",
+      "url":"https://vestride.github.io/Shuffle/"
+    },
+    {
+      "status":true,
+      "name":"Simplegrid",
+      "url":"http://simplegrid.io/"
+    },
+    {
+      "status":true,
+      "name":"Stas Melnikov",
+      "url":"https://codepen.io/melnik909/pen/QModrM"
+    },
+
+    {
+      "status":true,
+      "name":"Fey",
+      "url":"https://codepen.io/feyinway/pen/prGrJq"
+    },
+    {
+      "status":true,
+      "name":"Christian Robertson",
+      "url":"https://fonts.google.com/specimen/Roboto"
+    },
+    {
+      "status":true,
+      "name":"Mert Cukuren",
+      "url":"https://codepen.io/knyttneve/pen/bgvmma"
+    },
+    {
+      "status":true,
+      "name":"Fey",
+      "url":"https://codepen.io/feyinway/pen/LjMPgv"
+    },
+    {
+      "status":true,
+      "name":"Kevin Ku",
+      "url":"https://www.pexels.com/es-es/foto/codificando-codigos-datos-desarrollador-577585/"
+    },
+    {
+      "status":true,
+      "name":"Lucas",
+      "url":"https://www.pexels.com/es-es/foto/apple-codificando-codigo-codigos-574069/"
     }
   ],
   "experience":3,
