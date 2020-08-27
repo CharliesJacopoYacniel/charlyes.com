@@ -237,7 +237,7 @@ constructor(private serviceData: ServicedataService) {
         url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
         url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
         url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
-        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+        url_mocks: "assets/img/image_projects/charlies/project-cy-mocks.jpg",
         url_public: "https://github.com/CharliesYacniel",
         team: [
           {
@@ -284,7 +284,7 @@ constructor(private serviceData: ServicedataService) {
         url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
         url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
         url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
-        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
+        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.jpg",
         url_public: "https://github.com/CharliesYacniel",
         team: [
           {

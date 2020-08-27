@@ -321,20 +321,24 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
   }
   &::after {
     content: "";
-    opacity: 0.1;
-    // z-index: -9;
+    /* opacity: 0.3; */
     width: inherit;
     height: inherit;
     position: absolute;
     top: 0;
     left: 0;
-    background: radial-gradient(circle, $cy-green-primary 0%, $cy-black 100%, $cy-black 100%);
+    background: radial-gradient(circle, #93ea201a 0%, $cy-black 100%, $cy-black 100%);
 
   }
 }
 //=========================================
 
-
+.cy-project-mind{
+  z-index: 9;
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+}
 
 .testim {
   width: 100%;
