@@ -40,7 +40,7 @@
             Software Designer / Developer
           </div>
           <div class="cv center">
-            <a class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10" href="assets/files/cy-cv.pdf"
+            <a class="cy-btn cy-btn-fill-reverse margin-left-20 margin-bottom-10" href="assets/files/Charlies-Yacniel-CV.pdf"
               target="_blank">Download my CV</a>
             <a class="cy-btn cy-btn-fill margin-left-20 margin-bottom-10" href="#portfolio">Portfolio</a>
           </div>
@@ -255,7 +255,11 @@
 
     <div class="cy-row">
       <div class="cy-col-4 cy-col-6-sm">
-        <div class="circular-progress html"></div>
+        <div class="circular-progress php"></div>
+      </div>
+
+      <div class="cy-col-4 cy-col-6-sm">
+        <div class="circular-progress node"></div>
       </div>
 
       <div class="cy-col-4 cy-col-6-sm">
@@ -267,15 +271,11 @@
       </div>
 
       <div class="cy-col-4 cy-col-6-sm">
-        <div class="circular-progress php"></div>
+        <div class="circular-progress angular"></div>
       </div>
 
       <div class="cy-col-4 cy-col-6-sm">
-        <div class="circular-progress python"></div>
-      </div>
-
-      <div class="cy-col-4 cy-col-6-sm">
-        <div class="circular-progress node"></div>
+        <div class="circular-progress git"></div>
       </div>
     </div>
 
@@ -1178,51 +1178,53 @@
           <div class="cy-col-6 cy-col-12-sm">
             <h3 class="cy-title">Write me</h3>
 
-            <form class="cy-form" (ngSubmit)="onSendMail()">
+            <form class="cy-form"   #contacForm="ngForm" (ngSubmit)="onSendMail($event); contacForm.reset()">
               <!-- <div class="cy-form-group"> -->
               <div class="cy-form-group">
                 <div class="cy-form-row">
                   <label for="name">Name:</label>
-                  <input class="cy-form-control" type="text"   placeholder="Write your name" />
-                  <!-- <input
+                  <!-- <input class="cy-form-control" type="text"   placeholder="Write your name" /> -->
+                  <input
                         type="text"
                         name="name"
                         class="cy-form-control"
                         placeholder="Write your name"
                         [(ngModel)]="name"
                         required
-                        minlength="3"
-                        > -->
+                        minlength="4"
 
-                        <!-- #nameInput="ngModel" -->
+                        #nameInput="ngModel"
+                        >
 
-                      <!-- <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
-                        Your name is required and must be at least 3 characters long.
-                      </div> -->
+
+                      <div class="cy-label-error" *ngIf="nameInput.invalid && nameInput.dirty">
+                        Your name is required.
+                      </div>
                 </div>
                 <div class="cy-form-row">
                   <label for="email">E-mail:</label>
-                  <input class="cy-form-control" type="email"
-                    placeholder="ex: holamundo@charlyes.com" />
-                    <!-- <input
+                  <!-- <input class="cy-form-control" type="email"
+                    placeholder="ex: holamundo@charlyes.com" /> -->
+                    <input
                       type="email"
                       name="email"
                       class="cy-form-control"
-                      placeholder="Ex: holamundo@charlyes.com"
+                      placeholder="Ex: example@example.com"
                       [(ngModel)]="email_client"
                       required
                       email
-                      > -->
-                      <!-- #emailInput="ngModel" -->
 
-                    <!-- <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+                      #emailInput="ngModel"
+                      >
+
+                    <div class="cy-label-error" *ngIf="emailInput.invalid && emailInput.dirty">
                       Please enter a valid email.
-                    </div> -->
+                    </div>
                 </div>
               </div>
               <div class="cy-form-row">
                 <label for="phone">Phone:</label>
-                  <!-- <input
+                  <input
                   type="number"
                   name="phone"
                   class="cy-form-control"
@@ -1230,33 +1232,37 @@
                   [(ngModel)]="phone_client"
                   required
                   phone_client
-                  > -->
-                  <!-- #phoneInput="ngModel" -->
+                  #phoneInput="ngModel"
+                  >
 
-                <!-- <div class="help is-error" *ngIf="phoneInput.invalid && phoneInput.dirty">
+                <div class="cy-label-error" *ngIf="phoneInput.invalid && phoneInput.dirty">
                   Please leave me your phone number.
-                </div> -->
+                </div>
               </div>
               <div class="cy-form-row">
                 <label for="message">Message:</label>
-                <textarea class="cy-form-control" formControlName="message" cols="10" rows="5"
-                  placeholder="Write me your message"></textarea>
-                  <!-- <textarea
-                    class="textarea"
+                <!-- <textarea class="cy-form-control" formControlName="message" cols="10" rows="5"
+                  placeholder="Write me your message"></textarea> -->
+                  <textarea
+                    class="cy-form-control"
                     name="message"
                     placeholder="What's on your mind?"
                     [(ngModel)]="message"
                     required
-                    ></textarea> -->
-                    <!-- #messageInput="ngModel" -->
+                    minlength="10"
+                    #messageInput="ngModel"
+                    ></textarea>
 
-                    <!-- <div class="help is-error" *ngIf="messageInput.invalid && messageInput.dirty">
-                      Your message is required!
-                    </div> -->
+                    <div class="cy-label-error" *ngIf="messageInput.invalid && messageInput.dirty">
+                      Your message is required
+                    </div>
               </div>
               <div class="cy-form-row">
                 <!-- <input class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" value="Send" /> -->
-                <button class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" >Send</button>
+                <button class="cy-btn cy-btn-tertiary cy-btn-block"
+                type="submit"
+                [disabled]="!contacForm.form.valid"
+                >Send</button>
                 <!-- <button type="submit" class="button is-danger is-large">Submit</button> -->
               </div>
               <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>

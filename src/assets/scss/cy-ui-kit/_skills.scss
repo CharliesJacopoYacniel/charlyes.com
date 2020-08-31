@@ -119,32 +119,32 @@
 
 .html{
 	@include circular-progress(
-		90,
-		html5,
+		80,
+		html,
 		$cy-green-secondary,
 		$cy-black
 		);
 	}
 .css{
 	@include circular-progress(
-		60,
-		css,
+		90,
+		Css,
 		$cy-green-primary,
 		$cy-black
 		);
 	}
 .js{
 	@include circular-progress(
-		60,
-		js,
+		80,
+		JavaScript,
 		$cy-green-secondary,
 		$cy-black
 		);
 	}
 .php{
 	@include circular-progress(
-		20,
-		php,
+		90,
+		Php,
 		$cy-green-primary,
 		$cy-black
 		);
@@ -157,14 +157,30 @@
 		$cy-black
 		);
 	}
-.node{
+.angular{
 	@include circular-progress(
-		60,
-		node,
-		$cy-green-primary,
+		80,
+		Angular,
+		$cy-green-secondary,
 		$cy-black
 		);
 	}
+.node{
+	@include circular-progress(
+		80,
+		Node,
+		$cy-green-primary,
+		$cy-black
+		);
+  }
+.git{
+    @include circular-progress(
+      80,
+      Git,
+      $cy-green-primary,
+      $cy-black
+      );
+    }
 .skills{
 	display:flex;
 	flex-wrap: wrap;

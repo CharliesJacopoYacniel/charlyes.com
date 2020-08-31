@@ -128,7 +128,7 @@ constructor(private serviceData: ServicedataService) {
       this.credits = data.credits;
       // console.log('social',this.my_social_networks);
     });
-
+    window.onscroll = function(even) {this.myFunction(event)};
   }
 
   onCloseModal() {
@@ -150,11 +150,53 @@ constructor(private serviceData: ServicedataService) {
   //   // this.scroll_y = 'overflow-y: hidden;' ;
   //   // this.scroll_y = (this.scroll_y === 'scroll_y_yes') ? 'scroll_y_no' : 'scroll_y_yes';
   // }
+/**
+ * los skills que voy a dejar
+ * Front end
+ *   HTML al 80%
+ *   CSS al 90%  X
+ *   JS al 80%   X
+ *   Angular al 80% X
+ *
+ *  BACK END
+ *   PHP al 90%   X
+ *   NODE JS al 80% X
+ *   JAVA al 70%
+ *
+ * Otros
+ * Git al 80%  X
+ * Docker al 70%
+ * Adobe XD al 90%
+ * BD SQL/NO SQL al 80%
+ *
+ */
 
+
+
+myFunction(event:any) {
+  // if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  //   document.getElementById("myP").className = "test";
+  // } else {
+  //   document.getElementById("myP").className = "";
+  // }
+  var progressbar= document.getElementById("progressbar")
+  console.log(progressbar)
+  console.log(event)
+}
   async ngOnInit() {
+  //
 
-    this.emptySpan();// TODO no elimnar
 
+
+    window.onscroll = function (event) {
+      console.log(event)
+      var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
+      var progress = (scrollTop / (scrollHeight - clientHeight))*100;
+      console.log(progress)
+      // progressbar.style.width = `${progress}%`;
+    }
+  //
+    this.emptySpan();
     this.toggleButtonMenu();
     this.testimonials = [
       {
@@ -390,14 +432,9 @@ constructor(private serviceData: ServicedataService) {
         ]
       },
     ];
+
     await this.timeline();
     await this.testimonialsfriends();
-    // var progressbar= document.getElementById('progressbar');
-    // window.onscroll = function (event) {
-    //   var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
-    //   var progress = (scrollTop / (scrollHeight - clientHeight))*100;
-    //   progressbar.style.width = `${progress}%`;
-    // }
     await this.ShuffleFuntion();
   }
 
@@ -718,79 +755,81 @@ constructor(private serviceData: ServicedataService) {
 
   timeline() {
     // ===== codigo del progress bar
-    var progressbar = document.getElementById('progressbar');
+    // var progressbar = document.getElementById('progressbar');
     // window.onscroll = function (event) {
 
     // }
     //=============
-    var selectors = {
-      id: document.getElementById('timeline-1'),
-      item: document.getElementsByClassName('timeline-item'),
-      activeClass: 'timeline-item--active',
-      img: '.timeline__img',
-    };
+    // var selectors = {
+    //   id: document.getElementById('timeline-1'),
+    //   item: document.getElementsByClassName('timeline-item'),
+    //   activeClass: 'timeline-item--active',
+    //   img: '.timeline__img',
+    // };
     // selectors.item[0].classList.add(selectors.activeClass);
     // selectors.id.style.cssText =
     //     'background-image:url(' +
     //     selectors.item[0].getElementsByTagName('img')[0].getAttribute('src') +
     //     ')';
     // var itemLength = selectors.item.length;
-    var ArrayItems = selectors.item;
-    const item = [];
-    for (let i = 0; i < ArrayItems.length; i++) {
-      item.push(ArrayItems[i]);
-    }
-    window.onscroll = function (event) {
-      var {
-        scrollTop,
-        scrollHeight,
-        clientHeight,
-      } = event.target.documentElement;
-      var progress = (scrollTop / (scrollHeight - clientHeight)) * 100;
-      progressbar.style.width = `${progress}%`;
 
-      item.forEach((element: any) => {
-        var coord = element.getBoundingClientRect();
-        if (coord.top <= 60) {
-          element.classList.add(selectors.activeClass);
-          // selectors.id.style.cssText =
-          // 'background-image:url(' +
-          // element.getElementsByTagName('img')[0].getAttribute('src') +
-          // ')';
-        } else {
-          element.classList.remove(selectors.activeClass);
-        }
-      });
+    // var ArrayItems = selectors.item;
+    // const item = [];
+    // for (let i = 0; i < ArrayItems.length; i++) {
+    //   item.push(ArrayItems[i]);
+    // }
+    // window.onscroll = function (event) {
+    //   var {
+    //     scrollTop,
+    //     scrollHeight,
+    //     clientHeight,
+    //   } = event.target.documentElement;
+    //   // var progress = (scrollTop / (scrollHeight - clientHeight)) * 100;
+    //   // console.log('proresgess',progress)
+    //   // progressbar.style.width = `${progress}%`;
 
-      //TODO NO bORAR AUN
-      // item.forEach((element:any) =>{
-      //     var that = element;
-      //     min = that.offsetTop;
-      //     max = that.clientHeight + min;
-      //     console.log('altura elemento',max);
-      // console.log('MAX',max)
-      // console.log('asdasd',scrollTop / (scrollHeight - clientHeight))
-      // if(){
-      // }
-      // if ( element == (itemLength - 2) && pos > min + that.clientHeight / 2) {
-      // element.classList.remove(selectors.activeClass);
-      // selectors.id.style.cssText =
-      //     'background-image:url(' +
-      //     element.getElementsByTagName('img')[0].getAttribute('src') +
-      //     ')';
+    //   item.forEach((element: any) => {
+    //     var coord = element.getBoundingClientRect();
+    //     if (coord.top <= 60) {
+    //       element.classList.add(selectors.activeClass);
+    //       // selectors.id.style.cssText =
+    //       // 'background-image:url(' +
+    //       // element.getElementsByTagName('img')[0].getAttribute('src') +
+    //       // ')';
+    //     } else {
+    //       element.classList.remove(selectors.activeClass);
+    //     }
+    //   });
 
-      // selectors.item[(selectors.item).length - 1].classList.add(selectors.activeClass)
-      // } else if (pos <= max - 40 && pos >= min) {
-      // selectors.id.style.cssText =
-      //     'background-image:url(' +
-      //     element.getElementsByTagName('img')[0].getAttribute('src') +
-      //     ')';
+    //   //TODO NO bORAR AUN
+    //   // item.forEach((element:any) =>{
+    //   //     var that = element;
+    //   //     min = that.offsetTop;
+    //   //     max = that.clientHeight + min;
+    //   //     console.log('altura elemento',max);
+    //   // console.log('MAX',max)
+    //   // console.log('asdasd',scrollTop / (scrollHeight - clientHeight))
+    //   // if(){
+    //   // }
+    //   // if ( element == (itemLength - 2) && pos > min + that.clientHeight / 2) {
+    //   // element.classList.remove(selectors.activeClass);
+    //   // selectors.id.style.cssText =
+    //   //     'background-image:url(' +
+    //   //     element.getElementsByTagName('img')[0].getAttribute('src') +
+    //   //     ')';
 
-      // selectors.item[(selectors.item).length - 1].classList.remove(selectors.activeClass)
-      // that.classList.add(selectors.activeClass);
-      // }
-      // });
-    };
+    //   // selectors.item[(selectors.item).length - 1].classList.add(selectors.activeClass)
+    //   // } else if (pos <= max - 40 && pos >= min) {
+    //   // selectors.id.style.cssText =
+    //   //     'background-image:url(' +
+    //   //     element.getElementsByTagName('img')[0].getAttribute('src') +
+    //   //     ')';
+
+    //   // selectors.item[(selectors.item).length - 1].classList.remove(selectors.activeClass)
+    //   // that.classList.add(selectors.activeClass);
+    //   // }
+    //   // });
+    // };
   }
 
   toggleButtonMenu(){
@@ -812,36 +851,10 @@ constructor(private serviceData: ServicedataService) {
     });
     })
   }
-// ===============
 
-// showText() {
-//   this.textToShow = this.textArr[this.textIndex];
-//   this.textToShowLen = this.textToShow.length;
-//   this.letterIndex = 0;
-
-//   this.letterTimer = setInterval(function() {
-//     this.span.textContent += this.textToShow[this.letterIndex];
-//     console.log(this.textToShow[this.letterIndex]);
-//     this.letterIndex++;
-//     if (this.letterIndex > this.textToShowLen-1) {
-//       clearInterval(this.letterTimer);
-//       this.textTimer = setTimeout(this.nextText,this.textDelay)
-//     }
-//   } ,this.letterDelay)
-
-// }
-
-// nextText() {
-//   clearTimeout(this.textTimer);
-//   this.textIndex++;
-//   if (this.textIndex > this.textArr.length-1) {
-//     this.textIndex = 0;
-//   }
-//   this.emptySpan();
-
-// }
 
 emptySpan() {
+
   var span,
    textIndex,
    textToShow,
@@ -900,27 +913,23 @@ emptySpan() {
 }
 
 
-// async removeLetter() {
-//   if (this.span.textContent.length != 0) {
-//     var popedSpan = Array.prototype.slice.call(this.span.textContent).slice(0,this.span.textContent.length-1).join('');
-//     this.span.textContent = popedSpan;
-//   } else {
-//     clearInterval(this.emptyTimer);
-//     await this.showText();
-//   }
-// }
 
 
-
-onSendMail(){
-  // e.preventDefault();
+onSendMail(e:Event){
+  e.preventDefault();
   console.log('enviarme un correo')
   // console.log(e)
   // console.warn(this.userForm.value);
-  const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
-  alert(allInfo);
+  const dataMail= {
+    "name":this.name,
+    "email":this.email,
+    "phone":this.phone,
+    "message":this.message,
+  }
+  console.log(dataMail)
 
   this.mail_send==true;
+
 }
 
   // }
