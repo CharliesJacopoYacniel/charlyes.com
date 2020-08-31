@@ -255,6 +255,13 @@ ul.cy-list-resources-proyect{
   }
 }
 @media only screen and (max-width: 767px) {
+
+    img.cy-background-project{
+      height: auto;
+      top: 33%;
+    }
+
+
   ::-webkit-scrollbar {
     width: 0;     /* Tamaño del scroll en vertical */
     height: 0;    /* Tamaño del scroll en horizontal */

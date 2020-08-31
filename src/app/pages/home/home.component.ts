@@ -28,7 +28,11 @@ import { ServicedataService } from '../../services/servicedata.service';
 export class HomeComponent {
   @Input() currentState;
   // private eventOptions: boolean | { capture?: boolean; passive?: boolean };
-
+/*variables  de formulario*/
+  name: string;
+  email_client: string;
+  message: string;
+  phone_client: string;
   mail_send:boolean=false;
 
   fade_state: string = 'fade-out';
@@ -72,18 +76,13 @@ export class HomeComponent {
       checked: true,
     },
     {
-      name: 'Developer',
-      group: 'developer',
+      name: 'Front End',
+      group: 'frontend',
       checked: false,
     },
     {
-      name: 'CSS',
-      group: 'css',
-      checked: false,
-    },
-    {
-      name: 'Apps',
-      group: 'apps',
+      name: 'Back End',
+      group: 'backend',
       checked: false,
     },
   ];
@@ -224,169 +223,169 @@ constructor(private serviceData: ServicedataService) {
     ];
     this.portfolio = [
       {
-        card_type: 1,
-        group: 'css',
-        figureclass: 'col-6@xs col-4@sm col-3@md picture-item',
-        cy_class: 'cy-card cy-card-style-2',
-        date: "March 2020",
-        title: "charlyes.com",
-        type_project:"Landing Page",
-        rol: "Front-end Developer",
-        autor: "Charlies Yacniel",
-        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
-        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
-        url_mocks: "assets/img/image_projects/charlies/project-cy-mocks.jpg",
-        url_public: "https://github.com/CharliesYacniel",
-        team: [
+        "card_type": 1,
+        "group": 'frontend',
+        "figureclass": 'col-6@xs col-4@sm col-3@md picture-item',
+        "cy_class": 'cy-card cy-card-style-2',
+        "date": "March 2020",
+        "title": "charlyes.com",
+        "type_project":"Landing Page",
+        "rol": "Developer Front End",
+        "autor": "Charlies Yacniel",
+        "url_thumnails": "assets/img/image_projects/charlies/project-cy-devices.jpg",
+        "url_background": "assets/img/image_projects/charlies/project-cy-background.jpg",
+        "url_devices": "assets/img/image_projects/charlies/project-cy-devices.jpg",
+        "url_mobile": "assets/img/image_projects/charlies/project-cy-mobile.jpg",
+        "url_mocks": "assets/img/image_projects/charlies/project-cy-mocks.jpg",
+        "url_public": "https://github.com/CharliesYacniel",
+        "team": [
           {
-            name:"Charlies yacniel",
-            user_name:"@charliesyacniel",
-            rol:"Front-end developer",
-            url_network:"https://github.co/CharliesYacniel"
+            "name":"Charlies yacniel",
+            "user_name":"@charliesyacniel",
+            "rol":"Front-end developer",
+            "url_network":"https://github.co/CharliesYacniel"
           },
         ],
-        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
-        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
-        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
-        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
-        resources:[
-          {name: 'Angular 8'},
-          {name: 'Suffle JS'}
+        "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
+        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        "text_challenge":'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        "text_sumary":'In the end I managed to finish the project as a quarantine goal, here is the result.<pr>As of today I can refer future clients to a personal portal that identifies me when I am not present.',
+        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "resources":[
+          {"name": 'Angular 8'},
+          {"name": 'Suffle JS'}
         ],
-        clients: [
+        "clients": [
           {
-            position_logo:1,
-            class_logo:"cy-col-2 cy-col-2-sm",
-            class_text:"cy-col-10 cy-col-10-sm",
-            url_logo:'assets/img/logo-cy.svg',
-            name:'Charlies Yacniel',
-            description: 'Necesitaba crear mi propio sitio web'
+            "position_logo":1,
+            "class_logo":"cy-col-2 cy-col-2-sm",
+            "class_text":"cy-col-10 cy-col-10-sm",
+            "url_logo":'assets/img/logo-cy.svg',
+            "name":'Charlies Yacniel',
+            "description": 'Necesitaba crear mi propio sitio web'
           },
         ]
       },
       {
-        group: "developer",//use
-        figureclass: 'col-6@xs col-8@sm col-6@md picture-item',//user
-        card_type: 2,//use
-        cy_class: "cy-card cy-card-style-1",//use
+        "group": "backend",
+        "figureclass": 'col-6@xs col-8@sm col-6@md picture-item',
+        "card_type": 2,
+        "cy_class": "cy-card cy-card-style-1",
 
-        date: "December 2018",
-        title: "Bank Conciliations",
-        type_project:"Aplication Web",
-        rol: "Programmer analyst",
-        autor: "Charlies Yacniel",
-        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
-        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
-        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.jpg",
-        url_public: "https://github.com/CharliesYacniel",
-        team: [
+        "date": "December 2018",
+        "title": "Bank Conciliations",
+        "type_project":"Aplication Web",
+        "rol": "Back End developer",
+        "autor": "Charlies Yacniel",
+        "url_thumnails": "assets/img/image_projects/reconciliations/project-cy-devices.jpg",
+        "url_background": "assets/img/image_projects/reconciliations/project-cy-background.jpg",
+        "url_devices": "assets/img/image_projects/reconciliations/project-cy-devices.jpg",
+        "url_mobile": "assets/img/image_projects/reconciliations/project-cy-mobile.jpg",
+        "url_mocks": "assets/img/image_projects/reconciliations/project-cy-mocks.jpg",
+        "url_public": "https://github.com/CharliesYacniel",
+        "team": [
           {
-            name:"Fernando Espinal",
-            user_name:"@fersup",
-            rol:"Developer Mobile",
-            url_network:"https://github.co/CharliesYacniel"
+            "name":"Andy Castellanos",
+            "user_name":"@ariel.gonzalez.96742",
+            "rol":"Back End developer",
+            "url_network":"https://www.facebook.com/ariel.gonzalez.96742/"
           },
           {
-            name:"Andy Castellanos",
-            user_name:"@andy",
-            rol:"Developer Back End",
-            url_network:"https://github.co/CharliesYacniel"
-          },
-          {
-            name:"Fernando Espinal",
-            user_name:"@fersup",
-            rol:"Developer Mobile",
-            url_network:"https://github.com/CharliesYacniel"
+            "name":"Charlies Yacniel",
+            "user_name":"@charliesyacniel",
+            "rol":"Web developer",
+            "url_network":"https://github.com/CharliesYacniel"
           }
         ],
-        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
-        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
-        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
-        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
-        resources:[
-          {name: 'Animate CSS'},
-          {name: 'Datatables JS'},
-          {name: 'Bootstrap 4'},
-          {name: 'Toast JS'},
+        "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
+        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        "text_challenge":'The project was approved in August 2018 ending in December of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        "text_sumary":'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
+        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "resources":[
+          {"name": 'Animate CSS'},
+          {"name": 'Datatables JS'},
+          {"name": 'Bootstrap 4'},
+          {"name": 'Toast JS'},
         ],
-        clients: [
+        "clients": [
           {
-            position_logo:'column1',
-            class_logo:"cy-col-2 cy-col-2-sm",
-            class_text:"cy-col-10 cy-col-10-sm",
-            url_logo:'assets/img/logo-cy.svg',
-            name:'Solid Prestige Financial Institution',
-            description: 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
+            "position_logo":'column1',
+            "class_logo":"cy-col-2 cy-col-2-sm",
+            "class_text":"cy-col-10 cy-col-10-sm",
+            "url_logo":'assets/img/logo-cy.svg',
+            "name":'Solid Prestige Financial Institution',
+            "description": 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
           },
           {
-            position_logo:'column2',
-            class_logo:"cy-col-2 cy-col-2-sm",
-            class_text:"cy-col-10 cy-col-10-sm",
-            url_logo: 'assets/img/logo-cy.svg',
-            name: 'Grupo Rentas Aduaneras',
-            description: 'The "Grupo Rentas Aduaneras" is a government institution dedicated to the revenue collection item in national customs and international.'
+            "position_logo":'column2',
+            "class_logo":"cy-col-2 cy-col-2-sm",
+            "class_text":"cy-col-10 cy-col-10-sm",
+            "url_logo": 'assets/img/logo-cy.svg',
+            "name": 'Grupo Rentas Aduaneras',
+            "description": 'The "Grupo Rentas Aduaneras" is a government institution dedicated to the revenue collection item in national customs and international.'
           },
         ]
       },
       {
-        card_type: 2,
-        group: 'css',
-        figureclass: 'col-6@xs col-4@sm col-8@md picture-item',
-        cy_class: 'cy-card cy-card-style-2',
-        date: "October 2017",
-        title: "Update Data Clients",
-        type_project:"Form web",
-        rol: "Back-end developer",
-        autor: "Charlies Yacniel",
-        url_thumnails: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_background: "assets/img/image_projects/reconciliations/project-cy-background.png",
-        url_devices: "assets/img/image_projects/reconciliations/project-cy-devices.png",
-        url_mobile: "assets/img/image_projects/reconciliations/project-cy-mobile.png",
-        url_mocks: "assets/img/image_projects/reconciliations/project-cy-mocks.png",
-        url_public: "https://github.com/CharliesYacniel",
-        team: [
+        "card_type": 1,
+        "group": 'backend',
+        "figureclass": 'col-6@xs col-4@sm col-3@md picture-item',
+        "cy_class": 'cy-card cy-card-style-2',
+        "date": "October 2017",
+        "title": "Update Data Clients",
+        "type_project":"Form web",
+        "rol": "Back-end developer",
+        "autor": "Solid Prestige Financial Institution",
+        "url_thumnails": "assets/img/image_projects/campaign/project-cy-background.jpg",
+        "url_background": "assets/img/image_projects/campaign/project-cy-background.jpg",
+        "url_devices": "assets/img/image_projects/campaign/project-cy-devices.jpg",
+        "url_mobile": null,
+        "url_mocks": null,
+        "url_public": "https://github.com/CharliesYacniel",
+        "team": [
           {
-            name:"Charlies Yacniel",
-            user_name:"@charliesyacniel",
-            rol:"Back-end developer",
-            url_network:"https://github.co/CharliesYacniel"
+            "name":"Ivan Castelar",
+            "user_name":"@castelar007",
+            "rol":"Front-end developer",
+            "url_network":"https://github.com/castelar007"
           },
           {
-            name:"Victor Morales",
-            user_name:"@vimo",
-            rol:"Front-end developer",
-            url_network:"https://github.co/CharliesYacniel"
+            "name":"Victor Morales",
+            "user_name":"@ViiMorales",
+            "rol":"Software Architect",
+            "url_network":"https://github.com/ViiMorales"
+          },
+          {
+            "name":"Charlies Yacniel",
+            "user_name":"@charliesyacniel",
+            "rol":"Back-end developer",
+            "url_network":"https://github.co/CharliesYacniel"
           },
         ],
-        thumnail__descripition: "A Solid Prestige Financial Institution needs define your new processes...",
-        text_presentation:' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        text_intervention:'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        text_challenge:'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        text_hands_of_work:'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
-        text_sumary:'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
-        text_other:'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
-        resources:[
-          {name: 'Meteor JS'},
-          {name: 'Animate CSS'}
+        "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
+        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
+        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
+        "text_challenge":'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
+        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        "text_sumary":'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
+        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "resources":[
+          {"name": 'Meteor JS'},
+          {"name": 'Animate CSS'}
         ],
-        clients: [
+        "clients": [
           {
-            position_logo:'column1',
-            class_logo:"cy-col-2 cy-col-2-sm",
-            class_text:"cy-col-10 cy-col-10-sm",
-            url_logo:'assets/img/logo-cy.svg',
-            name:'Solid Prestige Financial Institution',
-            description: 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
+            "position_logo":'column1',
+            "class_logo":"cy-col-2 cy-col-2-sm",
+            "class_text":"cy-col-10 cy-col-10-sm",
+            "url_logo":'assets/img/logo-cy.svg',
+            "name":'Solid Prestige Financial Institution',
+            "description": 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
           },
         ]
       },
@@ -918,7 +917,8 @@ onSendMail(){
   console.log('enviarme un correo')
   // console.log(e)
   // console.warn(this.userForm.value);
-
+  const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
+  alert(allInfo);
 
   this.mail_send==true;
 }

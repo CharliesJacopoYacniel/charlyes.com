@@ -1178,36 +1178,86 @@
           <div class="cy-col-6 cy-col-12-sm">
             <h3 class="cy-title">Write me</h3>
 
-            <form class="cy-form" >
+            <form class="cy-form" (ngSubmit)="onSendMail()">
               <!-- <div class="cy-form-group"> -->
               <div class="cy-form-group">
                 <div class="cy-form-row">
                   <label for="name">Name:</label>
                   <input class="cy-form-control" type="text"   placeholder="Write your name" />
+                  <!-- <input
+                        type="text"
+                        name="name"
+                        class="cy-form-control"
+                        placeholder="Write your name"
+                        [(ngModel)]="name"
+                        required
+                        minlength="3"
+                        > -->
+
+                        <!-- #nameInput="ngModel" -->
+
+                      <!-- <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
+                        Your name is required and must be at least 3 characters long.
+                      </div> -->
                 </div>
                 <div class="cy-form-row">
                   <label for="email">E-mail:</label>
                   <input class="cy-form-control" type="email"
                     placeholder="ex: holamundo@charlyes.com" />
+                    <!-- <input
+                      type="email"
+                      name="email"
+                      class="cy-form-control"
+                      placeholder="Ex: holamundo@charlyes.com"
+                      [(ngModel)]="email_client"
+                      required
+                      email
+                      > -->
+                      <!-- #emailInput="ngModel" -->
+
+                    <!-- <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+                      Please enter a valid email.
+                    </div> -->
                 </div>
               </div>
               <div class="cy-form-row">
                 <label for="phone">Phone:</label>
-                <input class="cy-form-control" type="number"
-                  placeholder="Leave your telephone number" />
+                  <!-- <input
+                  type="number"
+                  name="phone"
+                  class="cy-form-control"
+                  placeholder="Leave your telephone number"
+                  [(ngModel)]="phone_client"
+                  required
+                  phone_client
+                  > -->
+                  <!-- #phoneInput="ngModel" -->
+
+                <!-- <div class="help is-error" *ngIf="phoneInput.invalid && phoneInput.dirty">
+                  Please leave me your phone number.
+                </div> -->
               </div>
-              <!-- <div class="cy-form-row">
-                <label for="pre">Budget:</label>
-                <input class="cy-form-control" type="number" name="pre" id="pre" placeholder="Indicates budget" />
-              </div> -->
               <div class="cy-form-row">
                 <label for="message">Message:</label>
                 <textarea class="cy-form-control" formControlName="message" cols="10" rows="5"
                   placeholder="Write me your message"></textarea>
+                  <!-- <textarea
+                    class="textarea"
+                    name="message"
+                    placeholder="What's on your mind?"
+                    [(ngModel)]="message"
+                    required
+                    ></textarea> -->
+                    <!-- #messageInput="ngModel" -->
+
+                    <!-- <div class="help is-error" *ngIf="messageInput.invalid && messageInput.dirty">
+                      Your message is required!
+                    </div> -->
               </div>
               <div class="cy-form-row">
                 <!-- <input class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" value="Send" /> -->
-                <button class="cy-btn cy-btn-tertiary cy-btn-block"  >Send</button>
+                <button class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" >Send</button>
+                <!-- <button type="submit" class="button is-danger is-large">Submit</button> -->
               </div>
               <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>
               <div class="cy-form-row">
@@ -1224,50 +1274,9 @@
         </div>
       </div>
       <div class="cy-credits">
-        <!--
-          lista de objetos a dar creditos
-            - inspiracion del sitio web(coder.xd)
-            -tipografia jetbrains (ellos dicen que no pero les dare creditos) LISTO
-            -David waimin y valeria por las fotos (posblemente)
-            -Graficos son de alvaro felipe de edteam
-            -shufle.js LISTO
-            -Animacion de apertura del proyecto LISTO
-            -carrusel de comentarios
-            -line time
-            -nataly por la foto de la unah
-            - tania por la foto odnde etoy haciendo cables
-            -victor alvarado prola foto del bunker
-            -belkis por la foto de copan donde estoy meditando
-            -iconos de frepik LISTO
-            - tipo de letra roboto
-            - keyla por la traduction al ingles
-            - Benesis por la redaccion LISTO
-            -iconos que estan en el footer del CV
-            -barra de scroling horizontal en el header
-            -imagnes de stck de los dispositivos de pantall de aterizaje
-            -creditos al equipo de los proyectos
-         -->
         <span class="cy-span-credit">This site has been designed and developed by Charlies Yacniel thanks to: </span>
         <ul >
           <li *ngFor="let item of credits"><a [href]="item.url" *ngIf="item.status===true"  [title]="item.name" target="blank">{{item.name}}</a></li>
-          <!--
-          <li><a href="https://www.instagram.com/bd_cl/?hl=es-la" title="Benesis" target="blank">Benesis</a></li>
-          <li><a href="https://www.flaticon.es/autores/freepik" title="Freepik" target="blank">Freepik</a></li>
-          <li><a href="http://fontello.com/" title="Freepik" target="blank">Fontello</a></li>
-          <li><a href="https://github.com/necolas/normalize.css" target="blank">Normalize.css</a></li>
-          <li><a href="https://www.jetbrains.com/lp/mono/" target="blank">Jetbrains mono</a></li>
-          <li><a href="https://vestride.github.io/Shuffle/" target="blank">Shuffle JS</a></li>
-          <li><a href="http://simplegrid.io/" target="blank">Simplegrid</a></li>
-          <li><a href="https://codepen.io/melnik909/pen/QModrM" target="blank">Stas Melnikov</a></li>
-          <li><a href="https://codepen.io/feyinway/pen/LjMPgv" target="blank">Fey</a></li>
-          <li><a href="https://codepen.io/feyinway/pen/prGrJq" target="blank">Fey</a></li>
-          <li><a href="https://fonts.google.com/specimen/Roboto" target="blank">Christian Robertson</a></li>
-          <li><a href="https://codepen.io/AlvaroFelipe/pen/gagWYN" target="blank">Alvaro Felipe</a></li>
-          <li><a href="https://codepen.io/knyttneve/pen/bgvmma" target="blank">Mert Cukuren</a></li>
-          <li><a href="https://www.instagram.com/ntpark_view/?hl=es-la" target="blank">Nataly Park Photografies</a></li>
-          <li><a href="https://www.instagram.com/vic89_m/?hl=es-la" target="blank">Víctor Alvarado</a></li>
-          <li><a href="https://www.instagram.com/belkislopez19/?hl=es-la" target="blank">Belkis López</a></li>
-          <li><a href="https://www.instagram.com/keysjafet.s/?hl=es-la" target="blank">Keyla Jafet</a></li> -->
         </ul>
       </div>
     </footer>
@@ -1282,11 +1291,8 @@
     <div class="cy-modal__block">
       <!--  -->
 
-        <img class="cy-background-project" src="assets/img/image_projects/reconciliations/project-cy-background.png"
-          alt="" srcset="" />
+        <img class="cy-background-project" [src]="project_item.url_background" alt="background-project-item" />
           <div class="cy-container">
-
-
               <div class="cy-row cy-row-background">
                 <div class="cy-col-12 cy-col-background">
                   <h1 class="cy-color-primary center">{{project_item.title}}</h1>

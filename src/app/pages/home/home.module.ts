@@ -8,7 +8,7 @@ import { HomeComponent } from './home.component';
 
 // import { AnimateOnScrollModule } from 'ng2-animate-on-scroll';
 // import { ModalComponent } from '../../components/modal/modal.component';
-// import { ReactiveFormsModule } from '@angular/forms';
+import {FormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [ HomeComponent],
@@ -16,6 +16,8 @@ import { HomeComponent } from './home.component';
 		CommonModule,
 		// HomeRoutingModule
     // ReactiveFormsModule
+    FormsModule
   ],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeModule {}
