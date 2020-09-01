@@ -328,6 +328,7 @@ input.selector-5:checked ~ .content .slider > li:nth-child(5) {
     top: 0;
     left: 0;
     background: radial-gradient(circle, #93ea201a 0%, $cy-black 100%, $cy-black 100%);
+    background: -webkit-radial-gradient(circle, #93ea201a -50%, $cy-black 100%, $cy-black 100%);
 
   }
 }

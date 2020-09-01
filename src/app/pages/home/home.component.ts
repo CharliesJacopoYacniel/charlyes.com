@@ -16,9 +16,11 @@ import {
 // } from '@angular/animations';
 import Shuffle from 'shufflejs';
 import { ServicedataService } from '../../services/servicedata.service';
+import { MailsService } from 'src/app/services/mails.service';
 // import { Projectitem } from 'src/app/models/projectitem';
 // import { setTimeout } from 'timers';
 // import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-home',
@@ -34,6 +36,7 @@ export class HomeComponent {
   message: string;
   phone_client: string;
   mail_send:boolean=false;
+  label_error:boolean=false;
 
   fade_state: string = 'fade-out';
   popup_state: string = 'close';
@@ -109,8 +112,11 @@ export class HomeComponent {
 //   phone: new FormControl(''),
 //   message: new FormControl(''),
 // });
-
-constructor(private serviceData: ServicedataService) {
+progressbar= document.getElementById("progressbar")
+constructor(
+  private serviceData: ServicedataService,
+  private cy_mail: MailsService,
+  ) {
 
 
     this.serviceData.getJSON().subscribe((data) => {
@@ -128,7 +134,7 @@ constructor(private serviceData: ServicedataService) {
       this.credits = data.credits;
       // console.log('social',this.my_social_networks);
     });
-    window.onscroll = function(even) {this.myFunction(event)};
+    // window.onscroll = function(even) {this.myFunction(event)};
   }
 
   onCloseModal() {
@@ -170,31 +176,35 @@ constructor(private serviceData: ServicedataService) {
  * BD SQL/NO SQL al 80%
  *
  */
-
-
-
-myFunction(event:any) {
-  // if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-  //   document.getElementById("myP").className = "test";
-  // } else {
-  //   document.getElementById("myP").className = "";
-  // }
-  var progressbar= document.getElementById("progressbar")
-  console.log(progressbar)
-  console.log(event)
+ngOnDestroy() {
+  window.removeEventListener('scroll', this.scroll, true);
 }
+
+scroll = function(event) {
+  // var progressbar= document.getElementById("progressbar")
+  //handle your scroll here
+  //notice the 'odd' function assignment to a class field
+  //this is used to be able to remove the event listener
+
+      // console.log(event)
+      var {scrollTop,scrollHeight,clientHeight} =event.target;
+      var progress = (scrollTop / (scrollHeight - clientHeight))*100;
+      // console.log(progress)
+      this.progressbar.style.width = `${progress}%`;
+};
   async ngOnInit() {
   //
 
+  window.addEventListener('scroll', this.scroll, true); //third parameter
 
-
-    window.onscroll = function (event) {
-      console.log(event)
-      var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
-      var progress = (scrollTop / (scrollHeight - clientHeight))*100;
-      console.log(progress)
-      // progressbar.style.width = `${progress}%`;
-    }
+  // window.onscroll = function (event) {
+  //   var progressbar= document.getElementById("progressbar")
+  //     console.log(event)
+  //     var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
+  //     var progress = (scrollTop / (scrollHeight - clientHeight))*100;
+  //     console.log(progress)
+  //     progressbar.style.width = `${progress}%`;
+  //   }
   //
     this.emptySpan();
     this.toggleButtonMenu();
@@ -916,20 +926,36 @@ emptySpan() {
 
 
 onSendMail(e:Event){
+  this.label_error=false;
+  this.mail_send=false;
   e.preventDefault();
-  console.log('enviarme un correo')
-  // console.log(e)
-  // console.warn(this.userForm.value);
-  const dataMail= {
-    "name":this.name,
-    "email":this.email,
-    "phone":this.phone,
-    "message":this.message,
-  }
-  console.log(dataMail)
+  let message=`Hey Charlies, soy tu mismo.
+  ${this.name} te envia su correo
+  (${this.email}) y su numero de telefono
+  (${this.phone}), procura responderle pronto.
+  Su mensjae fue este: <strong>${this.message}</strong> `;
 
-  this.mail_send==true;
-
+    this.cy_mail.cySendMail(message).subscribe(
+			(response: any) => {
+        console.log('response',response)
+        if(response.ok){
+             this.mail_send=true;
+        }else{
+          this.label_error=true;
+        }
+			},
+			(err: any) => {
+        console.log(err);
+        if (err.status == 401) {
+          console.log('ERROR 401 ',err);
+          this.label_error=true;
+				}
+				if (err.status == 0) {
+          console.log('Fallo la conexión con el servidor');
+          this.label_error=true;
+				}
+			}
+		);
 }
 
   // }

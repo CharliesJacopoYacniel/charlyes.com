@@ -1249,6 +1249,8 @@
                     placeholder="What's on your mind?"
                     [(ngModel)]="message"
                     required
+                    cols="10"
+                    rows="5"
                     minlength="10"
                     #messageInput="ngModel"
                     ></textarea>
@@ -1258,6 +1260,8 @@
                     </div>
               </div>
               <div class="cy-form-row">
+                <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>
+                <span *ngIf="label_error" class="cy-label-error">Oops! I'm sorry, I'm having problems with my server, I ask you to contact me on any of my social networks, please :)</span>
                 <!-- <input class="cy-btn cy-btn-tertiary cy-btn-block" type="submit" value="Send" /> -->
                 <button class="cy-btn cy-btn-tertiary cy-btn-block"
                 type="submit"
@@ -1265,7 +1269,6 @@
                 >Send</button>
                 <!-- <button type="submit" class="button is-danger is-large">Submit</button> -->
               </div>
-              <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>
               <div class="cy-form-row">
                 <div class="center-flex">
                   <img src="assets/img/logo-cy.svg" alt="Logo CY" />
