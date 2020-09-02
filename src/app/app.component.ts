@@ -4,7 +4,4 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'charlyes';
-  // scroll_y: string = 'scroll_y_yes';
-}
+export class AppComponent {}

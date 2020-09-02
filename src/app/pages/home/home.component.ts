@@ -145,8 +145,11 @@ constructor(
   }
 
   onOpenModal(data) {
-    console.log('open modal',data)
-    this.project_item = data;
+    // console.log('open modal',data)
+    // this.project_item = data;
+    localStorage.setItem("cy-project-item", JSON.stringify(data));
+    this.project_item = JSON.parse(localStorage.getItem("cy-project-item")) ;
+
     this.classActive = 'cy-modal';
     document.getElementsByTagName('body')[0].classList.remove('scroll_y_yes');
     document.getElementsByTagName('body')[0].classList.add('scroll_y_no');
@@ -193,8 +196,13 @@ scroll = function(event) {
       this.progressbar.style.width = `${progress}%`;
 };
   async ngOnInit() {
-  //
-
+  // if (typeof(Storage) !== "undefined") {
+  // // Code for localStorage/sessionStorage.
+  // } else {
+  //   // Sorry! No Web Storage support..
+  //   console.log()
+  // }
+  this.project_item = JSON.parse(localStorage.getItem("cy-project-item")) ;
   window.addEventListener('scroll', this.scroll, true); //third parameter
 
   // window.onscroll = function (event) {
@@ -292,19 +300,19 @@ scroll = function(event) {
         "url_public": "https://github.com/CharliesYacniel",
         "team": [
           {
-            "name":"Charlies yacniel",
+            "name":"Charlies Yacniel",
             "user_name":"@charliesyacniel",
             "rol":"Front-end developer",
             "url_network":"https://github.co/CharliesYacniel"
           },
         ],
-        "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
-        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        "text_challenge":'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
+        "thumnail__descripition": "For a long time, the question was hanging around my head: how to create a space to show my projects?",
+        "text_presentation":'For a long time, the question was hanging around my head: how to create a space to show my projects?',
+        "text_intervention":'For this personal project, I studied the ways in which I could display my work information, I investigated tips on some websites and with the vague idea I took pictures and other resources from friends, with this I was able to design a Landing Page that will show my professional information.<br><br>I defined a color palette based on my choice and designed an isotype that would express one of my favorite hobbies. (yes, if it is the white layer of the cube)',
+        "text_challenge":'I took the project as a quarantine challenge, I needed to create something that would help me express my abilities and that you yourself could visualize these abilities.',
+        "text_hands_of_work":'To land the idea I took inspiration from several sites on the web that helped me guide me on the way in which I could show visually pleasing information, I took an old format of my CV and adapted it to my new graphic image, I took the opportunity to create the signatures email and banners for my social networks.',
         "text_sumary":'In the end I managed to finish the project as a quarantine goal, here is the result.<pr>As of today I can refer future clients to a personal portal that identifies me when I am not present.',
-        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "text_other":'Take those ideas and use a prototyping tool to lay out the first dynamic mock-ups based on 12 columns. <br><br> First layout the mobile part of the site using a third-party grid based on CSS Flexbox then adapt it to medium devices, use a free predesigned iconography and encapsulated it to create my own icon library.',
         "resources":[
           {"name": 'Angular 8'},
           {"name": 'Suffle JS'}
@@ -316,7 +324,7 @@ scroll = function(event) {
             "class_text":"cy-col-10 cy-col-10-sm",
             "url_logo":'assets/img/logo-cy.svg',
             "name":'Charlies Yacniel',
-            "description": 'Necesitaba crear mi propio sitio web'
+            "description": 'In this case the client was Charlies Yacniel, a designer and software developer from Tegucigalpa Honduras.'
           },
         ]
       },
