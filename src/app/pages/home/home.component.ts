@@ -1,25 +1,7 @@
-import {
-  Component,
-  // ElementRef,
-  // Output,
-  Input,
-  // Directive,
-  // EventEmitter,
-  // NgZone,
-} from '@angular/core';
-// import {
-//   trigger,
-//   state,
-//   style,
-//   animate,
-//   transition,
-// } from '@angular/animations';
+import {Component,Input} from '@angular/core';
 import Shuffle from 'shufflejs';
 import { ServicedataService } from '../../services/servicedata.service';
 import { MailsService } from 'src/app/services/mails.service';
-// import { Projectitem } from 'src/app/models/projectitem';
-// import { setTimeout } from 'timers';
-// import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -89,29 +71,7 @@ export class HomeComponent {
       checked: false,
     },
   ];
-//  span:any;
-// //  textIndex:any;
-//  textToShow:any;
-//  textToShowLen:any;
-//  letterIndex:any;
-//  textTimer:any;
-//  letterTimer:any;
-// //  textDelay:any;
-// //  letterDelay:any;
-//  emptyTimer:any;
 
-//  textIndex = 0;
-//  textDelay= 2300;
-//  letterDelay = 130;
-
-
-
-// userForm = new FormGroup({
-//   name: new FormControl(''),
-//   email: new FormControl(''),
-//   phone: new FormControl(''),
-//   message: new FormControl(''),
-// });
 progressbar= document.getElementById("progressbar")
 constructor(
   private serviceData: ServicedataService,
@@ -122,9 +82,7 @@ constructor(
     this.serviceData.getJSON().subscribe((data) => {
       // console.log(data);
       this.linetime = data.linetime;
-      // this.testimonials = data.testimonials;
       this.experience = data.experience;
-      // this.portfolio = data.portfolio;
       this.clients = data.clients;
       this.projects = data.projects;
       this.email = data.email;
@@ -132,9 +90,7 @@ constructor(
       this.address = data.address;
       this.my_social_networks = data.my_social_networks;
       this.credits = data.credits;
-      // console.log('social',this.my_social_networks);
     });
-    // window.onscroll = function(even) {this.myFunction(event)};
   }
 
   onCloseModal() {
@@ -155,54 +111,21 @@ constructor(
     document.getElementsByTagName('body')[0].classList.add('scroll_y_no');
   }
 
-  // noScroll_Y() {
-  //   // this.scroll_y = 'overflow-y: hidden;' ;
-  //   // this.scroll_y = (this.scroll_y === 'scroll_y_yes') ? 'scroll_y_no' : 'scroll_y_yes';
-  // }
-/**
- * los skills que voy a dejar
- * Front end
- *   HTML al 80%
- *   CSS al 90%  X
- *   JS al 80%   X
- *   Angular al 80% X
- *
- *  BACK END
- *   PHP al 90%   X
- *   NODE JS al 80% X
- *   JAVA al 70%
- *
- * Otros
- * Git al 80%  X
- * Docker al 70%
- * Adobe XD al 90%
- * BD SQL/NO SQL al 80%
- *
- */
+
 ngOnDestroy() {
   window.removeEventListener('scroll', this.scroll, true);
 }
 
 scroll = function(event) {
-  // var progressbar= document.getElementById("progressbar")
-  //handle your scroll here
-  //notice the 'odd' function assignment to a class field
-  //this is used to be able to remove the event listener
-
-      // console.log(event)
       var {scrollTop,scrollHeight,clientHeight} =event.target;
       var progress = (scrollTop / (scrollHeight - clientHeight))*100;
-      // console.log(progress)
       this.progressbar.style.width = `${progress}%`;
 };
   async ngOnInit() {
-  // if (typeof(Storage) !== "undefined") {
-  // // Code for localStorage/sessionStorage.
-  // } else {
-  //   // Sorry! No Web Storage support..
-  //   console.log()
-  // }
-  this.project_item = JSON.parse(localStorage.getItem("cy-project-item")) ;
+    if(localStorage.getItem("cy-project-item")){
+      // console.log('existe item', localStorage.getItem("cy-project-item"))
+      this.project_item = JSON.parse(localStorage.getItem("cy-project-item")) ;
+    }
   window.addEventListener('scroll', this.scroll, true); //third parameter
 
   // window.onscroll = function (event) {
@@ -360,12 +283,12 @@ scroll = function(event) {
           }
         ],
         "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
-        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        "text_challenge":'The project was approved in August 2018 ending in December of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
-        "text_sumary":'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
-        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "text_presentation":' A Solid Prestige Financial Institution needs define your <b>new processes</b> for reconciliation <b>automation</b> of payments and collections, made by their clients through <b>manual</b> processes.<br><br> The <b>web portal</b> "Conciliations" is the <b>administrative module</b> where Users can log in and proceed with the <b>accounting balance</b> between the fundraising institution and the area of information technologies.',
+        "text_intervention":'Charlies was assigned to this project to carry out the <b>design and the development</b> of a <b>web application</b> that would allow users carry out the <b>validation</b> process that was carried out form <b>manual</b> passing this to a form <b>automatic</b>, safe and consistent.',
+        "text_challenge":'The project was approved in August 2018 ending in December of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <b>main requirement</b> for the operation of the project consisted oftake information from both entities, <b>compare</b> data, determine<b>deferred</b> and generate <b>alerts</b> to users.',
+        "text_hands_of_work":'In this project there was a <b>software requirement</b> on which a portal guide was designed using <b>mockups</b>, these weredesigned by the <b>graphic design</b> team respecting the established <b>graphic line</b>.',
+        "text_sumary":'In the end, users were satisfied to be able to carry out reconciliations on a <b>website</b> hosted on your <b>intranet</b>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <b>registration</b> of theinformation.',
+        "text_other":'The project management was carried out by the team of <b>Project Manager</b> of the “Financial Institution of Solid Prestige ”, they took control of the <b>tasks</b> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
         "resources":[
           {"name": 'Animate CSS'},
           {"name": 'Datatables JS'},
@@ -397,7 +320,7 @@ scroll = function(event) {
         "figureclass": 'col-6@xs col-4@sm col-3@md picture-item',
         "cy_class": 'cy-card cy-card-style-2',
         "date": "October 2017",
-        "title": "Update Data Clients",
+        "title": "Data Update Campaign",
         "type_project":"Form web",
         "rol": "Back-end developer",
         "autor": "Solid Prestige Financial Institution",
@@ -408,18 +331,18 @@ scroll = function(event) {
         "url_mocks": null,
         "url_public": "https://github.com/CharliesYacniel",
         "team": [
-          {
-            "name":"Ivan Castelar",
-            "user_name":"@castelar007",
-            "rol":"Front-end developer",
-            "url_network":"https://github.com/castelar007"
-          },
-          {
-            "name":"Victor Morales",
-            "user_name":"@ViiMorales",
-            "rol":"Software Architect",
-            "url_network":"https://github.com/ViiMorales"
-          },
+          // {
+          //   "name":"Ivan Castelar",
+          //   "user_name":"@castelar007",
+          //   "rol":"Front-end developer",
+          //   "url_network":"https://github.com/castelar007"
+          // },
+          // {
+          //   "name":"Victor Morales",
+          //   "user_name":"@ViiMorales",
+          //   "rol":"Software Architect",
+          //   "url_network":"https://github.com/ViiMorales"
+          // },
           {
             "name":"Charlies Yacniel",
             "user_name":"@charliesyacniel",
@@ -427,13 +350,13 @@ scroll = function(event) {
             "url_network":"https://github.co/CharliesYacniel"
           },
         ],
-        "thumnail__descripition": "A Solid Prestige Financial Institution needs define your new processes...",
-        "text_presentation":' A Solid Prestige Financial Institution needs define your <span>new processes</span> for reconciliation <span>automation</span> of payments and collections, made by their clients through <span>manual</span> processes.<br><br> The <span>web portal</span> "Conciliations" is the <span>administrative module</span> where Users can log in and proceed with the <span>accounting balance</span> between the fundraising institution and the area of information technologies.',
-        "text_intervention":'Charlies was assigned to this project to carry out the <span>design and the development</span> of a <span>web application</span> that would allow users carry out the <span>validation</span> process that was carried out form <span>manual</span> passing this to a form <span>automatic</span>, safe and consistent.',
-        "text_challenge":'The project was approved in August 2018 ending inDecember of the same year, it was agreed to set a first part of themodule for that month and the rest for a second installment.<br/>The <span>main requirement</span> for the operation of the project consisted oftake information from both entities, <span>compare</span> data, determine<span>deferred</span> and generate <span>alerts</span> to users.',
-        "text_hands_of_work":'In this project there was a <span>software requirement</span> on which a portal guide was designed using <span>mockups</span>, these weredesigned by the <span>graphic design</span> team respecting the established <span>graphic line</span>.',
-        "text_sumary":'In the end, users were satisfied to be able to carry out reconciliations on a <span>website</span> hosted on your <span>intranet</span>, up to dateToday can generate the documentation required by the "GroupCustoms Rents ”which validates the correct <span>registration</span> of theinformation.',
-        "text_other":'The project management was carried out by the team of <span>Project Manager</span> of the “Financial Institution of Solid Prestige ”, they took control of the <span>tasks</span> of the project. <br><br><br> For the design and development of the project there was free decision inthe use of tools, as a newsoftware solution.',
+        "thumnail__descripition": "A “Solid Prestige Financial Institution” ...",
+        "text_presentation":' A “Solid Prestige Financial Institution” proposed to <b>update</b> the data of those clients whose information was <b>incomplete</b> in their databases, for which an advertising campaign was presented in which motivated customers with a <b>raffle</b> of <b>prizes</b> that they could win just by updating their data.<br> <br>Data Update Campaign (DUC) is a dynamic web form that was implemented in the branches of “Financial Institution of Solid Prestige”, in this form clients could fill in their information while waiting for their <b>turn</b> of attention.',
+        "text_intervention":'In this project, he was assigned as a <b>front-end</b> developer, to carry out the development of a <b>web application</b> that allowed users to enter their <b>identification</b> personal and <b>confirm</b> information exists, while completing <b> pending </b> fields.',
+        "text_challenge":'The main requirement of this project was to present a <b>friendly</b> and <b>lightweight</b> solution to clients, one in which they would not feel <b>overwhelmed</b> when filling out a form of large numbers of fields.<br> <br>To do this, we opted to present a form based on <b> steps </b>, in which the fields were presented by type of information.',
+        "text_hands_of_work":'This project had visual <b>resources</b> and a list of the products that were going to be raffled on the date established for the draw, based on these resources a visual idea of what the <b>solution would be like was presented</b>.',
+        "text_sumary":'In the end the form was used for its initial purpose, a <b>considerable percentage</b> of the customers <b>filled out</b> information using this solution.',
+        "text_other":'The project had a deadline for delivery, the December season being a determining factor, since it represents vacation time for people. (This in Latin America)',
         "resources":[
           {"name": 'Meteor JS'},
           {"name": 'Animate CSS'}
@@ -445,7 +368,7 @@ scroll = function(event) {
             "class_text":"cy-col-10 cy-col-10-sm",
             "url_logo":'assets/img/logo-cy.svg',
             "name":'Solid Prestige Financial Institution',
-            "description": 'The “Solid Prestige Financial Institution” is an institution bank with a long regional history in proposing products and provision of services to the community.'
+            "description": 'The “Solid Prestige Financial Institution” is a banking institution with a long regional history in proposing products and providing services to the community.'
           },
         ]
       },

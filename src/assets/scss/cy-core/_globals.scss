@@ -161,11 +161,16 @@ background: transparent ;
    * Add the correct font weight in Chrome, Edge, and Safari.
    */
 
-  b,
+  b{
+
+    font-weight:bolder;
+    font-size:.9rem;
+    padding: 0 5px;
+    background-color:$cy-green-tertiary !important;
+  }
   strong {
     font-weight: bolder;
   }
-
   /**
    * 1. Correct the inheritance and scaling of font size in all browsers.
    * 2. Correct the odd `em` font sizing in all browsers.

@@ -8,9 +8,9 @@ import { HttpClient } from '@angular/common/http';
 export class ServicedataService {
 
   constructor(private http: HttpClient) {
-    this.getJSON().subscribe(data => {
-      console.log(data);
-  });
+  //   this.getJSON().subscribe(data => {
+  //     console.log(data);
+  // });
   }
   public getJSON(): Observable<any> {
     return this.http.get("./assets/data.json");
