@@ -241,6 +241,9 @@ background: transparent ;
     line-height: 1.15; /* 1 */
     margin: 0; /* 2 */
   }
+textarea{
+  resize: none;
+}
 
   /**
    * Show the overflow in IE.

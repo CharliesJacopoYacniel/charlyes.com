@@ -13,10 +13,11 @@ export class HomeComponent {
   @Input() currentState;
   // private eventOptions: boolean | { capture?: boolean; passive?: boolean };
 /*variables  de formulario*/
-  name: string;
+  name_client: string;
   email_client: string;
   message: string;
   phone_client: string;
+
   mail_send:boolean=false;
   label_error:boolean=false;
 
@@ -475,9 +476,9 @@ scroll = function(event) {
 
         touchPosDiff = touchStartPos - touchEndPos;
 
-        console.log(touchPosDiff);
-        console.log(touchStartPos);
-        console.log(touchEndPos);
+        // console.log(touchPosDiff);
+        // console.log(touchStartPos);
+        // console.log(touchEndPos);
 
         if (touchPosDiff > 0 + ignoreTouch) {
           testimLeftArrow.click();
@@ -860,15 +861,11 @@ onSendMail(e:Event){
   this.label_error=false;
   this.mail_send=false;
   e.preventDefault();
-  let message=`Hey Charlies, soy tu mismo.
-  ${this.name} te envia su correo
-  (${this.email}) y su numero de telefono
-  (${this.phone}), procura responderle pronto.
-  Su mensjae fue este: <strong>${this.message}</strong> `;
+  let message=`Hey Charlies, soy tu mismo. ${this.name_client} te envía su correo (${this.email_client}) y su número de teléfono(${this.phone_client}), procura responderle pronto.Su mensaje fue este: <strong>${this.message}</strong> `;
 
-    this.cy_mail.cySendMail(message).subscribe(
+    this.cy_mail.cySendMailHostinger(message).subscribe(
 			(response: any) => {
-        console.log('response',response)
+        // console.log('response',response)
         if(response.ok){
              this.mail_send=true;
         }else{
@@ -876,13 +873,13 @@ onSendMail(e:Event){
         }
 			},
 			(err: any) => {
-        console.log(err);
+        // console.log(err);
         if (err.status == 401) {
-          console.log('ERROR 401 ',err);
+          // console.log('ERROR 401 ',err);
           this.label_error=true;
 				}
 				if (err.status == 0) {
-          console.log('Fallo la conexión con el servidor');
+          // console.log('Fallo la conexión con el servidor');
           this.label_error=true;
 				}
 			}

@@ -27,10 +27,10 @@
     font-size: $cy-font-size-md;
     font-family: Roboto-Regular;
   }
-  .network-icon{
-    padding: 0px 20px 0px 20px;
+  // .network-icon{
+  //   padding: 0px 20px 0px 20px;
 
-  }
+  // }
 
 
   .cy-form-row{
@@ -159,3 +159,7 @@
     padding: 5px;
     font-size: 12px;
   }
+
+.cy-tweter:before{
+  margin-top: 15px !important;
+}

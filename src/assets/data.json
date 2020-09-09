@@ -372,6 +372,11 @@
       "active":true,
       "url":"https://twitter.com/CharliesYacniel",
       "cy_logo":"cy-tweter"
+    },
+    {
+      "active":true,
+      "url":"https://api.whatsapp.com/send?phone=50495782412&text=Hola%20Charlies%20%E2%9C%8B%F0%9F%8F%BB%20,me%20interesa%20saber%20mas%20sobre%20tu%20trabajo",
+      "cy_logo":"cy-whatsapp"
     }
   ],
   "credits":[
