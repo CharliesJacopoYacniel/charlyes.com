@@ -1,10 +1,8 @@
-// @import '../cy-core/variables';
-
-
 .cy-btn {
     display: inline-block;
     color: $cy-green-primary;
     text-align: center;
+    min-width: 180px;
     vertical-align: middle;
     user-select: none;
     background-color: transparent;
@@ -84,15 +82,6 @@
         background-color: $cy-green-primary;
       }
     }
-    // &:focus,
-    // &.focus {
-    //   outline: 0;
-    //   color: $cy-white;
-    //   background-color: $cy-green-tertiary;
-    //   border: 1px solid $cy-green-tertiary ;
-    // }
-
-
 
     // Disabled comes first so active can properly restyle
     &.disabled,
@@ -101,14 +90,7 @@
       // @include box-shadow(none);
     }
 
-    &:not(:disabled):not(.disabled):active,
-    &:not(:disabled):not(.disabled).active {
-      // @include box-shadow($btn-active-box-shadow);
 
-      &:focus {
-        // @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
-      }
-    }
   }
 
   // Future-proof disabling of clicks on `<a>` elements
@@ -168,18 +150,6 @@
     // No need for an active state here
   }
 
-
-  //
-  // Button Sizes
-  //
-
-  .cy-btn-lg {
-    // @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
-  }
-
-  .cy-btn-sm {
-    // @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
-  }
 
 
   //

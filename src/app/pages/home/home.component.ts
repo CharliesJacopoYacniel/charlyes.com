@@ -122,6 +122,14 @@ scroll = function(event) {
       var progress = (scrollTop / (scrollHeight - clientHeight))*100;
       this.progressbar.style.width = `${progress}%`;
 };
+
+
+public clearLabel(){
+  // console.log('paso por el funtion label')
+  this.mail_send=false;
+  this.label_error=false;
+}
+
   async ngOnInit() {
     if(localStorage.getItem("cy-project-item")){
       // console.log('existe item', localStorage.getItem("cy-project-item"))
@@ -129,15 +137,20 @@ scroll = function(event) {
     }
   window.addEventListener('scroll', this.scroll, true); //third parameter
 
-  // window.onscroll = function (event) {
-  //   var progressbar= document.getElementById("progressbar")
-  //     console.log(event)
-  //     var {scrollTop,scrollHeight,clientHeight} =event.target.documentElement
-  //     var progress = (scrollTop / (scrollHeight - clientHeight))*100;
-  //     console.log(progress)
-  //     progressbar.style.width = `${progress}%`;
-  //   }
-  //
+  // document.addEventListener('keydown', logKey);
+  var textArea=document.getElementById("message");
+  var name=document.getElementById("name");
+  var email=document.getElementById("email");
+  var phone=document.getElementById("phone");
+      name.addEventListener("focus", this.clearLabel);
+      email.addEventListener("focus", this.clearLabel);
+      phone.addEventListener("focus", this.clearLabel);
+      textArea.addEventListener("focus", this.clearLabel);
+  // function logKey(e) {
+  //   log.textContent += ` ${e.code}`;
+  //   console.log(e)
+  // }
+
     this.emptySpan();
     this.toggleButtonMenu();
     this.testimonials = [
@@ -204,6 +217,14 @@ scroll = function(event) {
         testimonial:
           'Excellent person both personally and academically, he has proven to be respectful, enterprising, responsible, proactive, seeks to deepen his studies, does not settle and always goes the extra mile, these are many of his qualities, but without a doubt the most important is his humility and the empathy he has with others.',
       },
+      {
+        name: "Nataly Park",
+        usersocialnetwork: "ntpark_view",
+        urlsocialnet: "https://www.instagram.com/ntpark_view/?hl=es-la",
+        checked: false,
+        urlphoto: "assets/img/photos_profile/nataly.jpg",
+        testimonial:"There are people who always look for a plus in their life, people who see their goals head-on and when they are there they always want to go for more, because the world is a sea of possibilities and among all those possibilities is Charlies, a fighter who faces his goals by surpassing himself in search of his self-realization and happiness."
+      }
     ];
     this.portfolio = [
       {
@@ -774,6 +795,7 @@ scroll = function(event) {
     // };
   }
 
+
   toggleButtonMenu(){
     let toggle = document.querySelector('.three-lines-menu'),
     li = document.querySelectorAll('ul.cy-nav-links li'),
@@ -855,7 +877,7 @@ emptySpan() {
 }
 
 
-
+// Existen personas que siempre buscan un plus en su vida, personas que ven de frente las metas y cuando están allí siempre quieren ir por mas, porque el mundo es un mar de posibilidades y entre todas esas posibilidades esta Charlies un luchador que enfrenta sus metas superándose a sí mismo en busca de su autorrealizacion y felicidad.
 
 onSendMail(e:Event){
   this.label_error=false;
@@ -865,7 +887,7 @@ onSendMail(e:Event){
 
     this.cy_mail.cySendMailHostinger(message).subscribe(
 			(response: any) => {
-        // console.log('response',response)
+        // this.clearLabel()
         if(response.ok){
              this.mail_send=true;
         }else{
@@ -873,17 +895,15 @@ onSendMail(e:Event){
         }
 			},
 			(err: any) => {
-        // console.log(err);
         if (err.status == 401) {
-          // console.log('ERROR 401 ',err);
           this.label_error=true;
 				}
 				if (err.status == 0) {
-          // console.log('Fallo la conexión con el servidor');
           this.label_error=true;
 				}
 			}
-		);
+    );
+
 }
 
   // }

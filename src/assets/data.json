@@ -73,64 +73,6 @@
       "content":"I survive the COVID-19 pandemic, meditating and studying online from my room."
     }
   ],
-  "testimonials": [
-    {
-      "name": "Skarllette Yasmín",
-      "usersocialnetwork": "s.nunz",
-      "urlsocialnet": "https://www.instagram.com/s.nunz",
-      "checked": true,
-      "urlphoto": "assets/img/photos_profile/skarllette.jpg",
-      "testimonial":"Charlies is a very helpful, friendly person, very responsible both personally and professionally, with extensive knowledge in the technological area, her various projects support her. Excellent to face individual or team projects, its collaborative spirit is always reflected.<br>Successes Ing. Charlies"
-    },
-    {
-      "name": "Tania Ordoñez",
-      "usersocialnetwork": "eoatania",
-      "urlsocialnet": "https://www.instagram.com/eoatania",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/tania.jpg",
-      "testimonial":"Charlies is someone curious, she always has in mind to keep learning; has great problem solving ability. She is responsible, committed, creative, trustworthy;. Her capacity for project development is extraordinary. Successes! <br><br>PD: Charlies is a cat in boots without a doubt, his boots support him ha ha ha"
-    },
-    {
-      "name": "Nohemy Rodriguez",
-      "usersocialnetwork": "dnrg22",
-      "urlsocialnet": "https://www.instagram.com/dnrg22",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/nohemy.jpg",
-      "testimonial":"Charlies Yacniel is a person with an extra bonus both to support and to learn, he is quite accessible, self-taught, independent, he likes to take on challenges, and he is not a conformist person. It is the perfect combination between a friend and a guide.<br><br>Professionally, he is very dedicated to his work and with a high sense of responsibility. Personally he is someone warm, kind, understanding and always pushing others to improve."
-    },
-    {
-      "name": "Cindy Sarahí",
-      "usersocialnetwork": "cindysarahil",
-      "urlsocialnet": "https://www.instagram.com/cindysarahil/",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/cindy.jpg",
-      "testimonial":"Charlies is one of the people who never gives up, always wants to learn more, a noble, humble and above all responsible person.Each new project for him is a new challenge, he will never say no to something he does not know, because if he does not investigate it; A great experience to have him as a co-worker."
-    },
-    {
-      "name": "Benesis Damaris",
-      "usersocialnetwork": "bd_cl",
-      "urlsocialnet": "https://www.instagram.com/bd_cl/",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/benesis.jpg",
-      "testimonial":"Charlies is someone capable of solving any problem you put him, he will help you in whatever you want, he will accompany you on new adventures, and he will propose new challenges.<br><br>Do you have a technological project in mind? Well call Charlies.<br>And when the project is complete, we will go camping to celebrate."
-    },
-    {
-      "name": "Melissa Castillo",
-      "usersocialnetwork": "melissa792",
-      "urlsocialnet": "https://www.instagram.com/melissa792/",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/melissa.jpg",
-      "testimonial":"He is a person who works hard to improve himself, always learning new things, looking at everything as an opportunity to make him grow as a person and as a professional. Always thinking positive, he is very happy, dynamic, sincere and with a noble heart. Very hard-working to support his family."
-    },
-    {
-      "name": "Ivonne Amador",
-      "usersocialnetwork": "alevonne",
-      "urlsocialnet": "https://www.instagram.com/alevonne",
-      "checked": false,
-      "urlphoto": "assets/img/photos_profile/ivonne.jpg",
-      "testimonial":"Excellent person both personally and academically, he has proven to be respectful, enterprising, responsible, proactive, seeks to deepen his studies, does not settle and always goes the extra mile, these are many of his qualities, but without a doubt the most important is his humility and the empathy he has with others."
-    }
-  ],
   "portfolio":[
       {
         "card_type": 1,

@@ -478,7 +478,7 @@
                   <div class="cy-form-row">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" class="cy-form-control" placeholder="Write your name"
-                      [(ngModel)]="name_client" required minlength="4" #nameInput="ngModel">
+                      [(ngModel)]="name_client" required minlength="4" #nameInput="ngModel" pattern="^[a-z-A-Z\D]+$" >
                     <div class="cy-label-error" *ngIf="nameInput.invalid && nameInput.dirty">
                       Your name is required.
                     </div>
@@ -486,7 +486,7 @@
                   <div class="cy-form-row">
                     <label for="email">E-mail:</label>
                     <input type="email" id="email" name="email" class="cy-form-control" placeholder="Ex: youremail@example.com"
-                      [(ngModel)]="email_client" required email #emailInput="ngModel">
+                      [(ngModel)]="email_client" required email #emailInput="ngModel" >
                     <div class="cy-label-error" *ngIf="emailInput.invalid && emailInput.dirty">
                       Please enter a valid email.
                     </div>
@@ -494,8 +494,8 @@
                 </div>
                 <div class="cy-form-row">
                   <label for="phone">Phone:</label>
-                  <input type="number" id="phone" name="phone" class="cy-form-control" placeholder="Leave your telephone number"
-                    [(ngModel)]="phone_client" required phone_client #phoneInput="ngModel">
+                  <input type="tel" id="phone" name="phone" class="cy-form-control" placeholder="Leave your telephone number"
+                    [(ngModel)]="phone_client" required phone_client #phoneInput="ngModel" pattern="^[0-9]+$" >
                   <div class="cy-label-error" *ngIf="phoneInput.invalid && phoneInput.dirty">
                     Please leave me your phone number.
                   </div>
@@ -503,16 +503,15 @@
                 <div class="cy-form-row">
                   <label for="message">Message:</label>
                   <textarea class="cy-form-control" id="message" name="message" placeholder="What's on your mind?"
-                    [(ngModel)]="message" required cols="10" rows="8" minlength="10" #messageInput="ngModel"></textarea>
+                    [(ngModel)]="message" required cols="10" rows="8" minlength="10" #messageInput="ngModel" pattern="[ A-Z0-9a-zäÄëËïÏöÖüÜáéíóúáéíóúÁÉÍÓÚÂÊÎÔÛâêîôûàèìòùÀÈÌÒÙ,!?'.;-]+" ></textarea>
                   <div class="cy-label-error" *ngIf="messageInput.invalid && messageInput.dirty">
                     Your message is required
                   </div>
                 </div>
                 <div class="cy-form-row">
-                  <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my
-                    answer very soon.</span>
-                  <span *ngIf="label_error" class="cy-label-error">Oops! I'm sorry, I'm having problems with my server,
-                    I ask you to contact me on any of my social networks, please :)</span>
+
+                  <span *ngIf="mail_send" class="cy-toast">Thank you for sending your information, you will receive my answer very soon.</span>
+                  <span *ngIf="label_error" class="cy-label-error">Oops! I'm sorry, I'm having problems with my server,I ask you to contact me on any of my social networks, please :)</span>
                   <button class="cy-btn cy-btn-tertiary cy-btn-block" type="submit"
                     [disabled]="!contacForm.form.valid">Send</button>
                 </div>

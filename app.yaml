@@ -1,0 +1,10 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /
+  static_files: charlyes/index.html
+  upload: charlyes/index.html
+- url: /
+  static_dir: charlyes
