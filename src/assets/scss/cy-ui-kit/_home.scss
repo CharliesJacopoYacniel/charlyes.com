@@ -141,3 +141,43 @@
   opacity: 0.01;
   }
 }
+
+
+.buttonTop{
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  background-color: $cy-green-primary;
+  bottom: 40px;
+  right: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999;
+  transition: .5s;
+  visibility: hidden;
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span{
+    color:$cy-white;
+    transform: rotate(-90deg);
+    font-size: 50px;
+  }
+}
+.buttonTop.active{
+      right: 5%;
+      visibility:visible;
+      opacity: 1;
+    }
+.buttonTop.deactive{
+      right: 100%;
+      visibility:hidden;
+      opacity: 0;
+    }
+.buttonTop:hover{
+  background-color: $cy-green-tertiary;
+  // border: 1px solid greenyellow;
+}

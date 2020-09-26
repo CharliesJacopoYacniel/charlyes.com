@@ -2,6 +2,8 @@ import {Component,Input} from '@angular/core';
 import Shuffle from 'shufflejs';
 import { ServicedataService } from '../../services/servicedata.service';
 import { MailsService } from 'src/app/services/mails.service';
+// import { Router } from '@angular/router';
+// import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -74,9 +76,13 @@ export class HomeComponent {
   ];
 
 progressbar= document.getElementById("progressbar")
+buttonTop:HTMLElement;
+status: boolean = false;
 constructor(
   private serviceData: ServicedataService,
   private cy_mail: MailsService,
+  // private activatedRoute: ActivatedRoute
+  // private router: Router
   ) {
 
 
@@ -121,6 +127,30 @@ scroll = function(event) {
       var {scrollTop,scrollHeight,clientHeight} =event.target;
       var progress = (scrollTop / (scrollHeight - clientHeight))*100;
       this.progressbar.style.width = `${progress}%`;
+      //la intruciond e abajo e spara el boton de ir al top
+
+          // this.buttonTop= document.getElementById('buttonToTop');
+          // console.log(buttonTop)
+          // let alto=(scrollHeight - clientHeight)
+          // console.log('scrollHeight',scrollHeight);
+          // console.log('clientHeight',clientHeight);
+          // console.log('scrollTop',scrollTop);
+          this.buttonTop= document.getElementById('buttonToTop')
+          if(scrollTop > 600){
+            // console.log('aparece meirda')
+            // this.status = true;
+            this.buttonTop.classList.add('active');
+            this.buttonTop.classList.remove('deactive');
+          }else{
+            // console.log('DESAPARECW')
+            // this.status = false;
+            this.buttonTop.classList.add('deactive');
+            this.buttonTop.classList.remove('active');
+          }
+
+
+          // this.buttonTop.classlist.toggle('active',scrollTop > 300)
+          // buttonTop.classList.toggle('active',window.scrollY > 400)
 };
 
 
@@ -135,9 +165,10 @@ public clearLabel(){
       // console.log('existe item', localStorage.getItem("cy-project-item"))
       this.project_item = JSON.parse(localStorage.getItem("cy-project-item")) ;
     }
+
   window.addEventListener('scroll', this.scroll, true); //third parameter
 
-  // document.addEventListener('keydown', logKey);
+
   var textArea=document.getElementById("message");
   var name=document.getElementById("name");
   var email=document.getElementById("email");
